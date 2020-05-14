@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20200513 23:05:32.156" generator="Robot 3.2.1 (Python 2.7.16 on darwin)">
+<suite source="/Users/nifran/Downloads/xubio_contable-master/test/registrar_usuario.robot" id="s1" name="Registrar Usuario">
+<kw type="setup" name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>chrome</arg>
+<arg>none</arg>
+<arg>http://35.174.46.86:4444/wd/hub</arg>
+</arguments>
+<msg timestamp="20200513 23:05:32.426" level="INFO">Opening browser 'chrome' to base url 'https://xubiotesting2.ddns.net/ar/' through remote server at 'http://35.174.46.86:4444/wd/hub'.</msg>
+<status status="PASS" endtime="20200513 23:05:35.119" starttime="20200513 23:05:32.425"></status>
+</kw>
+<test id="s1-t1" name="Registro de Usuario">
+<kw name="Validar Conexion" library="common">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>id=details-button</arg>
+</arguments>
+<msg timestamp="20200513 23:05:35.121" level="INFO">Clicking element 'id=details-button'.</msg>
+<status status="PASS" endtime="20200513 23:05:35.929" starttime="20200513 23:05:35.121"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>id=proceed-link</arg>
+</arguments>
+<msg timestamp="20200513 23:05:35.930" level="INFO">Clicking element 'id=proceed-link'.</msg>
+<status status="PASS" endtime="20200513 23:05:36.672" starttime="20200513 23:05:35.929"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200513 23:05:39.676" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20200513 23:05:39.676" starttime="20200513 23:05:36.673"></status>
+</kw>
+<status status="PASS" endtime="20200513 23:05:39.677" starttime="20200513 23:05:35.120"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20200513 23:05:40.139" starttime="20200513 23:05:39.677"></status>
+</kw>
+<kw name="Registrarme Ar" library="index_ar">
+<kw name="Boton Registrarme" library="index_ar">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>xpath=//a[text() = "Registrarme gratis"]</arg>
+</arguments>
+<msg timestamp="20200513 23:05:40.501" level="INFO">Current page contains element 'xpath=//a[text() = "Registrarme gratis"]'.</msg>
+<status status="PASS" endtime="20200513 23:05:40.501" starttime="20200513 23:05:40.142"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>Registrarme gratis</arg>
+</arguments>
+<msg timestamp="20200513 23:05:40.501" level="INFO">Clicking link 'Registrarme gratis'.</msg>
+<status status="PASS" endtime="20200513 23:05:41.921" starttime="20200513 23:05:40.501"></status>
+</kw>
+<status status="PASS" endtime="20200513 23:05:41.921" starttime="20200513 23:05:40.141"></status>
+</kw>
+<status status="PASS" endtime="20200513 23:05:41.921" starttime="20200513 23:05:40.140"></status>
+</kw>
+<kw name="Completar Formulario de Registro" library="registro">
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>https://xubiotesting2.ddns.net/NXV/registro</arg>
+</arguments>
+<msg timestamp="20200513 23:05:42.260" level="INFO">Current location is 'https://xubiotesting2.ddns.net/NXV/registro'.</msg>
+<status status="PASS" endtime="20200513 23:05:42.260" starttime="20200513 23:05:41.922"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>Registrate gratis</arg>
+</arguments>
+<status status="PASS" endtime="20200513 23:05:42.621" starttime="20200513 23:05:42.261"></status>
+</kw>
+<kw name="Campo Email" library="registro">
+<arguments>
+<arg>${email}</arg>
+</arguments>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>id=newUserName</arg>
+</arguments>
+<msg timestamp="20200513 23:05:42.985" level="INFO">Current page contains element 'id=newUserName'.</msg>
+<status status="PASS" endtime="20200513 23:05:42.985" starttime="20200513 23:05:42.621"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=newUserName</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20200513 23:05:42.986" level="INFO">Typing text 'test_nit50@nit.com' into text field 'id=newUserName'.</msg>
+<status status="PASS" endtime="20200513 23:05:44.421" starttime="20200513 23:05:42.986"></status>
+</kw>
+<status status="PASS" endtime="20200513 23:05:44.421" starttime="20200513 23:05:42.621"></status>
+</kw>
+<kw name="Campo Nombre" library="registro">
+<arguments>
+<arg>${nombre}</arg>
+</arguments>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>id=newNombre</arg>
+</arguments>
+<msg timestamp="20200513 23:05:45.021" level="INFO">Current page contains element 'id=newNombre'.</msg>
+<status status="PASS" endtime="20200513 23:05:45.021" starttime="20200513 23:05:44.423"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=newNombre</arg>
+<arg>${nombre}</arg>
+</arguments>
+<msg timestamp="20200513 23:05:45.022" level="INFO">Typing text 'Juan Perez' into text field 'id=newNombre'.</msg>
+<status status="PASS" endtime="20200513 23:05:46.433" starttime="20200513 23:05:45.021"></status>
+</kw>
+<status status="PASS" endtime="20200513 23:05:46.434" starttime="20200513 23:05:44.422"></status>
+</kw>
+<kw name="Campo Telefono" library="registro">
+<arguments>
+<arg>${telefono}</arg>
+</arguments>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>id=newTelefono</arg>
+</arguments>
+<msg timestamp="20200513 23:05:46.788" level="INFO">Current page contains element 'id=newTelefono'.</msg>
+<status status="PASS" endtime="20200513 23:05:46.788" starttime="20200513 23:05:46.435"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=newTelefono</arg>
+<arg>${telefono}</arg>
+</arguments>
+<msg timestamp="20200513 23:05:46.789" level="INFO">Typing text '110000000' into text field 'id=newTelefono'.</msg>
+<status status="PASS" endtime="20200513 23:05:47.956" starttime="20200513 23:05:46.788"></status>
+</kw>
+<status status="PASS" endtime="20200513 23:05:47.957" starttime="20200513 23:05:46.434"></status>
+</kw>
+<kw name="Campo Password" library="registro">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>id=newPassword</arg>
+</arguments>
+<msg timestamp="20200513 23:05:48.356" level="INFO">Current page contains element 'id=newPassword'.</msg>
+<status status="PASS" endtime="20200513 23:05:48.356" starttime="20200513 23:05:47.958"></status>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<doc>Types the given password into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=newPassword</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200513 23:05:48.357" level="INFO">Typing password into text field 'id=newPassword'.</msg>
+<status status="PASS" endtime="20200513 23:05:49.529" starttime="20200513 23:05:48.357"></status>
+</kw>
+<status status="PASS" endtime="20200513 23:05:49.529" starttime="20200513 23:05:47.957"></status>
+</kw>
+<kw name="Combobox Pais" library="registro">
+<arguments>
+<arg>${pais}</arg>
+</arguments>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<arguments>
+<arg>id=select_pais</arg>
+<arg>${pais}</arg>
+</arguments>
+<msg timestamp="20200513 23:05:49.531" level="INFO">Selecting options from selection list 'id=select_pais' by label Argentina.</msg>
+<status status="PASS" endtime="20200513 23:05:52.570" starttime="20200513 23:05:49.531"></status>
+</kw>
+<status status="PASS" endtime="20200513 23:05:52.571" starttime="20200513 23:05:49.529"></status>
+</kw>
+<kw name="Radiobutton Tipo" library="registro">
+<arguments>
+<arg>${tipo}</arg>
+</arguments>
+<kw name="Select Radio Button" library="SeleniumLibrary">
+<doc>Sets radio button group ``group_name`` to ``value``.</doc>
+<arguments>
+<arg>soyContador</arg>
+<arg>${tipo}</arg>
+</arguments>
+<msg timestamp="20200513 23:05:52.573" level="INFO">Selecting 'soyContador' from radio button 'soyContador'.</msg>
+<status status="PASS" endtime="20200513 23:05:53.978" starttime="20200513 23:05:52.572"></status>
+</kw>
+<status status="PASS" endtime="20200513 23:05:53.979" starttime="20200513 23:05:52.571"></status>
+</kw>
+<kw name="CheckBox Terminos" library="registro">
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<doc>Selects checkbox identified by ``locator``.</doc>
+<arguments>
+<arg>id=leiTerminos</arg>
+</arguments>
+<msg timestamp="20200513 23:05:53.980" level="INFO">Selecting checkbox 'id=leiTerminos'.</msg>
+<status status="PASS" endtime="20200513 23:05:56.018" starttime="20200513 23:05:53.980"></status>
+</kw>
+<status status="PASS" endtime="20200513 23:05:56.019" starttime="20200513 23:05:53.979"></status>
+</kw>
+<kw name="Checkbox Should Be Selected" library="SeleniumLibrary">
+<doc>Verifies checkbox ``locator`` is selected/checked.</doc>
+<arguments>
+<arg>id=leiTerminos</arg>
+</arguments>
+<msg timestamp="20200513 23:05:56.019" level="INFO">Verifying checkbox 'id=leiTerminos' is selected.</msg>
+<status status="PASS" endtime="20200513 23:05:57.671" starttime="20200513 23:05:56.019"></status>
+</kw>
+<kw name="Boton Crear Cuenta" library="registro">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>id=botonEnviar</arg>
+</arguments>
+<msg timestamp="20200513 23:05:58.029" level="INFO">Current page contains element 'id=botonEnviar'.</msg>
+<status status="PASS" endtime="20200513 23:05:58.029" starttime="20200513 23:05:57.672"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>id=botonEnviar</arg>
+</arguments>
+<msg timestamp="20200513 23:05:58.030" level="INFO">Clicking element 'id=botonEnviar'.</msg>
+<status status="PASS" endtime="20200513 23:05:58.849" starttime="20200513 23:05:58.030"></status>
+</kw>
+<status status="PASS" endtime="20200513 23:05:58.849" starttime="20200513 23:05:57.672"></status>
+</kw>
+<status status="PASS" endtime="20200513 23:05:58.849" starttime="20200513 23:05:41.922"></status>
+</kw>
+<kw name="Validar Alta Usuario" library="bienvenida">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>//iframe[@id='content']</arg>
+<arg>timeout= 1m</arg>
+</arguments>
+<status status="PASS" endtime="20200513 23:06:01.845" starttime="20200513 23:05:58.851"></status>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>//iframe[@id='content']</arg>
+</arguments>
+<msg timestamp="20200513 23:06:01.847" level="INFO">Selecting frame '//iframe[@id='content']'.</msg>
+<status status="PASS" endtime="20200513 23:06:02.586" starttime="20200513 23:06:01.846"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>10s</arg>
+</arguments>
+<msg timestamp="20200513 23:06:12.589" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" endtime="20200513 23:06:12.589" starttime="20200513 23:06:02.587"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>xpath=//h2[contains(text(),'¡TE DAMOS LA BIENVENIDA A XUBIO!')]</arg>
+</arguments>
+<status status="PASS" endtime="20200513 23:06:12.955" starttime="20200513 23:06:12.590"></status>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" endtime="20200513 23:06:13.371" starttime="20200513 23:06:12.955"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that current page title equals ``title``.</doc>
+<arguments>
+<arg>Xubio - ¡BIENVENIDOS A XUBIO CONTADORES!</arg>
+</arguments>
+<msg timestamp="20200513 23:06:13.726" level="INFO">Page title is 'Xubio - ¡BIENVENIDOS A XUBIO CONTADORES!'.</msg>
+<status status="PASS" endtime="20200513 23:06:13.726" starttime="20200513 23:06:13.371"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>xpath=(//li[@class='username']//span)[2]</arg>
+<arg>${nombre}</arg>
+</arguments>
+<msg timestamp="20200513 23:06:14.474" level="INFO">Element 'xpath=(//li[@class='username']//span)[2]' contains text 'Juan Perez'.</msg>
+<status status="PASS" endtime="20200513 23:06:14.475" starttime="20200513 23:06:13.726"></status>
+</kw>
+<status status="PASS" endtime="20200513 23:06:14.475" starttime="20200513 23:05:58.850"></status>
+</kw>
+<tags>
+<tag>smoke</tag>
+</tags>
+<status status="PASS" endtime="20200513 23:06:14.476" critical="yes" starttime="20200513 23:05:35.119"></status>
+</test>
+<test id="s1-t2" name="Salir del Sistema">
+<kw name="Desloguearse" library="desloguear">
+<kw name="Mouse Over" library="SeleniumLibrary">
+<doc>Simulates hovering mouse over the element ``locator``.</doc>
+<arguments>
+<arg>xpath=(//li[@class='username']//span)[2]</arg>
+</arguments>
+<msg timestamp="20200513 23:06:14.478" level="INFO">Simulating Mouse Over on element 'xpath=(//li[@class='username']//span)[2]'.</msg>
+<status status="PASS" endtime="20200513 23:06:15.450" starttime="20200513 23:06:14.478"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath=//a[contains(text(),'Cerrar Sesión')]</arg>
+</arguments>
+<status status="PASS" endtime="20200513 23:06:16.766" starttime="20200513 23:06:15.450"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//a[contains(text(),'Cerrar Sesión')]</arg>
+</arguments>
+<msg timestamp="20200513 23:06:16.766" level="INFO">Clicking element 'xpath=//a[contains(text(),'Cerrar Sesión')]'.</msg>
+<status status="PASS" endtime="20200513 23:06:18.199" starttime="20200513 23:06:16.766"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>xpath=//img[@class='img-fluid']</arg>
+</arguments>
+<status status="PASS" endtime="20200513 23:06:18.549" starttime="20200513 23:06:18.200"></status>
+</kw>
+<status status="PASS" endtime="20200513 23:06:18.550" starttime="20200513 23:06:14.478"></status>
+</kw>
+<tags>
+<tag>smoke</tag>
+</tags>
+<status status="PASS" endtime="20200513 23:06:18.551" critical="yes" starttime="20200513 23:06:14.477"></status>
+</test>
+<test id="s1-t3" name="Reingresar al Sistema">
+<kw name="Elegir Pais" library="index">
+<arguments>
+<arg>${pais}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//p[text()= '${pais}']</arg>
+</arguments>
+<msg timestamp="20200513 23:06:18.555" level="INFO">Clicking element 'xpath=//p[text()= 'Argentina']'.</msg>
+<status status="PASS" endtime="20200513 23:06:20.032" starttime="20200513 23:06:18.554"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that current URL is exactly ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20200513 23:06:20.371" level="INFO">Current location is 'https://xubiotesting2.ddns.net/ar/'.</msg>
+<status status="PASS" endtime="20200513 23:06:20.371" starttime="20200513 23:06:20.033"></status>
+</kw>
+<status status="PASS" endtime="20200513 23:06:20.371" starttime="20200513 23:06:18.553"></status>
+</kw>
+<tags>
+<tag>smoke</tag>
+</tags>
+<status status="PASS" endtime="20200513 23:06:20.372" critical="yes" starttime="20200513 23:06:18.552"></status>
+</test>
+<test id="s1-t4" name="Login">
+<kw name="Loguearse Ar" library="index_ar">
+<kw name="Boton Ingresar" library="index_ar">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>xpath=(//a[text() = "Ingresar"])[1]</arg>
+</arguments>
+<msg timestamp="20200513 23:06:20.725" level="INFO">Current page contains element 'xpath=(//a[text() = "Ingresar"])[1]'.</msg>
+<status status="PASS" endtime="20200513 23:06:20.726" starttime="20200513 23:06:20.375"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=(//a[text() = "Ingresar"])[1]</arg>
+</arguments>
+<msg timestamp="20200513 23:06:20.727" level="INFO">Clicking element 'xpath=(//a[text() = "Ingresar"])[1]'.</msg>
+<status status="PASS" endtime="20200513 23:06:21.750" starttime="20200513 23:06:20.726"></status>
+</kw>
+<status status="PASS" endtime="20200513 23:06:21.750" starttime="20200513 23:06:20.375"></status>
+</kw>
+<status status="PASS" endtime="20200513 23:06:21.750" starttime="20200513 23:06:20.374"></status>
+</kw>
+<kw name="Completar Formulario de Login" library="login">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>xpath=//h1[contains(text(),'Ingresar')]</arg>
+</arguments>
+<status status="PASS" endtime="20200513 23:06:22.148" starttime="20200513 23:06:21.752"></status>
+</kw>
+<kw name="Login Usuario" library="login">
+<arguments>
+<arg>${email}</arg>
+</arguments>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>id=userName</arg>
+</arguments>
+<msg timestamp="20200513 23:06:22.519" level="INFO">Current page contains element 'id=userName'.</msg>
+<status status="PASS" endtime="20200513 23:06:22.519" starttime="20200513 23:06:22.150"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=userName</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20200513 23:06:22.520" level="INFO">Typing text 'test_nit50@nit.com' into text field 'id=userName'.</msg>
+<status status="PASS" endtime="20200513 23:06:23.742" starttime="20200513 23:06:22.520"></status>
+</kw>
+<status status="PASS" endtime="20200513 23:06:23.743" starttime="20200513 23:06:22.148"></status>
+</kw>
+<kw name="Login Password" library="login">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>id=password</arg>
+</arguments>
+<msg timestamp="20200513 23:06:24.090" level="INFO">Current page contains element 'id=password'.</msg>
+<status status="PASS" endtime="20200513 23:06:24.090" starttime="20200513 23:06:23.744"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200513 23:06:24.091" level="INFO">Typing text '12345678' into text field 'id=password'.</msg>
+<status status="PASS" endtime="20200513 23:06:25.296" starttime="20200513 23:06:24.090"></status>
+</kw>
+<status status="PASS" endtime="20200513 23:06:25.297" starttime="20200513 23:06:23.743"></status>
+</kw>
+<kw name="Login Boton" library="login">
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<arguments>
+<arg>id=loginbuton</arg>
+</arguments>
+<msg timestamp="20200513 23:06:25.644" level="INFO">Current page contains element 'id=loginbuton'.</msg>
+<status status="PASS" endtime="20200513 23:06:25.645" starttime="20200513 23:06:25.298"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>id=loginbuton</arg>
+</arguments>
+<msg timestamp="20200513 23:06:25.646" level="INFO">Clicking element 'id=loginbuton'.</msg>
+<status status="PASS" endtime="20200513 23:06:28.626" starttime="20200513 23:06:25.645"></status>
+</kw>
+<status status="PASS" endtime="20200513 23:06:28.627" starttime="20200513 23:06:25.297"></status>
+</kw>
+<status status="PASS" endtime="20200513 23:06:28.627" starttime="20200513 23:06:21.751"></status>
+</kw>
+<status status="PASS" endtime="20200513 23:06:28.627" critical="yes" starttime="20200513 23:06:20.373"></status>
+</test>
+<kw type="teardown" name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" endtime="20200513 23:06:31.924" starttime="20200513 23:06:28.628"></status>
+</kw>
+<doc>Suite description</doc>
+<status status="PASS" endtime="20200513 23:06:31.925" starttime="20200513 23:05:32.158"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="4">Critical Tests</stat>
+<stat fail="0" pass="4">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="3">smoke</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Registrar Usuario" pass="4">Registrar Usuario</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20200513 23:05:32.421" level="WARN">Imported resource file '/Users/nifran/Downloads/xubio_contable-master/front/01__ar/vision_general.robot' is empty.</msg>
+</errors>
+</robot>

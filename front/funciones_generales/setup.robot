@@ -7,6 +7,7 @@ Resource            ../index.robot
 
 *** Variables ***
 ${URL}              https://xubiotesting2.ddns.net/         # https://xubiotesting2.ddns.net/NXV/newlogin
+${seleniumSpeed}    0
 
 *** Keywords ***
 Ingresar Al Sitio
@@ -15,6 +16,6 @@ Ingresar Al Sitio
     common.Validar Conexion
     Set Selenium Timeout                15s
     Set Selenium Implicit Wait          15s
-    #Set Selenium Speed                  0.70s
+    Set Selenium Speed                 ${seleniumspeed}
     Maximize Browser Window
 

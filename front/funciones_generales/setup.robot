@@ -6,7 +6,7 @@ Resource            ../01__ar/vision_general.robot
 Resource            ../index.robot
 
 *** Variables ***
-${URL}              https://xubiotesting2.ddns.net/NXV/newlogin    #https://xubiotesting2.ddns.net/
+${URL}              https://xubiotesting2.ddns.net/         # https://xubiotesting2.ddns.net/NXV/newlogin
 
 *** Keywords ***
 Ingresar Al Sitio

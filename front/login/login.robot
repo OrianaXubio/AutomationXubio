@@ -31,7 +31,7 @@ Completar Formulario de Login
 Login
     [Documentation]         Ingresar al sistema con credenciales validas
     [Tags]      login
-    # index.Elegir Pais                         ${pais}
-    # index_ar.Loguearse Ar
+     index.Elegir Pais                         ${pais}
+     index_ar.Loguearse Ar
     Completar Formulario de Login
     vision_general.Validar Ingreso Al Sitio

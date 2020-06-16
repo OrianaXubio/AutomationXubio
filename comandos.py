@@ -1,9 +1,11 @@
 import subprocess
 
+
 args = [
         'robot',
         '-d', 'reporte',
-        'test/registrar_usuario.robot'
+        'tests/ventas/comprobantes_de_venta/TC_015.robot'
+        # 'suites/'
         ]
 
 subprocess.Popen(args)

@@ -1,3 +1,8 @@
-robotframework==3.0.4
+pandas==1.0.3
+requests==2.23.0
+robotframework==3.2.1
+robotframework-requests==0.7.0
 robotframework-selenium2library==3.0.0
-robotframework-seleniumlibrary==3.1.1
+robotframework-seleniumlibrary==4.4.0
+selenium==3.141.0
+xlrd==1.2.0

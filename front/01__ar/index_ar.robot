@@ -8,7 +8,8 @@ Boton Registrarme
 
 #=============================================================================
 Loguearse Ar
+    [Documentation]                     Ingresar al formulario de login
     Boton Ingresar
-
 Registrarme Ar
+    [Documentation]                     Ingresar al formulario de registracion
     Boton Registrarme

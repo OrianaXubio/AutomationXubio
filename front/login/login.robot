@@ -1,3 +1,13 @@
+*** Settings ***
+Resource            ../01__ar/index_ar.robot
+Resource            ../01__ar/vision_general.robot
+Resource            ../index.robot
+
+*** Variables ***
+${email}            xubiotesting1@gmail.com        # melina@xubio.com
+${password}         xubiotest2020               # 1161667410
+${pais}             Argentina
+
 *** Keywords ***
 Login Usuario
     [Arguments]                         ${email}
@@ -12,7 +22,16 @@ Login Boton
     Click Element                       id=loginbuton
 # ==================================================================
 Completar Formulario de Login
+    [Documentation]                     Completar el formulario con credenciales validas
     Wait Until Page Contains Element     xpath=//h1[contains(text(),'Ingresar')]
     Login Usuario                       ${email}
     Login Password                      ${password}
     Login Boton
+
+Login
+    [Documentation]         Ingresar al sistema con credenciales validas
+    [Tags]      login
+    # index.Elegir Pais                         ${pais}
+    # index_ar.Loguearse Ar
+    Completar Formulario de Login
+    vision_general.Validar Ingreso Al Sitio

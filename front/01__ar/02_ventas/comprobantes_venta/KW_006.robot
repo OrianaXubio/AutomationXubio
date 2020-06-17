@@ -15,6 +15,7 @@ Resource            ../../../funciones_generales/recursos.robot
 *** Keywords ***
 Factura A Al Contado En Dolares
     Go To                                 https://xubiotesting2.ddns.net/NXV/vision-general
+    sleep   2s
     recursos.Elegir Categoria de Empresa                 Monotributista
     vision_general.Validar Ingreso Al Sitio
     comprobantes_venta.Ir a Nueva Venta

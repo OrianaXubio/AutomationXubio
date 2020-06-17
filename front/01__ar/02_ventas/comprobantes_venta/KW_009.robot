@@ -11,6 +11,7 @@ Resource            ../../../funciones_generales/recursos.robot
 *** Keywords ***
 Factura E ClienteExterior
     Go To                                 https://xubiotesting2.ddns.net/NXV/vision-general
+    sleep   2s
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente           Responsable Inscripto    default     Factura     Otra
     #Más Opciones - Provincia Destrino: Tierra del fuego

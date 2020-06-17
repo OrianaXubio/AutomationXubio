@@ -11,6 +11,7 @@ Resource            ../../../funciones_generales/recursos.robot
 *** Keywords ***
 Nota de Credito A
     Go To                                 https://xubiotesting2.ddns.net/NXV/vision-general
+    sleep   2s
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente       Responsable Inscripto   default     Factura     Cuenta Corriente
 

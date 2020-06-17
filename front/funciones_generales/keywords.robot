@@ -6,6 +6,7 @@ open
 
 click
     [Arguments]    ${element}
+    wait until page contains element       ${element}
     wait until keyword succeeds     10x      1s       Click Element  ${element}
 
 sendKeys

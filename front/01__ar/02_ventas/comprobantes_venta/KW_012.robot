@@ -23,6 +23,7 @@ Mas Opciones
 
 Factura A Al Contado En Dolares
     Go To                                 https://xubiotesting2.ddns.net/NXV/vision-general
+    sleep   2s
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente       Responsable Inscripto   default     Factura     Contado
     KW_012.Mas Opciones                Dólares     65.40

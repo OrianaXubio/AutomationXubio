@@ -14,6 +14,7 @@ Resource            ../../../01__ar/02_ventas/comprobantes_venta/comprobantes_ve
 *** Keywords ***
 Factura A
     Go To                                 https://xubiotesting2.ddns.net/NXV/vision-general
+    sleep   2s
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente       Responsable Inscripto   default     Factura     Cuenta Corriente
 

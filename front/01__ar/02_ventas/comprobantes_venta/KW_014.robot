@@ -10,6 +10,7 @@ Resource            ../../../funciones_generales/recursos.robot
 
 *** Keywords ***
 Nota de Debito B en Dolares
+    Go To                                 https://xubiotesting2.ddns.net/NXV/vision-general
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente                 Exento   default     Nota de Débito     Cuenta Corriente
     comprobantes_venta.Mas Opciones - Moneda        Dólares     72

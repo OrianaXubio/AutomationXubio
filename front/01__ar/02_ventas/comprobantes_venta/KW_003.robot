@@ -15,6 +15,7 @@ Resource            ../../../01__ar/02_ventas/comprobantes_venta/comprobantes_ve
 Factura B
     [Documentation]                Creación de factura B con Cliente Exterior
     [Tags]                         Factura_B
+    Go To                                 https://xubiotesting2.ddns.net/NXV/vision-general
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente          Cliente del exterior      default     Factura     Tarjeta de Débito
     sleep                          1s

@@ -22,9 +22,10 @@ Mas Opciones
     sendKeys    css=div[name="wdg_Cotizacion"] > input[type="textbox"]      TAB
 
 Factura A Al Contado En Dolares
+    Go To                                 https://xubiotesting2.ddns.net/NXV/vision-general
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente       Responsable Inscripto   default     Factura     Contado
-    Mas Opciones                Dólares     65.40
+    KW_012.Mas Opciones                Dólares     65.40
 
 Agregar Productos
     sleep   1s

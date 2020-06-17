@@ -10,6 +10,7 @@ Resource            ../../../funciones_generales/recursos.robot
 
 *** Keywords ***
 Empresa con Emision de factura-M
+    Go To                                 https://xubiotesting2.ddns.net/NXV/vision-general
     recursos.Ir a Mi Empresa
     recursos.Mas Opciones-Facturacion M
     Checkbox Should Be Selected                      xpath=//div[@name='wdg_FacturasM']//input

@@ -13,6 +13,7 @@ Resource            ../../../01__ar/02_ventas/comprobantes_venta/comprobantes_ve
 
 *** Keywords ***
 Factura B
+    Go To                                 https://xubiotesting2.ddns.net/NXV/vision-general
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente    Consumidor Final - Con identificación   default     Factura     Contado
 

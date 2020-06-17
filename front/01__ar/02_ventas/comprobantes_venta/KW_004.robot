@@ -33,6 +33,7 @@ Login
     vision_general.Validar Ingreso Al Sitio
 
 Factura A Al Contado En Dolares
+    Go To                                 https://xubiotesting2.ddns.net/NXV/vision-general
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente         Responsable Inscripto   default     Factura     Contado
     Mas Opciones 1                          Dólares     65.40

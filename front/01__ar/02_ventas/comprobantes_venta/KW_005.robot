@@ -15,6 +15,7 @@ Resource            ../../../01__ar/02_ventas/comprobantes_venta/comprobantes_ve
 Factura B_CuentaCorriente
     [Documentation]                         Creación de una factura B con Cuenta Corriente
     [Tags]                                  faturaB_Cta.CTe
+    Go To                                 https://xubiotesting2.ddns.net/NXV/vision-general
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente                   Consumidor Final - Con identificación      default     Factura     Cuenta Corriente
     sleep   1s

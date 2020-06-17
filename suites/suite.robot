@@ -90,29 +90,29 @@ TC_009
     KW_009.Guardar Factura
     KW_009.Validaciones
 
-TC_010
-    KW_010.Nota de Credito A
-    KW_010.Grilla Productos
-    KW_010.Grilla Percepcion/Impuestos
-    KW_010.Guardar Factura
-    KW_010.Validaciones
-    KW_010.Ir a Crear Nota de Credito
-    KW_010.Ir a Aplicaciones
-
-TC_011
-    KW_011.Nota de Credito
-    KW_011.Agregar Productos
-    KW_011.Grilla Percepcion/Impuestos
-    KW_011.Guardar Factura
-    KW_011.Validaciones
-
-TC_012
-    KW_012.Factura A Al Contado En Dolares
-    KW_012.Agregar Productos
-    KW_012.Grilla Percepcion/Impuestos
-    KW_012.Instrumentos de Cobro
-    KW_012.Guardar Factura
-    KW_012.Validaciones
-    KW_012.Ir a Crear Nota de Credito
-    KW_012.Instrumentos de Cobro (ventana)
-    KW_012.Guardar (ventana)
+#TC_010
+#    KW_010.Nota de Credito A
+#    KW_010.Grilla Productos
+#    KW_010.Grilla Percepcion/Impuestos
+#    KW_010.Guardar Factura
+#    KW_010.Validaciones
+#    KW_010.Ir a Crear Nota de Credito
+#    KW_010.Ir a Aplicaciones
+#
+#TC_011
+#    KW_011.Nota de Credito
+#    KW_011.Agregar Productos
+#    KW_011.Grilla Percepcion/Impuestos
+#    KW_011.Guardar Factura
+#    KW_011.Validaciones
+#
+#TC_012
+#    KW_012.Factura A Al Contado En Dolares
+#    KW_012.Agregar Productos
+#    KW_012.Grilla Percepcion/Impuestos
+#    KW_012.Instrumentos de Cobro
+#    KW_012.Guardar Factura
+#    KW_012.Validaciones
+#    KW_012.Ir a Crear Nota de Credito
+#    KW_012.Instrumentos de Cobro (ventana)
+#    KW_012.Guardar (ventana)

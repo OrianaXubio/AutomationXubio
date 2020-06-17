@@ -27,6 +27,7 @@ Completar Formulario de Login
     Login Usuario                       ${email}
     Login Password                      ${password}
     Login Boton
+    Sleep  3s
 
 Login
     [Documentation]         Ingresar al sistema con credenciales validas

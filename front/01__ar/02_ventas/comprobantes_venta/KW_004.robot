@@ -37,6 +37,7 @@ Factura A Al Contado En Dolares
     sleep   2s
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente         Responsable Inscripto   default     Factura     Contado
+    sleep   2s
     Mas Opciones 1                          Dólares     65.40
 
 Agregar Productos

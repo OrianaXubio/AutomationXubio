@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       Nueva venta
+Documentation       Creación de Recibo A
 Library             SeleniumLibrary
 
 Resource            ../../../front/login/login.robot
@@ -12,6 +12,7 @@ Login
     login.Login
 
 TC_015
+    [Documentation]             Creación de Recibo A al contado en pesos
     KW_015.Recibo A
     KW_015.Agregar Productos
     KW_015.Grilla Percepcion/Impuestos

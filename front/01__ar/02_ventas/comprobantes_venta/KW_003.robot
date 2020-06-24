@@ -1,5 +1,4 @@
 *** Settings ***
-Documentation       Nueva venta
 Library             SeleniumLibrary
 
 Resource            ../../../funciones_generales/setup.robot
@@ -15,8 +14,6 @@ Resource            ../../../01__ar/02_ventas/comprobantes_venta/comprobantes_ve
 Factura B
     [Documentation]                Creación de factura B con Cliente Exterior
     [Tags]                         Factura_B
-    Go To                                 https://xubiotesting2.ddns.net/NXV/vision-general
-    sleep   2s
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente          Cliente del exterior      default     Factura     Tarjeta de Débito
     sleep                          1s
@@ -25,6 +22,7 @@ Factura B
     click                          xpath=(//input[@value='0'])[6]
 
 Agregar Productos
+    [Documentation]                     se completan los campos de productos
     sleep   1s
     comprobantes_venta.Agregar Item CF    1   Carpeta         1       2500.50     0
     comprobantes_venta.Agregar Item CF    2   Alquiler        1       16500       10
@@ -35,9 +33,12 @@ Agregar Productos
     click    xpath=//td[@id='TransaccionCVItems_internal_delete_column_7']/div/div
 
 Guardar Factura
+    [Documentation]                     se guarda la factura generada
     comprobantes_venta.Guardar
 
 Validaciones
+    [Documentation]                     validacion de columnas importe, totalizadores, letra del comprobante
+    ...                                 y checkbox servicios prestados
     #Validacion Columna Importe
     assertText                                  xpath=//td[@id='TransaccionCVItems_ImporteConIvaIncluido_1']/div    2,500.50
     assertText                                  xpath=//td[@id='TransaccionCVItems_ImporteConIvaIncluido_2']/div    14,850.00
@@ -52,5 +53,3 @@ Validaciones
     comprobantes_venta.Total                          19205.50
     #Validación del Checkbox
     Checkbox Should Be Selected                 xpath=//div[@name='wdg_FacturaNoExportacion']//input
-
-    vision_general.Ir a Inicio

@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       Nueva venta
+Documentation       Creacion de una factura A al contado
 Library             SeleniumLibrary
 
 Resource            ../../../front/login/login.robot
@@ -12,6 +12,7 @@ Login
     login.Login
 
 TC_004
+    [Documentation]         Creacion de una factura A al contado con productos de distintas tasas de IVA en dólares
     KW_004.Factura A Al Contado En Dolares
     KW_004.Agregar Productos
     KW_004.Grilla Percepcion/Impuestos

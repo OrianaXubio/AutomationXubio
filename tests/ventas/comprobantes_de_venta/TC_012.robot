@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       Nueva venta
+Documentation       Creación de una Nota de Crédito A
 Library             SeleniumLibrary
 
 Resource            ../../../front/login/login.robot
@@ -12,6 +12,7 @@ Login
     login.Login
 
 TC_012
+    [Documentation]                     Creación de una Nota de Crédito A desde una factura total al contado en dólares
     KW_012.Factura A Al Contado En Dolares
     KW_012.Agregar Productos
     KW_012.Grilla Percepcion/Impuestos

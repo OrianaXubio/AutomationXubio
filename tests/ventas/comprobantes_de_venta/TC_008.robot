@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       Nueva venta
+Documentation       Creación de una factura E a un cliente del exterior
 Library             SeleniumLibrary
 
 Resource            ../../../front/login/login.robot
@@ -12,6 +12,8 @@ Login
     login.Login
 
 TC_008
+    [Documentation]         Creación de una factura E a un cliente del exterior con medio de pago
+    ...                     Cheque con productos con diferentes tasas de IVA en pesos argentinos
     KW_008.Factura E
     KW_008.Grilla Productos
     KW_008.Instrumentos de Cobro

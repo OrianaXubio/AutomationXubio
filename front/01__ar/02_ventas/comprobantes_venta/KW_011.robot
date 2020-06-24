@@ -1,5 +1,4 @@
 *** Settings ***
-Documentation       Nueva venta
 Library             SeleniumLibrary
 
 Resource            ../../../funciones_generales/setup.robot
@@ -10,13 +9,13 @@ Resource            ../../../funciones_generales/recursos.robot
 
 *** Keywords ***
 Nota de Credito
-    Go To                                 https://xubiotesting2.ddns.net/NXV/vision-general
-    sleep   2s
+    [Documentation]                     creacion de una nota de credito A
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente         Responsable Inscripto   default     Nota de Crédito     Ticket
     click                                   xpath=//div//input[@value='Más Opciones']
 
 Agregar Productos
+    [Documentation]                     se completan los campos de productos
     sleep   1s
     comprobantes_venta.Agregar Item RI    1   Carpeta         1       2500.50     0
     comprobantes_venta.Agregar Item RI    2   Alquiler        1       16500       10
@@ -27,6 +26,7 @@ Agregar Productos
     click    xpath=//td[@id='TransaccionCVItems_internal_delete_column_7']/div/div
 
 Grilla Percepcion/Impuestos
+    [Documentation]                     se completan los campos de percepcion/impuestos
     sleep  1s
     click    xpath=//input[@value='Percepciones e Impuestos']
     comprobantes_venta.Agregar Percepcion      1   Ingresos Brutos Buenos Aires (Percepción)   250
@@ -36,9 +36,12 @@ Grilla Percepcion/Impuestos
     click    xpath=//td[@id='TransaccionCVItemsPercepciones_internal_delete_column_5']/div/div
 
 Guardar Factura
+    [Documentation]                     se guarda la factura generada
     comprobantes_venta.Guardar
 
 Validaciones
+    [Documentation]                     validacion de columnas importe, iva, total, totalizadores
+    ...                                 y letra del comprobante, botones
     comprobantes_venta.Validacion Botones NC
     comprobantes_venta.Letra Numero Comprobante        A
     assertText                                  xpath=//div[@name='wdg_Tipo']//select//option[3]                Nota de Crédito
@@ -66,4 +69,3 @@ Validaciones
     click                                       id=fafPopUpTitle
     assertText                                  xpath=//h1[@id='fafPopUpTitle']//span             Pregunta
     click                                       id=showAskPopupNoButton
-    vision_general.Ir a Inicio

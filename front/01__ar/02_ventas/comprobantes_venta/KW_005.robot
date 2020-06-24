@@ -1,5 +1,4 @@
 *** Settings ***
-Documentation       Nueva venta
 Library             SeleniumLibrary
 
 Resource            ../../../funciones_generales/setup.robot
@@ -15,8 +14,6 @@ Resource            ../../../01__ar/02_ventas/comprobantes_venta/comprobantes_ve
 Factura B_CuentaCorriente
     [Documentation]                         Creación de una factura B con Cuenta Corriente
     [Tags]                                  faturaB_Cta.CTe
-    Go To                                 https://xubiotesting2.ddns.net/NXV/vision-general
-    sleep   2s
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente                   Consumidor Final - Con identificación      default     Factura     Cuenta Corriente
     sleep   1s
@@ -29,7 +26,8 @@ Factura B_CuentaCorriente
     type                                   xpath=//input[@value='1']    72
 
 Agregar Productos
-    sleep   2s
+    [Documentation]                     se completan los campos de productos
+    sleep   1s
     comprobantes_venta.Agregar Item CF                1   Carpeta         1       2500.50     0
     comprobantes_venta.Agregar Item CF                2   Alquiler        1       16500       10
     comprobantes_venta.Agregar Item CF                3   Cinta Papel     2.5     500         0
@@ -39,7 +37,8 @@ Agregar Productos
     click    xpath=//td[@id='TransaccionCVItems_internal_delete_column_7']/div/div
 
 Grilla Percepcion/Impuestos
-    sleep   2s
+    [Documentation]                     se completan los campos de percepcion/impuestos
+    sleep   1s
     click                                   xpath=//input[@value='Percepciones e Impuestos']
     comprobantes_venta.Agregar Percepcion             1   Ingresos Brutos Buenos Aires (Percepción)   250
     comprobantes_venta.Agregar Percepcion             2   Impuestos Internos                          360
@@ -47,9 +46,12 @@ Grilla Percepcion/Impuestos
     click    xpath=//td[@id='TransaccionCVItemsPercepciones_internal_delete_column_4']/div/div
 
 Guardar Factura
+    [Documentation]                     se guarda la factura generada
     comprobantes_venta.Guardar
 
 Validaciones
+    [Documentation]                     validacion de columnas importe, iva, total, totalizadores
+    ...                                 y letra del comprobante
     # validación Columna Importe
     assertText                                  xpath=//td[@id='TransaccionCVItems_ImporteConIvaIncluido_1']/div    2,500.50
     assertText                                  xpath=//td[@id='TransaccionCVItems_ImporteConIvaIncluido_2']/div    14,850.00
@@ -66,5 +68,3 @@ Validaciones
     #Validacion Campo Moneda
     Page Should Contain Element                 xpath=//div[@name="wdg_MonedaID"]//input[@value="Euros"]
     Page Should Contain Element                 xpath=//div[@name="wdg_Cotizacion"]//input[@value="72"]
-
-    vision_general.Ir a Inicio

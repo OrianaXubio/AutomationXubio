@@ -1,5 +1,4 @@
 *** Settings ***
-Documentation       Nueva venta
 Library             SeleniumLibrary
 
 Resource            ../../../funciones_generales/setup.robot
@@ -13,13 +12,13 @@ Resource            ../../../01__ar/02_ventas/comprobantes_venta/comprobantes_ve
 
 *** Keywords ***
 Factura A
-    Go To                                 https://xubiotesting2.ddns.net/NXV/vision-general
-    sleep   2s
+    [Documentation]                     creacion de una factura A
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente       Responsable Inscripto   default     Factura     Cuenta Corriente
 
 Agregar Productos
-    sleep   2s
+    [Documentation]                     se completan los campos de produtos
+    sleep   1s
     comprobantes_venta.Agregar Item RI    1   Carpeta         1       2500.50     0
     comprobantes_venta.Agregar Item RI    2   Alquiler        1       16500       10
     comprobantes_venta.Agregar Item RI    3   Cinta Papel     2.5     500         0
@@ -29,7 +28,8 @@ Agregar Productos
     click    xpath=//td[@id='TransaccionCVItems_internal_delete_column_7']/div/div
 
 Grilla Percepcion/Impuestos
-    sleep  2s
+    [Documentation]                     se completan los campos de percepcion/impuestos
+    sleep  1s
     click    xpath=//input[@value='Percepciones e Impuestos']
     comprobantes_venta.Agregar Percepcion      1   Ingresos Brutos Buenos Aires (Percepción)   250
     comprobantes_venta.Agregar Percepcion      2   IVA                                         130
@@ -37,15 +37,15 @@ Grilla Percepcion/Impuestos
     comprobantes_venta.Agregar Percepcion      4   Categoría OTRO                              125.50
     click    xpath=//td[@id='TransaccionCVItemsPercepciones_internal_delete_column_5']/div/div
 
-#Vista Previa
-#    click    id=_onSaveAndShow
-#    click    xpath=(//a[contains(text(),'Cerrar')])[3]
 Guardar Factura
+    [Documentation]                     se guarda la factura generada
     comprobantes_venta.Guardar
 
 Validaciones
+    [Documentation]                         validacion de comlumnas importe, iva, total, totalizadores,
+    ...                                     letra en el comprobante y botones
     #Verificacion del campo Operación Sujeta a Retención
-    Checkbox Should Not Be Selected              xpath=//div[@id="masOpcionesWrapper"]/div[25]/div[2]/div/input
+    Checkbox Should Not Be Selected             xpath=//div[@id="masOpcionesWrapper"]/div[25]/div[2]/div/input
     #Columna Importe
     assertText                                  xpath=//td[@id='TransaccionCVItems_Importe_1']/div           2,500.50
     assertText                                  xpath=//td[@id='TransaccionCVItems_Importe_2']/div           14,850.00
@@ -74,4 +74,3 @@ Validaciones
     comprobantes_venta.Total Bruto                    19205.5000
     comprobantes_venta.Total Impuestos                4686.2600
     comprobantes_venta.Total                          23891.7600
-    vision_general.Ir a Inicio

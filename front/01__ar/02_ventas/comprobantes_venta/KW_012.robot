@@ -1,5 +1,4 @@
 *** Settings ***
-Documentation       Nueva venta
 Library             SeleniumLibrary
 
 Resource            ../../../funciones_generales/setup.robot
@@ -9,26 +8,26 @@ Resource            ../../../01__ar/02_ventas/comprobantes_venta/comprobantes_ve
 Resource            ../../../funciones_generales/recursos.robot
 
 *** Keywords ***
-Mas Opciones
-    [Arguments]     ${moneda}   ${cotizacion}
-    click       xpath=//input[@value='Más Opciones']
-    click       xpath=//div[@id='masOpcionesWrapper']/div[11]/div/div[2]/div/input
-    wait until keyword succeeds     20x      1s       clear element text  xpath=//div[@id='masOpcionesWrapper']/div[11]/div/div[2]/div/input
-    click       xpath=//div[@id='masOpcionesWrapper']/div[11]/div/div[2]/div/input
-    type        xpath=//div[@id='masOpcionesWrapper']/div[11]/div/div[2]/div/input      ${moneda}
-    click       xpath=//td/div/table/tbody/tr/td
-    click       css=div[name="wdg_Cotizacion"] > input[type="textbox"]
-    type        css=div[name="wdg_Cotizacion"] > input[type="textbox"]                  ${cotizacion}
-    sendKeys    css=div[name="wdg_Cotizacion"] > input[type="textbox"]      TAB
+#Mas Opciones II
+#    [Arguments]     ${moneda}   ${cotizacion}
+#    click       xpath=//input[@value='Más Opciones']
+#    click       xpath=//div[@id='masOpcionesWrapper']/div[11]/div/div[2]/div/input
+#    wait until keyword succeeds     20x      1s       clear element text  xpath=//div[@id='masOpcionesWrapper']/div[11]/div/div[2]/div/input
+#    click       xpath=//div[@id='masOpcionesWrapper']/div[11]/div/div[2]/div/input
+#    type        xpath=//div[@id='masOpcionesWrapper']/div[11]/div/div[2]/div/input      ${moneda}
+#    click       xpath=//td/div/table/tbody/tr/td
+#    click       css=div[name="wdg_Cotizacion"] > input[type="textbox"]
+#    type        css=div[name="wdg_Cotizacion"] > input[type="textbox"]                  ${cotizacion}
+#    sendKeys    css=div[name="wdg_Cotizacion"] > input[type="textbox"]      TAB
 
 Factura A Al Contado En Dolares
-    Go To                                 https://xubiotesting2.ddns.net/NXV/vision-general
-    sleep   2s
+    [Documentation]                     creacion de una nota de credito
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente       Responsable Inscripto   default     Factura     Contado
-    KW_012.Mas Opciones                Dólares     65.40
+    comprobantes_venta.Mas Opciones - Moneda                Dólares     65.40
 
 Agregar Productos
+    [Documentation]                     se completan los campos de productos
     sleep   1s
     comprobantes_venta.Agregar Item RI    1   Carpeta         1       2500.00     0
     comprobantes_venta.Agregar Item RI    2   Alquiler        1       16500       10
@@ -39,6 +38,7 @@ Agregar Productos
     click    xpath=//td[@id='TransaccionCVItems_internal_delete_column_7']/div/div
 
 Grilla Percepcion/Impuestos
+    [Documentation]                     se completan los campos de percepcion/impuestos
     sleep  1s
     click    xpath=//input[@value='Percepciones e Impuestos']
     comprobantes_venta.Agregar Percepcion      1   Ingresos Brutos Buenos Aires (Percepción)   250
@@ -48,15 +48,19 @@ Grilla Percepcion/Impuestos
     click    xpath=//td[@id='TransaccionCVItemsPercepciones_internal_delete_column_5']/div/div
 
 Instrumentos de Cobro
+    [Documentation]                     se completan los campos de instrumento de cobro
     sleep   1s
     comprobantes_venta.Agregar Instrumento De Cobro     1   Caja    Caja en USD     Dólares   65.40   3891.13
     comprobantes_venta.Agregar Instrumento De Cobro     2   Banco   Banco Galicia cuenta USD   Dólares   65.40   20000
     click    xpath=//td[@id='TransaccionTesoreriaIngresoItems_internal_delete_column_3']/div/div
 
 Guardar Factura
+    [Documentation]                     se guarda la factura generada
     comprobantes_venta.Guardar
 
 Validaciones
+    [Documentation]                     validacion de columnas importe, iva, total, totalizadores
+    ...                                 y letra del comprobante
     assertText    xpath=//th[8]/div[2]          Importe
     assertText    xpath=//th[9]/div[2]          IVA
     assertText    xpath=//th[10]/div[2]         Total
@@ -88,11 +92,12 @@ Validaciones
     click       xpath=//input[@value='Más Opciones']
     Page Should Contain Element     xpath=//div[@name="wdg_MonedaID"]//input[@value="Dólares"]
     Page Should Contain Element     xpath=//div[@name="wdg_Cotizacion"]//input[@value="65.400000"]
-    # Se obtiene el numero de comprobante
+    # Se guarda el numero de comprobante en una variable
     ${num_comprobante}      Get value           xpath=//div[@name='wdg_NumeroDocumento']//input
     Set Global Variable                         ${num_comprobante}
 
 Ir a Crear Nota de Credito
+    [Documentation]                     se validan los datos en todos los campos
     click                               xpath=//a[@id='generarNotaCredito']
 
     Page Should Contain Element         xpath=//div[@id="seccionTitulo"]//div[contains(text(),"Nuevo - Responsable Inscripto - Comprobante de Venta")]
@@ -130,6 +135,7 @@ Ir a Crear Nota de Credito
     assertText                           xpath=(//td[@id='TransaccionCVItemsPercepciones_Importe_4']/div)[2]    125.50
 
 Instrumentos de Cobro (ventana)
+    [Documentation]             validacion de los campos intrumentos de cobro y totalizadores en el popup
     sleep   1s
     comprobantes_venta.Agregar Instrumento De Cobro (ventana)    1   Caja    Caja en USD     Dólares   65.40   3891.13
     comprobantes_venta.Agregar Instrumento De Cobro (ventana)    2   Banco   Banco Galicia cuenta USD   Dólares   65.40   20000
@@ -141,8 +147,9 @@ Instrumentos de Cobro (ventana)
     comprobantes_venta.Total Cobranza         1562479.902
 
 Guardar (ventana)
+    [Documentation]             se guardan los cambios en el popup
+    Sleep   1s
     click                                       xpath=(//a[@id="_onSave"])[2]
-    Page Should Contain Element                 xpath=(//h1[@id="fafPopUpTitle"])[2]
-    click                                       xpath=//a[@id="showAskPopupYesButton"]
-    Wait Until Page Does Not Contain Element    xpath=(//h1[@id="fafPopUpTitle"])[2]
-    vision_general.Ir a Inicio
+#    Wait Until Page Contains Element            xpath=(//h1[@id="fafPopUpTitle"])[2]
+#    click                                       xpath=//a[@id="showAskPopupYesButton"]
+#    Wait Until Page Does Not Contain Element    xpath=(//h1[@id="fafPopUpTitle"])[2]

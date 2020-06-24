@@ -11,7 +11,7 @@ Elegir Categoria de Empresa
     wait until keyword succeeds     20x      1s       clear element text       xpath=//div[@name="wdg_CategoriaFiscal"]//input
     type        xpath=//div[@name="wdg_CategoriaFiscal"]//input             ${categoria}
     click       xpath=//td/div/table/tbody/tr/td
-    click       id=_onSave
+    Guardar Cambios De Empresa
     click       id=showAskPopupYesButton
 
 Mas Opciones-Facturacion M
@@ -21,7 +21,6 @@ Mas Opciones-Facturacion M
 Destildar Facturacion M
     click                           xpath=//input[@value='Más Opciones']
     wait until keyword succeeds     10x      1s     Unselect Checkbox                 xpath=//div[@name='wdg_FacturasM']//input
-
 
 Guardar Cambios de Empresa
     sleep   1s

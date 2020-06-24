@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       Nueva venta
+Documentation       Creacion de una factura A
 Library             SeleniumLibrary
 
 Resource            ../../../front/login/login.robot
@@ -12,6 +12,8 @@ Login
     login.Login
 
 TC_001
+    [Documentation]         Creacion de una factura A en cuenta corriente con productos de
+    ...                     distintas tasas de IVA en pesos argentinos
     KW_001.Factura A
     KW_001.Agregar Productos
     KW_001.Grilla Percepcion/Impuestos

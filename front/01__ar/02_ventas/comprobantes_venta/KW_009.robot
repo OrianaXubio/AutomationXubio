@@ -1,5 +1,4 @@
 *** Settings ***
-Documentation       Nueva venta
 Library             SeleniumLibrary
 
 Resource            ../../../funciones_generales/setup.robot
@@ -10,8 +9,7 @@ Resource            ../../../funciones_generales/recursos.robot
 
 *** Keywords ***
 Factura E ClienteExterior
-    Go To                                 https://xubiotesting2.ddns.net/NXV/vision-general
-    sleep   2s
+    [Documentation]                     creacion de una factura E
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente           Responsable Inscripto    default     Factura     Otra
     #Más Opciones - Provincia Destrino: Tierra del fuego
@@ -20,14 +18,19 @@ Factura E ClienteExterior
     click                                     xpath=//tr[23]/td
 
 Agregar Productos
+    [Documentation]                     se completan los campos de productos
     sleep   1s
     comprobantes_venta.Agregar Item RI    1   Honorarios      1       5000        0
     comprobantes_venta.Agregar Item RI    2   Alquiler        1       16985       10
+    click    xpath=//td[@id='TransaccionCVItems_internal_delete_column_3']/div/div
 
 Guardar Factura
+    [Documentation]                     se guarda la factura generada
     comprobantes_venta.Guardar
 
 Validaciones
+    [Documentation]                     validacion de columnas importe, totalizadores
+    ...                                 letra del comprobante y provincia
     comprobantes_venta.Letra Numero Comprobante       E
     #verificar que la opcion sea Tierra del Fuego
     Page Should Contain Element               xpath=//div[@name='wdg_Provincia']//input[@value="Tierra del Fuego"]
@@ -38,5 +41,3 @@ Validaciones
     comprobantes_venta.Total Bruto             20286.50
     comprobantes_venta.Total Impuestos         0.00
     comprobantes_venta.Total                   20286.50
-
-    vision_general.Ir a Inicio

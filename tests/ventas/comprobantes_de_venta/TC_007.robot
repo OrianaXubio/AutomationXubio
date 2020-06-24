@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       Nueva venta
+Documentation       Creación de una factura M en Tarjeta de Débito
 Library             SeleniumLibrary
 
 Resource            ../../../front/login/login.robot
@@ -12,6 +12,8 @@ Login
     login.Login
 
 TC_007
+    [Documentation]             Creación de una factura M en Tarjeta de Débito con productos con
+    ...                         diferentes tasas de IVA en pesos argentinos
     KW_007.Empresa con Emision de factura-M
     KW_007.Factura M
     KW_007.Agregar Productos

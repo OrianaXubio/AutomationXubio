@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       Nueva venta
+Documentation       Creacion de una factura C en Tarjeta de Crédito
 Library             SeleniumLibrary
 
 Resource            ../../../front/login/login.robot
@@ -12,7 +12,8 @@ Login
     login.Login
 
 TC_006
-    KW_006.Factura A Al Contado En Dolares
+    [Documentation]         Creacion de una factura C en Tarjeta de Crédito con productos exentos en pesos argentinos
+    KW_006.Factura C
     KW_006.Agregar Productos
     KW_006.Guardar Factura
     KW_006.Validaciones

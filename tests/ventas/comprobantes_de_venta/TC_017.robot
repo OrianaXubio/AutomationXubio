@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       Nueva venta
+Documentation       Informe Diario de Cierre Z
 Library             SeleniumLibrary
 
 Resource            ../../../front/login/login.robot
@@ -12,8 +12,10 @@ Login
     login.Login
 
 TC_017
+    [Documentation]             Creación de Informe Diario de Cierre Z con los items opcionales
+    ...                         completos al contado en pesos
     KW_017.Informe Diario de Cierre Z
     KW_017.Agregar Productos
     KW_017.Grilla Instrumento de cobro
+    KW_017.Guardar
     KW_017.Validaciones
-    #KW_017.Guardar

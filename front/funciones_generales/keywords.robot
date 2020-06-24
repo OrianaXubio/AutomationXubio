@@ -1,54 +1,63 @@
 
 *** Keywords ***
 open
-    [Arguments]    ${element}
-    wait until keyword succeeds     10x      1s       Go To          ${element}
+    [Arguments]    ${url}
+    Go To          ${url}
 
 click
     [Arguments]    ${element}
-    wait until page contains element       ${element}
+    Wait Until Page Contains Element        ${element}
     wait until keyword succeeds     10x      1s       Click Element  ${element}
 
 sendKeys
     [Arguments]    ${element}    ${value}
+    Wait Until Page Contains Element        ${element}
     wait until keyword succeeds     10x      1s       Press Keys     ${element}    ${value}
 
 type
     [Arguments]    ${element}    ${value}
+    Wait Until Page Contains Element        ${element}
     wait until keyword succeeds     10x      1s       Press Keys     ${element}    DELETE
     wait until keyword succeeds     10x      1s       Press Keys     ${element}    ${value}
 
 clickAndWait
     [Arguments]    ${element}
+    Wait Until Page Contains Element        ${element}
     wait until keyword succeeds     10x      1s       Click Element  ${element}
 
 submit
     [Arguments]    ${element}
+    Wait Until Page Contains Element        ${element}
     wait until keyword succeeds     10x      1s       Submit Form    ${element}
 
 selectAndWait
     [Arguments]                 ${element}  ${value}
+    Wait Until Page Contains Element        ${element}
     wait until keyword succeeds     10x      1s       Select From List By Label   ${element}  ${value}
 
 select
     [Arguments]                 ${element}  ${value}
+    Wait Until Page Contains Element        ${element}
     wait until keyword succeeds     10x      1s       Select From List By Label   ${element}  ${value}
 
 verifyValue
     [Arguments]                  ${element}  ${value}
+    Wait Until Page Contains Element        ${element}
     wait until keyword succeeds     10x      1s       Element Should Contain       ${element}  ${value}
 
 verifyText
     [Arguments]                  ${element}  ${value}
+    Wait Until Page Contains Element        ${element}
     wait until keyword succeeds     10x      1s       Page Should Contain          ${value}
 
 verifyElementPresent
     [Arguments]                  ${element}
-    wait until page contains element    ${element}
+    Wait Until Page Contains Element        ${element}
     wait until keyword succeeds     10x      1s       Page Should Contain Element  ${element}
 
 verifyVisible
     [Arguments]                  ${element}
+    Wait Until Page Contains Element        ${element}
     wait until keyword succeeds     10x      1s       Page Should Contain Element  ${element}
 
 verifyTitle
@@ -57,6 +66,7 @@ verifyTitle
 
 verifyTable
     [Arguments]                  ${element}  ${value}
+    Wait Until Page Contains Element        ${element}
     wait until keyword succeeds     10x      1s       Element Should Contain       ${element}  ${value}
 
 assertConfirmation
@@ -65,18 +75,22 @@ assertConfirmation
 
 assertText
     [Arguments]                  ${element}  ${value}
+    Wait Until Page Contains Element        ${element}
     Wait Until Element Contains       ${element}  ${value}
 
 assertValue
     [Arguments]                  ${element}  ${value}
+    Wait Until Page Contains Element        ${element}
     Element Should Contain       ${element}  ${value}
 
 assertElementPresent
     [Arguments]                  ${element}
+    Wait Until Page Contains Element        ${element}
     wait until keyword succeeds     10x      1s       Page Should Contain Element  ${element}
 
 assertVisible
     [Arguments]                  ${element}
+    Wait Until Page Contains Element        ${element}
     wait until keyword succeeds     10x      1s       Page Should Contain Element  ${element}
 
 assertTitle
@@ -89,7 +103,6 @@ assertTable
 
 waitForText
     [Arguments]                  ${element}  ${value}
-    wait until page contains element    ${element}
     Wait Until Element Contains       ${element}  ${value}
 
 waitForValue
@@ -110,14 +123,17 @@ waitForTitle
 
 waitForTable
     [Arguments]                  ${element}  ${value}
+    Wait Until Page Contains Element        ${element}
     wait until keyword succeeds     10x      1s       Table Should Contain       ${element}  ${value}
 
 doubleClick
     [Arguments]           ${element}
+    Wait Until Page Contains Element        ${element}
     wait until keyword succeeds     10x      1s       Double Click Element  ${element}
 
 doubleClickAndWait
     [Arguments]           ${element}
+    Wait Until Page Contains Element        ${element}
     wait until keyword succeeds     10x      1s       Double Click Element  ${element}
     sleep  2s
 

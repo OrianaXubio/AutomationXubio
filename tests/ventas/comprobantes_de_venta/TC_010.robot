@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       Nueva venta
+Documentation       Creación de una Nota de Crédito A
 Library             SeleniumLibrary
 
 Resource            ../../../front/login/login.robot
@@ -12,6 +12,7 @@ Login
     login.Login
 
 TC_010
+    [Documentation]         Creación de una Nota de Crédito A desde una factura total en cuenta corriente
     KW_010.Nota de Credito A
     KW_010.Grilla Productos
     KW_010.Grilla Percepcion/Impuestos

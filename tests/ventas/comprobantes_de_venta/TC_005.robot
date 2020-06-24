@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       Nueva venta
+Documentation       Creacion de una factura B en cuenta corriente
 Library             SeleniumLibrary
 
 Resource            ../../../front/login/login.robot
@@ -12,7 +12,8 @@ Login
     login.Login
 
 TC_005
-    [Documentation]                         Creación de una factura B con Cuenta Corriente
+    [Documentation]                         Creacion de una factura B en cuenta corriente con diferentes
+    ...                                     tasas de IVA en euros
     [Tags]                                  faturaB_Cta.CTe
     KW_005.Factura B_CuentaCorriente
     KW_005.Agregar Productos

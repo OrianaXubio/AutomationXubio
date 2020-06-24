@@ -1,5 +1,4 @@
 *** Settings ***
-Documentation       Nueva venta
 Library             SeleniumLibrary
 
 Resource            ../../../funciones_generales/setup.robot
@@ -10,27 +9,31 @@ Resource            ../../../funciones_generales/recursos.robot
 
 *** Keywords ***
 Factura E
-    Go To                                 https://xubiotesting2.ddns.net/NXV/vision-general
-    sleep   2s
+    [Documentation]                     creacion de factura E para cliente del exterior
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente       Cliente del exterior   default     Factura     Cheque
 
 Grilla Productos
-    sleep   2s
+    [Documentation]                     se completan los campos de productos
+    sleep   1s
     comprobantes_venta.Agregar Item RI    1   HONORARIOS         1       5000     0
     comprobantes_venta.Agregar Item RI    2   Alquiler           1       16985    10
     click    xpath=//td[@id='TransaccionCVItems_internal_delete_column_3']/div/div
 
 Instrumentos de Cobro
-    sleep   2s
+    [Documentation]                     se completan los campos de instrumento de cobro
+    sleep   1s
     comprobantes_venta.Agregar Instrumento De Cobro     1   Valores a depositar    Valores a depositar    Pesos   1   20286.5
     comprobantes_venta.Agregar Cheque                   1   12345678  31  12  2020    Banco Bica
     click    xpath=//td[@id='TransaccionTesoreriaIngresoItems_internal_delete_column_2']/div/div
 
 Guardar Factura
+    [Documentation]                     se guarda la factura generada
     comprobantes_venta.Guardar
 
 Validaciones
+    [Documentation]                     validacion de columnas importe, totalizadores, condicion de pago
+    ...                                 letra del comprobante y datos del cheque
     assertText                          xpath=//div[@name="wdg_TransaccionCVItems"]//th[8]/div[2]       Importe
     Page Should Not Contain Element     xpath=//div[@name="wdg_TransaccionCVItems"]//th[9]/div[2]
     assertText    xpath=//td[@id='TransaccionCVItems_Importe_1']/div                                    5,000.00
@@ -47,5 +50,3 @@ Validaciones
     comprobantes_venta.Total                          20286.5000
     comprobantes_venta.Total Cobranza                 20286.5000
     comprobantes_venta.Condicion De Pago              Cheque
-
-    vision_general.Ir a Inicio

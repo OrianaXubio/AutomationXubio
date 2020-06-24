@@ -1,5 +1,4 @@
 *** Settings ***
-Documentation       Nueva venta
 Library             SeleniumLibrary
 
 Resource            ../../../funciones_generales/setup.robot
@@ -14,64 +13,38 @@ Informe Diario de Cierre Z
     [Tags]                                            Informe Diario de Cierre Z
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente                   Consumidor Final - Sin identificación   default     Informe Diario de Cierre Z     Contado
-    click                                             xpath=//div[@name='wdg_PrimerTktBC']
-    type                                              xpath=//div[@name='wdg_PrimerTktBC']//input                     156
-    click                                             xpath=//div[@name='wdg_UltimoTktBC']
-    type                                              xpath=//div[@name='wdg_UltimoTktBC']//input                     269
-    click                                             xpath=//div[@name='wdg_CantComprobantesEmitidos']
-    type                                              xpath=//div[@name='wdg_CantComprobantesEmitidos']//input        113
-    click                                             xpath=//div[@name='wdg_CantComprobantesCancelados']
-    type                                              xpath=//div[@name='wdg_CantComprobantesCancelados']//input      0
+    comprobantes_venta.Campo Comprobantes/Tkt         156       269     113     0
 
 Agregar Productos
+    [Documentation]                                   Se Completa la grilla Productos
     sleep   1s
-    comprobantes_venta.Agregar Item CF            1   Carpetas        1       3002        0
-    comprobantes_venta.Agregar Item CF            2   Alquiler        1       18500       10
+    comprobantes_venta.Agregar Item CF                1   Carpetas        1       3002        0
+    comprobantes_venta.Agregar Item CF                2   Alquiler        1       18500       0
+    click    xpath=//td[@id='TransaccionCVItems_internal_delete_column_3']/div/div
 
 Grilla Instrumento de cobro
+    [Documentation]                                   Completa la grilla Instrumentos de cobro
     sleep   1s
-    #Agregar Instrumento De Cobro
-    click                       xpath=//td[@id='TransaccionTesoreriaIngresoItems_M_CuentaTipo_1']/div
-    type                        xpath=//td[@id='TransaccionTesoreriaIngresoItems_M_CuentaTipo_1']/div               Caja
-    sendKeys                    xpath=//td[@id='TransaccionTesoreriaIngresoItems_M_CuentaTipo_1']/div               TAB
-    sendKeys                    xpath=//td[@id='TransaccionTesoreriaIngresoItems_M_CuentaTipo_1']/div               ENTER
-    click                       xpath=//td[@id='TransaccionTesoreriaIngresoItems_CuentaID_1']/div
-    type                        xpath=//td[@id='TransaccionTesoreriaIngresoItems_CuentaID_1']/div                   Caja
-    sendKeys                    xpath=//td[@id='TransaccionTesoreriaIngresoItems_CuentaID_1']/div                   TAB
-    click                       xpath=//td[@id='TransaccionTesoreriaIngresoItems_MonedaIDTransaccion_1']/div
-    type                        xpath=//td[@id='TransaccionTesoreriaIngresoItems_MonedaIDTransaccion_1']/div        Pesos Argentinos
-    sendKeys                    xpath=//td[@id='TransaccionTesoreriaIngresoItems_MonedaIDTransaccion_1']/div        TAB
-    click                       xpath=//td[@id='TransaccionTesoreriaIngresoItems_CotizacionMonTransaccion_1']/div
-    type                        xpath=//td[@id='TransaccionTesoreriaIngresoItems_CotizacionMonTransaccion_1']/div   1.000000
-    sendKeys                    xpath=//td[@id='TransaccionTesoreriaIngresoItems_CotizacionMonTransaccion_1']/div   TAB
-    click                       xpath=//td[@id='TransaccionTesoreriaIngresoItems_ImporteMonTransaccion_1']/div
-    type                        xpath=(//input[@value='0'])[11]                                                     21,502.00
-    click                       xpath=//td[@id="TransaccionTesoreriaIngresoItems_Descripcion_1"]/div
-    sendKeys                    xpath=//td[@id="TransaccionTesoreriaIngresoItems_Descripcion_1"]/div                TAB
-
-Guardar
-    click    id=_onSave
+    comprobantes_venta.Agregar Instrumento De Cobro_2    1   Caja    Caja    Pesos Argentinos    1.000000       21,502.00
+    click    xpath=//td[@id='TransaccionTesoreriaIngresoItems_internal_delete_column_2']/div/div
 
 Validaciones
-    comprobantes_venta.Letra Numero Comprobante     Z
-    #validación de comprobante
-    assertText                                      xpath=//div[@name='wdg_Tipo']//select//option[5]                                  Informe Diario de Cierre Z
-    #Validación primer Tique B/C
-    Page Should Contain Element                     xpath=//div[@name='wdg_PrimerTktBC']//input[@value="156"]                         156
-    #Validación Ultimo tique B/C
-    Page Should Contain Element                     xpath=//div[@name='wdg_UltimoTktBC']//input[@value="269"]                         269
-    #Validación de comprobantes cancelados
-    Page Should Contain Element                     xpath=//div[@name='wdg_CantComprobantesCancelados']//input[@value="0"]            0
-    #Validacion Cant. de comprobantes emitidos
-    Page Should Contain Element                     xpath=//div[@name='wdg_CantComprobantesEmitidos']//input[@value="113"]            113
-    #Validación columna importe
-    Page Should Contain Element                     xpath=//td[@id='TransaccionCVItems_ImporteConIvaIncluido_1']/div                  3,002.00
-    #Validacion Importe de percepción e Impuesto
-    assertText                                      xpath=//td[@id='TransaccionTesoreriaIngresoItems_ImporteMonTransaccion_1']/div    21,502.00
-    #Verificacion de los totales
-    comprobantes_venta.Total Bruto                       16124.11
-    comprobantes_venta.Total Impuestos                   3527.89
-    comprobantes_venta.Total                             19652
-    comprobantes_venta.Total Cobranza                    21502
+    [Documentation]                                   Realiza la validaciones de los campos
+    comprobantes_venta.Letra Numero Comprobante                         Z
+    comprobantes_venta.Validacion Comprobante                           Informe Diario de Cierre Z
+    comprobantes_venta.Validacion primer Tique B/C                      156
+    comprobantes_venta.Validacion Ultimo tique B/C                      269
+    comprobantes_venta.Validacion de comprobantes cancelados            0
+    comprobantes_venta.Validacion Cant. de comprobantes emitidos        113
+    comprobantes_venta.Validacion Columna Importe Con IVA               1       3,002.00
+    comprobantes_venta.Validacion Importe de percepcion e Impuesto      1       21,502.00
 
-    vision_general.Ir a Inicio
+    #Verificacion de los totales
+    comprobantes_venta.Total Bruto                                     17653.0400
+    comprobantes_venta.Total Impuestos                                 3848.9600
+    comprobantes_venta.Total                                           21502.0000
+    comprobantes_venta.Total Cobranza                                  21502.0000
+
+Guardar
+    comprobantes_venta.Guardar
+    sleep   1s

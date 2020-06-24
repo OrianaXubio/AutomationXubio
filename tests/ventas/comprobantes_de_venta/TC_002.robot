@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       Nueva venta
+Documentation       Creacion de una factura B al contado
 Library             SeleniumLibrary
 
 Resource            ../../../front/login/login.robot
@@ -12,6 +12,7 @@ Login
     login.Login
 
 TC_002
+    [Documentation]         Creacion de una factura B al contado con diferentes tasas de IVA en pesos argentinos
     KW_002.Factura B
     KW_002.Grilla Productos
     KW_002.Grilla Percepcion/Impuestos

@@ -18,8 +18,8 @@ Factura B
     comprobantes_venta.Tipo Cliente          Cliente del exterior      default     Factura     Tarjeta de Débito
     sleep                          1s
     # Mas Opciones - Servicios prestados en el país para un sujeto del exterior
-    click                          xpath=//div//input[@value='Más Opciones']
-    click                          xpath=(//input[@value='0'])[6]
+    comprobantes_venta.Mas Opciones
+    Select Checkbox                      xpath=//div[@name='wdg_FacturaNoExportacion']//input
 
 Agregar Productos
     [Documentation]                     se completan los campos de productos

@@ -6,7 +6,8 @@ open
 
 click
     [Arguments]    ${element}
-    Wait Until Page Contains Element        ${element}
+    Wait Until Element Is Visible       ${element}
+    #Wait Until Page Contains Element        ${element}
     wait until keyword succeeds     10x      1s       Click Element  ${element}
 
 sendKeys

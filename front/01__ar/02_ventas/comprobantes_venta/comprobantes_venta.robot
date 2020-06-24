@@ -173,7 +173,8 @@ Guardar
     [Documentation]         click en el boton Guardar de la factura, luego hay un sleep para esperar que se guarde la factura
     sleep   2s
     click                                       id=_onSave
-    sleep   1s
+    #sleep   1s
+    Wait Until Element Is Visible              xpath=//a[@id='_onPrint']
 
 Crear Nota de Credito
     [Documentation]                              Ir a Nota de Credito

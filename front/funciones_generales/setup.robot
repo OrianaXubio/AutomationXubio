@@ -12,7 +12,7 @@ ${delay}            0s
 *** Keywords ***
 Ingresar Al Sitio
     [Documentation]                     Seteo del navegador, la url y el timeout de la sesion
-    Open Browser                        ${URL}      chrome       #none     http://35.174.46.86:4444/wd/hub
+    Open Browser                        ${URL}      chrome       none     http://35.174.46.86:4444/wd/hub
     common.Validar Conexion
     Set Selenium Timeout                15s
     Set Selenium Implicit Wait          15s

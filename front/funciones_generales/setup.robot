@@ -16,7 +16,7 @@ Ingresar Al Sitio
     common.Validar Conexion
     Set Selenium Timeout                15s
     Set Selenium Implicit Wait          15s
-    #Set Selenium Speed                  ${delay}
+    Set Selenium Speed                  ${delay}
     Maximize Browser Window
 
 Ingresar Al Sitio Login

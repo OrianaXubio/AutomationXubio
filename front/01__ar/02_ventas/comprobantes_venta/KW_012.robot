@@ -8,18 +8,6 @@ Resource            ../../../01__ar/02_ventas/comprobantes_venta/comprobantes_ve
 Resource            ../../../funciones_generales/recursos.robot
 
 *** Keywords ***
-#Mas Opciones II
-#    [Arguments]     ${moneda}   ${cotizacion}
-#    click       xpath=//input[@value='Más Opciones']
-#    click       xpath=//div[@id='masOpcionesWrapper']/div[11]/div/div[2]/div/input
-#    wait until keyword succeeds     20x      1s       clear element text  xpath=//div[@id='masOpcionesWrapper']/div[11]/div/div[2]/div/input
-#    click       xpath=//div[@id='masOpcionesWrapper']/div[11]/div/div[2]/div/input
-#    type        xpath=//div[@id='masOpcionesWrapper']/div[11]/div/div[2]/div/input      ${moneda}
-#    click       xpath=//td/div/table/tbody/tr/td
-#    click       css=div[name="wdg_Cotizacion"] > input[type="textbox"]
-#    type        css=div[name="wdg_Cotizacion"] > input[type="textbox"]                  ${cotizacion}
-#    sendKeys    css=div[name="wdg_Cotizacion"] > input[type="textbox"]      TAB
-
 Factura A Al Contado En Dolares
     [Documentation]                     creacion de una nota de credito
     comprobantes_venta.Ir a Nueva Venta
@@ -150,6 +138,3 @@ Guardar (ventana)
     [Documentation]             se guardan los cambios en el popup
     Sleep   1s
     click                                       xpath=(//a[@id="_onSave"])[2]
-#    Wait Until Page Contains Element            xpath=(//h1[@id="fafPopUpTitle"])[2]
-#    click                                       xpath=//a[@id="showAskPopupYesButton"]
-#    Wait Until Page Does Not Contain Element    xpath=(//h1[@id="fafPopUpTitle"])[2]

@@ -45,9 +45,9 @@ Validaciones
     comprobantes_venta.Validacion Comprobante       Nota de Débito MiPyME (FCE)
     comprobantes_venta.Verificacion Comprobante Asociado
     comprobantes_venta.Varificacion Es Anulacion
-    comprobantes_venta.Ir a Remitos Asociados
-    comprobantes_venta.Verificacion Remitos Asociados
+    Reload Page
 
 Cambiar Categoria de Empresa
     [Documentation]                     cambia la empresa a responsable inscripto
+    Sleep   2s
     recursos.Elegir Categoria de Empresa            Responsable Inscripto

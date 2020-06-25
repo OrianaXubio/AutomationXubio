@@ -62,9 +62,9 @@ Validaciones
 
     comprobantes_venta.Letra Numero Comprobante       B
     #Validación de Importes Totales
-    comprobantes_venta.Total Bruto                    16070.72
-    comprobantes_venta.Total Impuestos                3870.28
-    comprobantes_venta.Total                          19941.00
+    comprobantes_venta.Total Bruto                    16070.7200
+    comprobantes_venta.Total Impuestos                3870.2800
+    comprobantes_venta.Total                          19941.0000
     #Validacion Campo Moneda
     Page Should Contain Element                 xpath=//div[@name="wdg_MonedaID"]//input[@value="Euros"]
-    Page Should Contain Element                 xpath=//div[@name="wdg_Cotizacion"]//input[@value="72"]
+    Page Should Contain Element                 xpath=//div[@name="wdg_Cotizacion"]//input[@value="72.000000"]

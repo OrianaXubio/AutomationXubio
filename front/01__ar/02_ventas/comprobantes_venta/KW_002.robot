@@ -58,7 +58,7 @@ Validaciones
     assertText    xpath=//td[@id='TransaccionCVItems_ImporteConIvaIncluido_6']/div    -50.00
 
     comprobantes_venta.Letra Numero Comprobante       B
-    comprobantes_venta.Total Bruto                    16070.72
-    comprobantes_venta.Total Impuestos                3870.28
-    comprobantes_venta.Total                          19941
-    comprobantes_venta.Total Cobranza                 19941
+    comprobantes_venta.Total Bruto                    16070.7200
+    comprobantes_venta.Total Impuestos                3870.2800
+    comprobantes_venta.Total                          19941.0000
+    comprobantes_venta.Total Cobranza                 19941.0000

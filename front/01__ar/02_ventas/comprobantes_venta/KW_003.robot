@@ -48,8 +48,8 @@ Validaciones
     assertText                                  xpath=//td[@id='TransaccionCVItems_ImporteConIvaIncluido_6']/div    -50.00
     comprobantes_venta.Letra Numero Comprobante       B
     #Validación de Inportes Totales
-    comprobantes_venta.Total Bruto                    16070.72
-    comprobantes_venta.Total Impuestos                3134.78
-    comprobantes_venta.Total                          19205.50
+    comprobantes_venta.Total Bruto                    16070.7200
+    comprobantes_venta.Total Impuestos                3134.7800
+    comprobantes_venta.Total                          19205.5000
     #Validación del Checkbox
     Checkbox Should Be Selected                 xpath=//div[@name='wdg_FacturaNoExportacion']//input

@@ -60,6 +60,6 @@ Validaciones
     comprobantes_venta.Validacion Columna Total               6       -51.25
     comprobantes_venta.Validacion Remito ingresado            X-0001-00000003
     comprobantes_venta.Validacion Observaciones               Factura de Crédito MiPyME (FCE) asociada con el remito X-0001-00000003
-    comprobantes_venta.Total Bruto                              19205.50
-    comprobantes_venta.Total Impuestos                          3820.76
-    comprobantes_venta.Total                                    23026.26
+    comprobantes_venta.Total Bruto                            19205.5000
+    comprobantes_venta.Total Impuestos                        3820.7600
+    comprobantes_venta.Total                                  23026.2600

@@ -38,6 +38,6 @@ Validaciones
     assertText                                xpath=//td[@id='TransaccionCVItems_Importe_1']/div           5,000.00
     assertText                                xpath=//td[@id='TransaccionCVItems_Importe_2']/div           15,286.50
     #Verificacion de los totales
-    comprobantes_venta.Total Bruto             20286.50
-    comprobantes_venta.Total Impuestos         0.00
-    comprobantes_venta.Total                   20286.50
+    comprobantes_venta.Total Bruto             20286.5000
+    comprobantes_venta.Total Impuestos         0.0000
+    comprobantes_venta.Total                   20286.5000

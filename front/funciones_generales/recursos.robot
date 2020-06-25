@@ -1,5 +1,6 @@
 *** Keywords ***
 Ir a Mi Empresa
+    sleep   2s
     click           link=Configuración
     sleep   1s
     click           link=Mi Empresa

@@ -516,13 +516,13 @@ Verificacion Remitos Asociados
 
 Validacion Remito ingresado
     [Documentation]                     Despliega la opcion Remitos Asociados y completa los campos
-     [Arguments]                        ${remito}
-     Page Should Contain Element        xpath=//td[@id='ComprobanteRemitosItems_RemitoID_1']//div//input            ${remito}
+    [Arguments]                        ${remito}
+    Wait Until Element Contains        xpath=//td[@id='ComprobanteRemitosItems_RemitoID_1']//div            ${remito}
 
 Validacion Observaciones
     [Documentation]                     Despliega la opcion Remitos Asociados y completa los campos
     [Arguments]                         ${observacion}
-    Page Should Contain Element         xpath=//td[@id="ComprobanteRemitosItems_Descripcion_1"]/div/div/input       ${observacion}
+    Wait Until Element Contains         xpath=//td[@id="ComprobanteRemitosItems_Descripcion_1"]//div       ${observacion}
 
 Validacion Comprobante Asociado
     [Documentation]                     valida que el comprobante asociado sea correcto

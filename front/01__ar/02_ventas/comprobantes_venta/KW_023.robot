@@ -37,6 +37,6 @@ Validaciones
     comprobantes_venta.Validacion Columna Importe               2       14,850.00
     comprobantes_venta.Validacion Columna Iva                   2       3,118.50
     comprobantes_venta.Validacion Columna Total                 2       17,968.50
-    comprobantes_venta.Total Bruto                              17350.50
-    comprobantes_venta.Total Impuestos                          3793.64
-    comprobantes_venta.Total                                    21144.14
+    comprobantes_venta.Total Bruto                              17350.5000
+    comprobantes_venta.Total Impuestos                          3793.6400
+    comprobantes_venta.Total                                    21144.1400

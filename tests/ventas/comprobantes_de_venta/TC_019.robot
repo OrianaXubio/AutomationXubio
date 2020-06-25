@@ -17,4 +17,5 @@ TC_019
     KW_019.Factura de Credito Mipyme A
     KW_019.Agregar Productos
     KW_019.Seleccionar Remitos Asociados
+    KW_019.Guardar
     KW_019.Validaciones

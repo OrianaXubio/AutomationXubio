@@ -2,6 +2,7 @@
 Resource            ../01__ar/index_ar.robot
 Resource            ../01__ar/vision_general.robot
 Resource            ../index.robot
+Resource            ../funciones_generales/recursos.robot
 
 *** Variables ***
 ${email}            xubiotesting1@gmail.com        # melina@xubio.com
@@ -35,3 +36,4 @@ Login
     index_ar.Loguearse Ar
     Completar Formulario de Login
     vision_general.Validar Ingreso Al Sitio
+    recursos.Verificar Tipo De Empresa      Responsable Inscripto

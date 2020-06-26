@@ -11,6 +11,7 @@ Resource            ../../../funciones_generales/recursos.robot
 *** Keywords ***
 Crear Nota de Credito MiPyMe A
     [Documentation]                              realiza un Nota de credito MiPyMe, asocia una factura y tilda la opcion "Es Anulacion"
+    log to console              Crear Nota de Credito MiPyMe A
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente              Responsable Inscripto   default   Nota de Crédito MiPyME (FCE)   Cuenta Corriente
     comprobantes_venta.Comprobante Asociado      Factura de Crédito MiPyME (FCE) N° A-0002-00000001
@@ -19,16 +20,19 @@ Crear Nota de Credito MiPyMe A
 
 Agregar Productos
     [Documentation]                               Se Completa la grilla Productos
+    log to console              Agregar Productos
     sleep   1s
     comprobantes_venta.Agregar Item RI            1   Carpeta         1       2500.50     0
     comprobantes_venta.Agregar Item RI            2   Alquiler        1       16500       10
     click       xpath=//td[@id='TransaccionCVItems_internal_delete_column_3']/div/div
 
 Guardar
+    log to console              Guardar
     comprobantes_venta.Guardar
 
 Validaciones
     [Documentation]                                             Realiza la validaciones de los campos
+    log to console              Validaciones
     comprobantes_venta.Validacion Comprobante                   Nota de Crédito MiPyME (FCE)
     comprobantes_venta.Letra Numero Comprobante                 A
     comprobantes_venta.Condicion De Pago                        Cuenta Corriente

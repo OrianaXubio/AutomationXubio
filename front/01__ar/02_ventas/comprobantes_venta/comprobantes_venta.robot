@@ -416,7 +416,7 @@ Validacion Cliente (Pop-up)
 Validacion de Letra (Pop-up)
     [Documentation]                                     Valida letra del campo Numero
     [Arguments]     ${letra}
-    Page Should Contain Element                         xpath=(//div[@name='wdg_NumeroDocumento']//input[contains(@value, '${letra}')] )[2]
+    Page Should Contain Element                        xpath=(//div[@name='wdg_NumeroDocumento'])[2]//input[contains(@value, '${letra}')]
 
 Validacion Condicion de Pago_(Pop-up)
     [Documentation]                                     Valida el dato del campo Condicion de Pago del Pop-up
@@ -532,3 +532,33 @@ Validacion Comprobante Asociado
 Validacion de casilla Es Anulacion
     [Documentation]                     Verifica que la casilla de "Es Anulacion" se encuentre tildada
     Checkbox Should Be Selected         xpath=//div[@name='wdg_anulacion']//input
+
+Validacion de todos los campos en la grilla cobro
+    [Documentation]                                                      Valida que esten los campos en la grilla de cobro
+    assertText    xpath=//table[@id='WidgetLinenull']/tbody/tr/th[2]    Cliente
+    assertText    xpath=//table[@id='WidgetLinenull']/tbody/tr/th[3]    Documento
+    assertText    xpath=//table[@id='WidgetLinenull']/tbody/tr/th[4]    Moneda
+    assertText    xpath=//table[@id='WidgetLinenull']/tbody/tr/th[5]    Cotización
+    assertText    xpath=//table[@id='WidgetLinenull']/tbody/tr/th[6]    Importe
+
+validacion Cliente Formulario Cobranza
+    [Documentation]                                         Valida que el Cliente que figura en la factura
+    ...                                                     sea el mismo que en el formulario cobranza (Pop-up 2)
+    [Arguments]                                             ${cliente}
+    Page Should Contain Element                             xpath=(//div[@name='wdg_Organizacion'])[2]//input[contains(@value,'${cliente}')]
+
+Validacion Moneda (Pop-up)
+    [Documentation]                                          valida que el Pop-up en el campo "Moneda" coincida con el ingresado en la factura
+    [Arguments]                                              ${moneda}
+    sleep                                                   2s
+    Page Should Contain Element                             xpath=(//div[@name="wdg_MonedaID"])[2]//input[@value='${moneda}']
+
+validacion Mensaje Cotizacion
+    [Documentation]                                         Valida que aparesca el mensaje en el Pop-up
+    [Arguments]                                             ${mensaje}
+    Page Should Contain Element                             xpath=//div[contains(text(),'${mensaje}')]
+
+Validacion Importe Cobranza
+    [Documentation]                                           Valida que el Importe de Cobranza del Pop-up sea el correcto
+    [Arguments]                                               ${item}     ${valor}
+    assertText                                               xpath=(//td[@id='TransaccionTesoreriaIngresoItems_ImporteMonTransaccion_${item}'])[2]/div    ${valor}

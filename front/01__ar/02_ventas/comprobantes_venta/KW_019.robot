@@ -12,12 +12,14 @@ Resource            ../../../funciones_generales/recursos.robot
 *** Keywords ***
 Factura de Credito Mipyme A
     [Documentation]
+    log to console          Factura de Credito Mipyme A
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente              Responsable Inscripto   default   Factura de Crédito MiPyME (FCE)   Cuenta Corriente
     comprobantes_venta.Mas Opciones
 
 Agregar Productos
     [Documentation]                                Se Completa la grilla Productos
+    log to console          Agregar Productos
     sleep   1s
     comprobantes_venta.Agregar Item RI            1   Carpeta         1       2500.50     0
     comprobantes_venta.Agregar Item RI            2   Alquiler        1       16500       10
@@ -29,13 +31,16 @@ Agregar Productos
 
 Seleccionar Remitos Asociados
     [Documentation]                               Despliega la opcion Remito Asociados y completa los campos
+    log to console          Seleccionar Remitos Asociados
     comprobantes_venta.Remitos Asociados        1     X-0001-00000003       Factura de Crédito MiPyME (FCE) asociada con el remito X-0001-00000003
 
 Guardar
+    log to console          Guardar
     comprobantes_venta.Guardar
 
 Validaciones
     [Documentation]                                             Realiza la validaciones de los campos
+    log to console          Validaciones
     comprobantes_venta.Validacion Comprobante                   Factura de Crédito MiPyME (FCE)
     comprobantes_venta.Letra Numero Comprobante                 A
     comprobantes_venta.Condicion De Pago                        Cuenta Corriente

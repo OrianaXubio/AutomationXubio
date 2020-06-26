@@ -13,7 +13,7 @@ Resource            ../../../01__ar/02_ventas/comprobantes_venta/comprobantes_ve
 *** Keywords ***
 Factura B_CuentaCorriente
     [Documentation]                         Creación de una factura B con Cuenta Corriente
-    [Tags]                                  faturaB_Cta.CTe
+    Log To Console                          Factura B_CuentaCorriente
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente                   Consumidor Final - Con identificación      default     Factura     Cuenta Corriente
     sleep   1s
@@ -27,6 +27,7 @@ Factura B_CuentaCorriente
 
 Agregar Productos
     [Documentation]                     se completan los campos de productos
+    Log To Console                      Agregar Productos
     sleep   1s
     comprobantes_venta.Agregar Item CF                1   Carpeta         1       2500.50     0
     comprobantes_venta.Agregar Item CF                2   Alquiler        1       16500       10
@@ -38,6 +39,7 @@ Agregar Productos
 
 Grilla Percepcion/Impuestos
     [Documentation]                     se completan los campos de percepcion/impuestos
+    Log To Console                      Grilla Percepcion/Impuestos
     sleep   1s
     click                                   xpath=//input[@value='Percepciones e Impuestos']
     comprobantes_venta.Agregar Percepcion             1   Ingresos Brutos Buenos Aires (Percepción)   250
@@ -47,11 +49,13 @@ Grilla Percepcion/Impuestos
 
 Guardar Factura
     [Documentation]                     se guarda la factura generada
+    Log To Console                      Guardar Factura
     comprobantes_venta.Guardar
 
 Validaciones
     [Documentation]                     validacion de columnas importe, iva, total, totalizadores
     ...                                 y letra del comprobante
+    Log To Console                      Validaciones
     # validación Columna Importe
     assertText                                  xpath=//td[@id='TransaccionCVItems_ImporteConIvaIncluido_1']/div    2,500.50
     assertText                                  xpath=//td[@id='TransaccionCVItems_ImporteConIvaIncluido_2']/div    14,850.00

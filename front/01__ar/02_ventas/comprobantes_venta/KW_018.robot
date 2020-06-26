@@ -10,12 +10,13 @@ Resource            ../../../funciones_generales/recursos.robot
 *** Keywords ***
 Comprobante Recibo Z
     [Documentation]                         Creación de un informe diario de cierre Z
-    [Tags]                                  Recibo z
+    log to console                  Comprobante Recibo Z
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente         Consumidor Final - Sin identificación   default     Informe Diario de Cierre Z     Cuenta Corriente
 
 Agregar Productos
     [Documentation]                         Se agregan productos
+    log to console                  Agregar Productos
     sleep   1s
     comprobantes_venta.Agregar Item CF    1    Carátulas       8       64500        0
     comprobantes_venta.Agregar Item CF    2    Cinta Papel     169     89600        0
@@ -28,6 +29,7 @@ Agregar Productos
 Validaciones
     [Documentation]                     validaciones de columna importe, totalizadores, letra en el comprobante, tipo
     ...                                 de comprobante, primer y ultimo tique, cant comprobantes emitidos y cancelados
+    log to console          Validaciones
     assertText                          xpath=//div[@name="wdg_TransaccionCVItems"]//th[8]/div[2]       Importe
     Page Should Not Contain Element     xpath=//div[@name="wdg_TransaccionCVItems"]//th[9]/div[2]
 

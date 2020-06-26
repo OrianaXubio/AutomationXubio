@@ -10,11 +10,13 @@ Resource            ../../../funciones_generales/recursos.robot
 *** Keywords ***
 Nota de Credito A
     [Documentation]                       creacion de una nota de credito A
+    log to console                          Nota de Credito A
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente       Responsable Inscripto   default     Factura     Cuenta Corriente
 
 Grilla Productos
     [Documentation]                     se completan los campos de productos
+    log to console                      Grilla Productos
     sleep   1s
     comprobantes_venta.Agregar Item RI    1   Carpeta         1       2500.50     0
     comprobantes_venta.Agregar Item RI    2   Alquiler        1       16500       10
@@ -26,6 +28,7 @@ Grilla Productos
 
 Grilla Percepcion/Impuestos
     [Documentation]                     se completan los campos de percepcion/impuestos
+    log to console                      Grilla Percepcion/Impuestos
     sleep   1s
     click    xpath=//input[@value='Percepciones e Impuestos']
     comprobantes_venta.Agregar Percepcion      1   Ingresos Brutos Buenos Aires (Percepción)   250
@@ -36,11 +39,13 @@ Grilla Percepcion/Impuestos
 
 Guardar Factura
     [Documentation]                     se guarda la factura generada
+    log to console                      Guardar Factura
     comprobantes_venta.Guardar
 
 Validaciones
     [Documentation]                     validacion de columnas importe, iva, total, totalizadores
     ...                                 y letra del comprobante
+    log to console                      Validaciones
     # Verificacion del campo Operación Sujeta a Retención
     Checkbox Should Not Be Selected              xpath=//div[@id="masOpcionesWrapper"]/div[25]/div[2]/div/input
     #Columna Importe
@@ -76,6 +81,7 @@ Validaciones
 
 Ir a Crear Nota de Credito
     [Documentation]                     se validan los datos en todos los campos
+    log to console                      Ir a Crear Nota de Credito
     click                               xpath=//a[@id='generarNotaCredito']
     verifyText                          xpath=//h1[@id='fafPopUpTitle']/span            Importes a Aplicar por Factura
     Page Should Contain Element         xpath=//input[@id='CLIENTE_0' and @value ="Responsable Inscripto"]
@@ -122,6 +128,7 @@ Ir a Crear Nota de Credito
 
 Ir a Aplicaciones
     [Documentation]         se valida que existan los campos en el popup
+    log to console          Ir a Aplicaciones
     click           id=FacturaVenta_openVinculacionCuentaCorriente
     assertText      xpath=//div[3]/div/div[2]/div/div/div[2]/table/tbody/tr[2]/td[2]/div/div    Aplicado
     #assertText      xpath=//div[3]/div/div[2]/div/div[2]/div[2]/div/div[2]/div                  23,891.76

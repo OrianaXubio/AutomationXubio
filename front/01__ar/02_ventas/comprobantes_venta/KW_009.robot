@@ -10,6 +10,7 @@ Resource            ../../../funciones_generales/recursos.robot
 *** Keywords ***
 Factura E ClienteExterior
     [Documentation]                     creacion de una factura E
+    log to console                      Factura E ClienteExterior
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente           Responsable Inscripto    default     Factura     Otra
     #Más Opciones - Provincia Destrino: Tierra del fuego
@@ -19,6 +20,7 @@ Factura E ClienteExterior
 
 Agregar Productos
     [Documentation]                     se completan los campos de productos
+    log to console                      Agregar Productos
     sleep   1s
     comprobantes_venta.Agregar Item RI    1   Honorarios      1       5000        0
     comprobantes_venta.Agregar Item RI    2   Alquiler        1       16985       10
@@ -26,11 +28,13 @@ Agregar Productos
 
 Guardar Factura
     [Documentation]                     se guarda la factura generada
+    log to console                      Guardar Factura
     comprobantes_venta.Guardar
 
 Validaciones
     [Documentation]                     validacion de columnas importe, totalizadores
     ...                                 letra del comprobante y provincia
+    log to console                      Validaciones
     comprobantes_venta.Letra Numero Comprobante       E
     #verificar que la opcion sea Tierra del Fuego
     Page Should Contain Element               xpath=//div[@name='wdg_Provincia']//input[@value="Tierra del Fuego"]

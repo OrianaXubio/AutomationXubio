@@ -11,22 +11,26 @@ Resource            ../../../funciones_generales/recursos.robot
 *** Keywords ***
 Crear Nota de Debito MiPyMe A
     [Documentation]                              Crea una Nota de Débito Mipyme A en cuenta corriente y asocia una factura
+    log to console          Crear Nota de Debito MiPyMe A
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente              Responsable Inscripto   default   Nota de Débito MiPyME (FCE)   Cuenta Corriente
     comprobantes_venta.Comprobante Asociado      Factura de Crédito MiPyME (FCE) N° A-0002-00000001
 
 Agregar Productos
     [Documentation]                                Se Completa la grilla Productos
+    log to console          Agregar Productos
     sleep   1s
     comprobantes_venta.Agregar Item RI            1   Carpeta         1       2500.50     0
     comprobantes_venta.Agregar Item RI            2   Alquiler        1       16500       10
     click                                         xpath=//td[@id='TransaccionCVItems_internal_delete_column_3']/div/div
 
 Guardar
-      comprobantes_venta.Guardar
+    log to console          guardar
+    comprobantes_venta.Guardar
 
 Validaciones
     [Documentation]                                             Realiza la validaciones de los campos
+    log to console          validaciones
     comprobantes_venta.Validacion Comprobante                   Nota de Débito MiPyME (FCE)
     comprobantes_venta.Letra Numero Comprobante                 A
     comprobantes_venta.Condicion De Pago                        Cuenta Corriente

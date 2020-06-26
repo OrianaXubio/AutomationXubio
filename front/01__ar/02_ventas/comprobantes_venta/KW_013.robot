@@ -10,12 +10,14 @@ Resource            ../../../funciones_generales/recursos.robot
 *** Keywords ***
 Factura A
     [Documentation]                              Creacion de una factura A
+    log to console                              Factura A
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente              Responsable Inscripto   default     Factura     Cuenta Corriente
 
 
 Agregar Productos
     [Documentation]                                Se Completa la grilla Productos
+    log to console                              Agregar Productos
     sleep   2s
     comprobantes_venta.Agregar Item RI            1   Carpeta         1       2500.50     0
     comprobantes_venta.Agregar Item RI            2   Alquiler        1       16500       10
@@ -27,6 +29,7 @@ Agregar Productos
 
 Grilla Percepcion/Impuestos
     [Documentation]                                Completa la grilla Percepcion/Impuestos
+    log to console                                  Grilla Percepcion/Impuestos
     sleep  2s
     click                                           xpath=//input[@value='Percepciones e Impuestos']
     comprobantes_venta.Agregar Percepcion           1   Ingresos Brutos Buenos Aires (Percepción)   250
@@ -37,11 +40,13 @@ Grilla Percepcion/Impuestos
 
 Guardar Factura
     [Documentation]                                 Guarda la factura creada
+    log to console                                  Guardar Factura
     comprobantes_venta.Guardar
 
 
 Nota de Credito
     [Documentation]                                Crea una nota de credito y  modifica el importe a aplicar
+    log to console                                  Nota de Credito
     comprobantes_venta.Crear Nota de Credito
     comprobantes_venta.Validacion Popup NC
     comprobantes_venta.Validacion del Importe            23,891.76
@@ -50,6 +55,7 @@ Nota de Credito
 Agregar Producto en Popup
     [Documentation]                                Agrega elemento a la grilla de producto del Pop-up
     ...                                            y realiza las validaciones de los datos
+    log to console                                  Agregar Producto en Popup
     comprobantes_venta.Agregar Item RI (ventana)                    1   Cinta Papel     1     200         0
     comprobantes_venta.Validacion Cliente (Pop-up)                  Responsable Inscripto
     comprobantes_venta.Validacion de Letra (Pop-up)                 A
@@ -68,10 +74,12 @@ Agregar Producto en Popup
 
 Aplicaciones
     [Documentation]                                                 Selecciona el boton aplicaciones de la factura
+    log to console                              Aplicaciones
     comprobantes_venta.Seleccionar Aplicaciones
 
 Campos de Aplicaciones
     [Documentation]                                                 Valida los campos del Pop-up aplicaciones
+    log to console                      Campos de Aplicaciones
     comprobantes_venta.Validacion Campos Aplicaciones               Aplicado
     comprobantes_venta.Validacion Campos Aplicaciones               Pendiente
     comprobantes_venta.Validacion Campos Aplicaciones               Documento Destino
@@ -79,5 +87,5 @@ Campos de Aplicaciones
 
 Salir de la Aplicaciones
     [Documentation]                                                 sale del Pop-up Aplicaciones
+    log to console                      Salir de la Aplicaciones
     comprobantes_venta.Salir de Aplicaciones
-

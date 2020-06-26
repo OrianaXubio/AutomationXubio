@@ -13,7 +13,7 @@ Resource            ../../../01__ar/02_ventas/comprobantes_venta/comprobantes_ve
 *** Keywords ***
 Factura B
     [Documentation]                Creación de factura B con Cliente Exterior
-    [Tags]                         Factura_B
+    Log To Console                  Factura B
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente          Cliente del exterior      default     Factura     Tarjeta de Débito
     sleep                          1s
@@ -23,6 +23,7 @@ Factura B
 
 Agregar Productos
     [Documentation]                     se completan los campos de productos
+    Log To Console                      Agregar Productos
     sleep   1s
     comprobantes_venta.Agregar Item CF    1   Carpeta         1       2500.50     0
     comprobantes_venta.Agregar Item CF    2   Alquiler        1       16500       10
@@ -34,11 +35,13 @@ Agregar Productos
 
 Guardar Factura
     [Documentation]                     se guarda la factura generada
+    Log To Console                      Guardar Factura
     comprobantes_venta.Guardar
 
 Validaciones
     [Documentation]                     validacion de columnas importe, totalizadores, letra del comprobante
     ...                                 y checkbox servicios prestados
+    Log To Console                      Validaciones
     #Validacion Columna Importe
     assertText                                  xpath=//td[@id='TransaccionCVItems_ImporteConIvaIncluido_1']/div    2,500.50
     assertText                                  xpath=//td[@id='TransaccionCVItems_ImporteConIvaIncluido_2']/div    14,850.00

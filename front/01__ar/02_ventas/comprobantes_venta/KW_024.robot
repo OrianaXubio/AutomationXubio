@@ -10,6 +10,7 @@ Resource            ../../../funciones_generales/recursos.robot
 *** Keywords ***
 Nota de Debito Mipyme C
     [Documentation]                         Creación de una Nota de Debito Mipyme C
+    log to console              Nota de Debito Mipyme C
     recursos.Elegir Categoria de Empresa    Monotributista
     vision_general.Validar Ingreso Al Sitio
     comprobantes_venta.Ir a Nueva Venta
@@ -17,6 +18,7 @@ Nota de Debito Mipyme C
 
 Agregar Productos
     [Documentation]                     se completan los campos de productos
+    log to console              Agregar Productos
     sleep   1s
     comprobantes_venta.Agregar Item RI    1   Cinta papel (EX)         1       1256.9     0
     comprobantes_venta.Agregar Item RI    2   Crayones (EX)            1       3250       10
@@ -24,12 +26,14 @@ Agregar Productos
 
 Guardar Factura
     [Documentation]                     se guarda la factura generada
+    log to console              Guardar Factura
     comprobantes_venta.Guardar
     comprobantes_venta.Mas Opciones
 
 Validaciones
     [Documentation]                     validacion de columnas importe, totalizadores, condicion de pago
     ...                                 y letra del comprobante
+    log to console              Validaciones
     comprobantes_venta.Letra Numero Comprobante     C
     comprobantes_venta.Condicion De Pago            Cuenta Corriente
     # verificacion de columna Importe
@@ -49,5 +53,6 @@ Validaciones
 
 Cambiar Categoria de Empresa
     [Documentation]                     cambia la empresa a responsable inscripto
+    log to console              Cambiar Categoria de Empresa
     Sleep   2s
     recursos.Elegir Categoria de Empresa            Responsable Inscripto

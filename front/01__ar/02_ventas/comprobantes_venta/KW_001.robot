@@ -13,11 +13,13 @@ Resource            ../../../01__ar/02_ventas/comprobantes_venta/comprobantes_ve
 *** Keywords ***
 Factura A
     [Documentation]                     creacion de una factura A
+    Log To Console                      Factura A
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente       Responsable Inscripto   default     Factura     Cuenta Corriente
 
 Agregar Productos
     [Documentation]                     se completan los campos de produtos
+    Log To Console                      Agregar Productos
     sleep   1s
     comprobantes_venta.Agregar Item RI    1   Carpeta         1       2500.50     0
     comprobantes_venta.Agregar Item RI    2   Alquiler        1       16500       10
@@ -29,6 +31,7 @@ Agregar Productos
 
 Grilla Percepcion/Impuestos
     [Documentation]                     se completan los campos de percepcion/impuestos
+    Log To Console                      Grilla Percepcion/Impuestos
     sleep  1s
     click    xpath=//input[@value='Percepciones e Impuestos']
     comprobantes_venta.Agregar Percepcion      1   Ingresos Brutos Buenos Aires (Percepción)   250
@@ -39,11 +42,13 @@ Grilla Percepcion/Impuestos
 
 Guardar Factura
     [Documentation]                     se guarda la factura generada
+    Log To Console                      Grilla Percepcion/Impuestos
     comprobantes_venta.Guardar
 
 Validaciones
     [Documentation]                         validacion de comlumnas importe, iva, total, totalizadores,
     ...                                     letra en el comprobante y botones
+    Log To Console                          Validaciones
     #Verificacion del campo Operación Sujeta a Retención
     Checkbox Should Not Be Selected             xpath=//div[@id="masOpcionesWrapper"]/div[25]/div[2]/div/input
     #Columna Importe

@@ -10,12 +10,14 @@ Resource            ../../../funciones_generales/recursos.robot
 *** Keywords ***
 Nota de Debito B en Dolares
     [Documentation]                     creacion de nota de debito B
+    log to console                      Nota de Debito B en Dolares
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente                 Exento   default     Nota de Débito     Cuenta Corriente
     comprobantes_venta.Mas Opciones - Moneda        Dólares     72
 
 Grilla Productos
     [Documentation]                     se completan los campos de productos
+    log to console                      Grilla Productos
     sleep   1s
     comprobantes_venta.Agregar Item CF    1   Carpeta         1       1250     0
     comprobantes_venta.Agregar Item CF    2   Alquiler        1       780    10
@@ -23,11 +25,13 @@ Grilla Productos
 
 Guardar Factura
     [Documentation]                     se guarda la factura generada
+    log to console                      Guardar Factura
     comprobantes_venta.Guardar
 
 Validaciones
     [Documentation]                     validacion de columnas importe, totalizadores
     ...                                 letra del comprobante, tipo de moneda, cotizacion y cond. de pago
+    log to console                      Validaciones
     comprobantes_venta.Letra Numero Comprobante         B
     # click en Mas Opciones
     comprobantes_venta.Mas Opciones

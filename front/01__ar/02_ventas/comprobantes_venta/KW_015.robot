@@ -10,12 +10,13 @@ Resource            ../../../funciones_generales/recursos.robot
 *** Keywords ***
 Recibo A
     [Documentation]                                       Creación de Recibo A al contado en pesos
-    [Tags]                                                Recibo A
+    log to console                      Recibo A
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente                       Responsable Inscripto   default     Recibo     Contado
 
 Agregar Productos
     [Documentation]                                       Se Completa la grilla Productos
+    log to console                      Agregar Productos
     sleep   2s
     comprobantes_venta.Agregar Item RI                    1   Carpeta         1       3002        0
     comprobantes_venta.Agregar Item RI                    2   Alquiler        1       18500       10
@@ -24,6 +25,7 @@ Agregar Productos
 
 Grilla Percepcion/Impuestos
     [Documentation]                                       Completa la grilla Percepcion/Impuestos
+    log to console                      Grilla Percepcion/Impuestos
     sleep     1s
     click                                                 xpath=//input[@value='Percepciones e Impuestos']
     comprobantes_venta.Agregar Percepcion                 1   Ingresos Brutos Buenos Aires (Percepción)   250
@@ -34,30 +36,33 @@ Grilla Percepcion/Impuestos
 
 Grilla Instrumento de cobro
     [Documentation]                                       Completa la grilla Instrumentos de cobro
+    log to console                      Grilla Instrumento de cobro
     sleep       1s
     comprobantes_venta.Agregar Instrumento De Cobro       1       Caja        Caja       Pesos Argentinos        1.000000          25,724.54
     click    xpath=//td[@id='TransaccionTesoreriaIngresoItems_internal_delete_column_2']/div/div
 
 Validaciones
     [Documentation]                                     Realiza la validaciones de los campos
-     comprobantes_venta.Letra Numero Comprobante         A
-     comprobantes_venta.Validacion Comprobante         Recibo
-     comprobantes_venta.Condicion De Pago              Contado
-     comprobantes_venta.Validacion Columna Importe     1   3,002.00
-     comprobantes_venta.Validacion Columna Importe     2   16,650.00
-     comprobantes_venta.Validacion Columna Importe     3   900.00
-     comprobantes_venta.Validacion Columna Iva         1   810.54
-     comprobantes_venta.Validacion Columna Iva         2   3,496.50
-     comprobantes_venta.Validacion Columna Iva         3   0.00
-     comprobantes_venta.Validacion Columna Total       1   3,812.54
-     comprobantes_venta.Validacion Columna Total       2   20,146.50
-     comprobantes_venta.Validacion Columna Total       3   900.00
+    log to console                      Validaciones
+    comprobantes_venta.Letra Numero Comprobante         A
+    comprobantes_venta.Validacion Comprobante         Recibo
+    comprobantes_venta.Condicion De Pago              Contado
+    comprobantes_venta.Validacion Columna Importe     1   3,002.00
+    comprobantes_venta.Validacion Columna Importe     2   16,650.00
+    comprobantes_venta.Validacion Columna Importe     3   900.00
+    comprobantes_venta.Validacion Columna Iva         1   810.54
+    comprobantes_venta.Validacion Columna Iva         2   3,496.50
+    comprobantes_venta.Validacion Columna Iva         3   0.00
+    comprobantes_venta.Validacion Columna Total       1   3,812.54
+    comprobantes_venta.Validacion Columna Total       2   20,146.50
+    comprobantes_venta.Validacion Columna Total       3   900.00
 
      #Verificacion de los totales
-     comprobantes_venta.Total Bruto                      20552.0000
-     comprobantes_venta.Total Impuestos                  5172.5400
-     comprobantes_venta.Total                            25724.5400
-     comprobantes_venta.Total Cobranza                   25724.5400
+    comprobantes_venta.Total Bruto                      20552.0000
+    comprobantes_venta.Total Impuestos                  5172.5400
+    comprobantes_venta.Total                            25724.5400
+    comprobantes_venta.Total Cobranza                   25724.5400
 
 Guardar
-      comprobantes_venta.Guardar
+    log to console              guardar
+    comprobantes_venta.Guardar

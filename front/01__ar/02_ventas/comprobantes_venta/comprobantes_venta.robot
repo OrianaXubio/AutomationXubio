@@ -1,11 +1,37 @@
 *** Keywords ***
-Ir a Nueva Venta
-    [Documentation]     ingresa a la seccion Nueva Venta
+Ir a Comprobantes de Venta
+    [Documentation]     ingresa a la seccion Comprobantes de venta
     click           link=Ventas
     sleep   1s
     click           link=Comprobantes de Venta
+
+Ir a Nueva Venta
+    [Documentation]     ingresa a la seccion Nueva Venta
+    Ir A Comprobantes De Venta
     click           link=Nueva Venta
     verifyText      xpath=//div[@id='seccionTitulo']/div    Nuevo - Comprobante de Venta
+
+Filtro Fecha_Hasta
+    [Documentation]         Selecciona "Filtros" y coloca la fecha actual en el campo "Hasta" del calendario
+    ${CurrentDate}=  Get Current Date  result_format=%Y-%m-%d %H:%M:%S.%f
+    ${datetime} =	Convert Date  ${CurrentDate}  datetime
+    click           xpath=//div[@class='filter-caption']
+    click           xpath=(//input[@name='day'])[2]
+    sendKeys        xpath=(//input[@name='day'])[2]           DELETE
+    input text      xpath=(//input[@name='day'])[2]           ${datetime.day}
+    click           xpath=(//input[@name='month'])[2]
+    sendKeys        xpath=(//input[@name='month'])[2]         DELETE
+    input text      xpath=(//input[@name='month'])[2]         ${datetime.month}
+    click           xpath=(//input[@name='year'])[2]
+    sendKeys        xpath=(//input[@name='year'])[2]          DELETE
+    input text      xpath=(//input[@name='year'])[2]          ${datetime.year}
+    click           link=Aceptar
+
+Mas Opciones - Observaciones
+    [Documentation]         selecciona y complete el campo "observaciones" del desplegable "Mas Opciones"
+    [Arguments]             ${texto}
+    click                   xpath=//div[@name='wdg_Descripcion']//textarea
+    type                    xpath=//div[@name='wdg_Descripcion']//textarea          ${texto}
 
 Tipo Cliente
     [Documentation]     se completan los campos basicos del cliente para la creacion de una factura
@@ -96,9 +122,9 @@ Agregar Cheque
     type        xpath=//td[@id='TransaccionTesoreriaIngresoItems_M_NumeroCheque_${num_item}']/div/div/input     ${num_cheque}
     sendKeys    xpath=//td[@id='TransaccionTesoreriaIngresoItems_M_NumeroCheque_${num_item}']/div               TAB
     click       xpath=//td[@id='TransaccionTesoreriaIngresoItems_FechaVto_${num_item}']/div
-    type        xpath=(//input[@name='day'])[5]                                                                 ${dia}
-    type        xpath=(//input[@name='month'])[5]                                                               ${mes}
-    type        xpath=(//input[@name='year'])[5]                                                                ${anio}
+    type        xpath=//td[@id='TransaccionTesoreriaIngresoItems_FechaVto_${num_item}']//input[@name='day']     ${dia}
+    type        xpath=//td[@id='TransaccionTesoreriaIngresoItems_FechaVto_${num_item}']//input[@name='month']   ${mes}
+    type        xpath=//td[@id='TransaccionTesoreriaIngresoItems_FechaVto_${num_item}']//input[@name='year']    ${anio}
     click       xpath=//td[@id='TransaccionTesoreriaIngresoItems_M_Banco_${num_item}']/div
     type        xpath=//td[@id='TransaccionTesoreriaIngresoItems_M_Banco_${num_item}']/div/div/div/input        ${banco}
     click       xpath=//td/div/table/tbody/tr/td
@@ -233,7 +259,7 @@ Campo Comprobantes/Tkt
     type                                         xpath=//div[@name='wdg_CantComprobantesCancelados']//input      ${cant_cancelado}
 
 Agregar Instrumento De Cobro_2
-   [Documentation]                              Completa los campos de instrumento de cobro
+   [Documentation]                              Completa los campos de instrumento de cobro en el popup
    [Arguments]                                  ${num_item}     ${tipo_cuenta}  ${cuenta}   ${moneda}   ${cotizacion}   ${importe}
     click                                       xpath=//td[@id='TransaccionTesoreriaIngresoItems_M_CuentaTipo_${num_item}']/div
     type                                        xpath=//td[@id='TransaccionTesoreriaIngresoItems_M_CuentaTipo_${num_item}']/div                         ${tipo_cuenta}
@@ -292,17 +318,36 @@ Completar Campos en Cobrar
 Completar Campos en Grilla Cobro
     [Documentation]                 Completa los campos de instrumento de cobro en el popup "Cobro"
     [Arguments]                     ${num_item}     ${tipo_cuenta}  ${cuenta}
-    click                           xpath=(//td[@id='TransaccionTesoreriaIngresoItems_M_CuentaTipo_${num_item}']/div)[2]
-    type                            xpath=(//td[@id='TransaccionTesoreriaIngresoItems_M_CuentaTipo_${num_item}']/div)[2]          ${tipo_cuenta}
+    click                           xpath=//div[@id="df_popup"]//td[@id='TransaccionTesoreriaIngresoItems_M_CuentaTipo_${num_item}']/div
+    type                            xpath=//div[@id="df_popup"]//td[@id='TransaccionTesoreriaIngresoItems_M_CuentaTipo_${num_item}']/div          ${tipo_cuenta}
     click                           xpath=//td/div/table/tbody/tr/td
-    click                           xpath=(//td[@id='TransaccionTesoreriaIngresoItems_CuentaID_${num_item}']/div)[2]
-    type                            xpath=(//td[@id='TransaccionTesoreriaIngresoItems_CuentaID_${num_item}']/div)[2]               ${cuenta}
+    click                           xpath=//div[@id="df_popup"]//td[@id='TransaccionTesoreriaIngresoItems_CuentaID_${num_item}']/div
+    type                            xpath=//div[@id="df_popup"]//td[@id='TransaccionTesoreriaIngresoItems_CuentaID_${num_item}']/div               ${cuenta}
     click                           xpath=//td/div/table/tbody/tr/td
     sleep                           1s
-    click                           xpath=(//a[@id="_onSave"])[2]
+    click                           xpath=//div[@id="df_popup"]//a[@id="_onSave"]
 
+Buscador
+    [Documentation]                 buscador de comprobantes de ventas/compras etc
+    [Arguments]                     ${buscar}
+    sendKeys                        xpath=//div[@botonid="Buscar"]//input           ${buscar}
+    sleep   2s
+    Page Should Contain Element     xpath=//div[@class="webix_cell"][1]
 
-# ======== Seccion validaciones ==================
+Cobrar Comprobante De Venta
+    [Documentation]                 click en boton Acciones y luego en el boton Cobrar
+    click                           link=Acciones
+    verifyText                      link=Cobrar                                 Cobrar
+    click                           link=Cobrar
+    assertText                      xpath=//h1[@id='fafPopUpTitle']/span        Importes a Aplicar por Factura
+
+# ======== Seccion validaciones ===============================================
+
+Total Retenciones
+    [Documentation]     validacion de Total Retenciones en el popup
+    [Arguments]     ${valor}
+    Page Should Contain Element     xpath=//div[@name='wdg_TotalRetencionMonPrincipal']//input[@value='${valor}']
+
 Total Cuenta Corriente
     [Documentation]     validacion de Total Cuenta Corriente en el popup Cobranza
     [Arguments]     ${valor}
@@ -411,7 +456,7 @@ Validacion del Importe
 Validacion Cliente (Pop-up)
     [Documentation]                                     Valida el cliente en la ventana del Pop-up
     [Arguments]                                         ${cliente}
-    Page Should Contain Element                         xpath=//div[@name='wdg_Organizacion']//input[@class='readOnly']         ${cliente}
+    Page Should Contain Element                         xpath=//div[@id="df_popup"]//div[@name='wdg_Organizacion']//input[@value='${cliente}']
 
 Validacion de Letra (Pop-up)
     [Documentation]                                     Valida letra del campo Numero
@@ -451,11 +496,17 @@ Validacion Importe IVA (Pop-up)
 
 Validacion Campos Aplicaciones
     [Documentation]                                       Valida que se encuentre los campos de la ventana Aplicaciones
-    [Arguments]     ${valor1}
-    Page Should Contain Element                           xpath=(//div[@class='header'][contains(text(),'Aplicado')])[1]               ${valor1}
-    Page Should Contain Element                           xpath=(//div[@class='header'][contains(text(),'Pendiente')])[1]               ${valor1}
-    Page Should Contain Element                           xpath=(//div[@class='header'][contains(text(),'Documento Destino')])[1]       ${valor1}
-    Page Should Contain Element                           xpath=(//div[@class='header'][contains(text(),'Fecha Aplic.')])[1]            ${valor1}
+    [Arguments]             ${aplicado}      ${pendiente}          ${doc_destino}       ${moneda}         ${cotizacion}
+    # Validacion Aplicado
+    assertText           xpath=(//div[@class="webix_ss_center_scroll"])[5]//div[@column="1"]//div   ${aplicado}
+    # Validacion Pendiente
+    assertText           xpath=(//div[@class="webix_ss_center_scroll"])[5]//div[@column="2"]//div    ${pendiente}
+    # Validacion Documento Destino
+    assertText           xpath=(//div[@class="webix_ss_center_scroll"])[5]//div[@column="3"]//div    ${doc_destino}
+    # Validacion Moneda
+    assertText           xpath=(//div[@class="webix_ss_center_scroll"])[5]//div[@column="5"]//div    ${moneda}
+    # Validacion Cotizacion
+    assertText           xpath=(//div[@class="webix_ss_center_scroll"])[5]//div[@column="6"]//div    ${cotizacion}
 
 Validacion primer Tique B/C
     [Documentation]                                       Verifica el valor del tique B/C ingresado
@@ -534,7 +585,7 @@ Validacion de casilla Es Anulacion
     Checkbox Should Be Selected         xpath=//div[@name='wdg_anulacion']//input
 
 Validacion de todos los campos en la grilla cobro
-    [Documentation]                                                      Valida que esten los campos en la grilla de cobro
+    [Documentation]                     Valida que esten los campos en la grilla de cobro
     assertText    xpath=//table[@id='WidgetLinenull']/tbody/tr/th[2]    Cliente
     assertText    xpath=//table[@id='WidgetLinenull']/tbody/tr/th[3]    Documento
     assertText    xpath=//table[@id='WidgetLinenull']/tbody/tr/th[4]    Moneda
@@ -562,3 +613,11 @@ Validacion Importe Cobranza
     [Documentation]                                           Valida que el Importe de Cobranza del Pop-up sea el correcto
     [Arguments]                                               ${item}     ${valor}
     assertText                                               xpath=(//td[@id='TransaccionTesoreriaIngresoItems_ImporteMonTransaccion_${item}'])[2]/div    ${valor}
+
+Validacion Campos Cobro Pop-up
+    [Arguments]                     ${item}     ${cliente}      ${documento}        ${moneda}       ${cotizacion}       ${importe}
+    Page Should Contain Element         xpath=//input[@id='CLIENTE_${item}'][contains(@value,'${cliente}')]
+    Page Should Contain Element         xpath=//input[@id='DOCUMENTO_${item}'][contains(@value,'${documento}')]
+    Page Should Contain Element         xpath=//input[@id='MONEDA_${item}'][contains(@value,'${moneda}')]
+    Page Should Contain Element         xpath=//input[@id='COTIZACION_${item}'][contains(@value,'${cotizacion}')]
+    Page Should Contain Element         xpath=//input[@id='IMPORTE_${item}'][contains(@value,'${importe}')]

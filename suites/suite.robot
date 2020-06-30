@@ -27,8 +27,10 @@ Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_021.robot
 Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_022.robot
 Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_023.robot
 Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_024.robot
-
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_025.robot
 Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_026.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_027.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_028.robot
 Suite Setup         setup.Ingresar Al Sitio Login
 Suite Teardown      Close All Browsers
 Test Setup          Go To   https://xubiotesting2.ddns.net/NXV/vision-general
@@ -264,6 +266,23 @@ TC_024
     KW_024.Validaciones
     KW_024.Cambiar Categoria de Empresa
 
+TC_025
+    [Documentation]        Cobrar desde la grilla de comprobantes de venta masivamente y de distintos clientes
+    KW_025.Selecciona Fecha_Hasta
+    KW_025.Realiza Nueva Venta_1
+    KW_025.Agregar Productos_1
+    KW_025.Guardar_1
+    KW_025.Realizar Nueva Venta_2
+    KW_025.Agregar Productos_2
+    KW_025.Guardar_2
+    KW_025.Realizar Nueva Venta_3
+    KW_025.Agregar Productos_3
+    KW_025.Guardar_3
+    KW_025.Ralizar busqueda
+    KW_025.Seleccionar Facturas
+    KW_025.Cobrar Factura
+    KW_025.Validaciones
+    KW_025.Detalle del proceso Pop-up
 
 TC_026
     [Documentation]         Cobrar un comprobante de venta en pesos desde el comprobante de forma parcial
@@ -272,3 +291,21 @@ TC_026
     KW_026.Guardar Factura
     KW_026.Ir a Seccion Cobrar
     KW_026.Ir a Aplicaciones
+
+TC_027
+    [Documentation]             Cobrar un comprobante de venta en dolares desde el comprobante
+    ...                         de forma parcial con la misma cotización
+    KW_027.Realizar una Venta
+    KW_027.Agregar Productos
+    KW_027.Guardar
+    KW_027.Cobrar Factura
+    KW_027.Ir a Aplicaciones
+
+TC_028
+    [Documentation]         Cobrar un comprobante de venta en pesos desde el comprobante de forma total
+    KW_028.Cobrar un comprobante de venta
+    KW_028.Agregar Productos
+    KW_028.Guardar Factura
+    KW_028.Cobrar Desde Comprobante De Forma Total
+    KW_028.Guardar Factura II
+    KW_028.Validaciones en Aplicaciones

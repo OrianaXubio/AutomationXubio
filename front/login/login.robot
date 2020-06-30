@@ -32,8 +32,10 @@ Completar Formulario de Login
 Login
     [Documentation]         Ingresar al sistema con credenciales validas
     [Tags]      login
+    log to console          ingresando al sistema
     index.Elegir Pais                         ${pais}
     index_ar.Loguearse Ar
     Completar Formulario de Login
+    log to console          login
     vision_general.Validar Ingreso Al Sitio
     recursos.Verificar Tipo De Empresa      Responsable Inscripto

@@ -14,7 +14,6 @@ Factura A
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente              Responsable Inscripto   default     Factura     Cuenta Corriente
 
-
 Agregar Productos
     [Documentation]                                Se Completa la grilla Productos
     log to console                              Agregar Productos
@@ -43,7 +42,6 @@ Guardar Factura
     log to console                                  Guardar Factura
     comprobantes_venta.Guardar
 
-
 Nota de Credito
     [Documentation]                                Crea una nota de credito y  modifica el importe a aplicar
     log to console                                  Nota de Credito
@@ -53,9 +51,12 @@ Nota de Credito
     comprobantes_venta.Modificar importe en NC           200
 
 Agregar Producto en Popup
-    [Documentation]                                Agrega elemento a la grilla de producto del Pop-up
-    ...                                            y realiza las validaciones de los datos
+    [Documentation]                                 Agrega elemento a la grilla de producto del Pop-up
+    ...                                             y realiza las validaciones de los datos
     log to console                                  Agregar Producto en Popup
+    # Se guarda el numero de comprobante en una variable
+    ${num_comprobante}       Get Value              xpath=(//div[@name='wdg_NumeroDocumento']//input)[2]
+    Set Global Variable                             ${num_comprobante}
     comprobantes_venta.Agregar Item RI (ventana)                    1   Cinta Papel     1     200         0
     comprobantes_venta.Validacion Cliente (Pop-up)                  Responsable Inscripto
     comprobantes_venta.Validacion de Letra (Pop-up)                 A
@@ -80,10 +81,8 @@ Aplicaciones
 Campos de Aplicaciones
     [Documentation]                                                 Valida los campos del Pop-up aplicaciones
     log to console                      Campos de Aplicaciones
-    comprobantes_venta.Validacion Campos Aplicaciones               Aplicado
-    comprobantes_venta.Validacion Campos Aplicaciones               Pendiente
-    comprobantes_venta.Validacion Campos Aplicaciones               Documento Destino
-    comprobantes_venta.Validacion Campos Aplicaciones               Fecha Aplic.
+    comprobantes_venta.Validacion Campos Aplicaciones          200.00        23,691.76      ${num_comprobante}       Pesos Argentinos        1.00
+    Page Should Contain Element                                xpath=(//div[@class='header'][contains(text(),'Fecha Aplic.')])[1]
 
 Salir de la Aplicaciones
     [Documentation]                                                 sale del Pop-up Aplicaciones

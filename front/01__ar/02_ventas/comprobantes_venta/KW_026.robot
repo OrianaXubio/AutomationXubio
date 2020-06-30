@@ -12,7 +12,6 @@ Resource            ../../../funciones_generales/recursos.robot
 Cobrar un comprobante de venta
     [Documentation]                         Cobrar un comprobante de venta en pesos desde el comprobante de forma parcial
     log to console              Cobrar un comprobante de venta
-    #vision_general.Validar Ingreso Al Sitio
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente         Responsable Inscripto   default   Factura    Cuenta Corriente
 

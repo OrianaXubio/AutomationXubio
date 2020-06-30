@@ -325,7 +325,7 @@ Completar Campos en Grilla Cobro
     type                            xpath=//div[@id="df_popup"]//td[@id='TransaccionTesoreriaIngresoItems_CuentaID_${num_item}']/div               ${cuenta}
     click                           xpath=//td/div/table/tbody/tr/td
     sleep                           1s
-    click                           xpath=//div[@id="df_popup"]//a[@id="_onSave"]
+    # click                           xpath=//div[@id="df_popup"]//a[@id="_onSave"]
 
 Buscador
     [Documentation]                 buscador de comprobantes de ventas/compras etc

@@ -58,7 +58,7 @@ Cobrar Factura
     comprobantes_venta.Total Inst De Cobro                          72000.00
     comprobantes_venta.Total Cuenta Corriente                       72000.00
     comprobantes_venta.Completar Campos en Grilla Cobro             1           Banco            Banco Galicia
-    # click                                                           xpath=//a[@id='_onSave']
+    click                                                           xpath=//div[@id="df_popup"]//a[@id="_onSave"]
 
 Ir a Aplicaciones
     [Documentation]                                                ingresa a "Aplicaciones" y luego oprime "Salir"

@@ -12,6 +12,8 @@ Resource            ../../../funciones_generales/recursos.robot
 Cobrar un comprobante de venta
     [Documentation]                         Cobrar un comprobante de venta en pesos desde el comprobante de forma total
     log to console              Cobrar un comprobante de venta
+    comprobantes_venta.Ir a Comprobantes de Venta
+    comprobantes_venta.Filtro Fecha_Hasta
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente         Monotributista   default   Nota de Débito    Cuenta Corriente
 

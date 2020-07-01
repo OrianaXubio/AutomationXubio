@@ -31,6 +31,8 @@ Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_025.robot
 Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_026.robot
 Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_027.robot
 Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_028.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_029.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_030.robot
 Suite Setup         setup.Ingresar Al Sitio Login
 Suite Teardown      Close All Browsers
 Test Setup          Go To   https://xubiotesting2.ddns.net/NXV/vision-general
@@ -309,3 +311,26 @@ TC_028
     KW_028.Cobrar Desde Comprobante De Forma Total
     KW_028.Guardar Factura II
     KW_028.Validaciones en Aplicaciones
+
+TC_029
+    [Documentation]         Cobrar un comprobante de venta en dolares desde el comprobante
+    ...                     de forma total con la misma cotización
+    KW_029.Filtra Hasta Fecha Actual
+    KW_029.Realiza una Nueva Venta
+    KW_029.Agregar Productos
+    KW_029.Guardar Factura
+    KW_029.Comprobantes de Venta
+    KW_029.Selecionar Factura
+    KW_029.Cobrar Factura
+    KW_029.Grilla Cobranza
+    KW_029.Ir a Aplicaciones
+
+TC_030
+    [Documentation]         Cobrar un comprobante de venta en dolares desde el comprobante de forma parcial con
+    ...                     diferente cotización (menor) y verificar la diferencia de cambio
+    KW_030.Cobrar Comprobante de Venta en Dolares
+    KW_030.Grilla Productos
+    KW_030.Guardar Factura
+    KW_030.Cobrar en Dolares
+    KW_030.Guardar Factura II
+    KW_030.Validaciones en Aplicaciones

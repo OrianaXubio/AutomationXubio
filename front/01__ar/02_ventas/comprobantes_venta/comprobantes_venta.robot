@@ -199,7 +199,6 @@ Guardar
     [Documentation]         click en el boton Guardar de la factura, luego hay un sleep para esperar que se guarde la factura
     sleep   2s
     click                                       id=_onSave
-    #sleep   1s
     Wait Until Element Is Visible              xpath=//a[@id='_onPrint']
 
 Crear Nota de Credito
@@ -231,7 +230,7 @@ Agregar Item RI (ventana)
 
 click en mas opciones (Pop-up)
     [Documentation]                             Selecciona mas opciones (Pop-up)
-    click                                       xpath=(//div//input[@value='Más Opciones'])[2]
+    click                                       xpath=//div[@id="df_popup"]//div//input[@value='Más Opciones']
 
 Guardar (ventana)
     [Documentation]                             Guarda el Pop-up
@@ -341,6 +340,13 @@ Cobrar Comprobante De Venta
     click                           link=Cobrar
     assertText                      xpath=//h1[@id='fafPopUpTitle']/span        Importes a Aplicar por Factura
 
+Cambiar Cotizacion Dolar
+    [Documentation]         cambia la cotizacion del dolar desde el popup
+    [Arguments]             ${valor}
+    Unselect Checkbox               xpath=//input[@id="USACOTIZACIONORIGEN_0"]
+    Wait Until Element Is Visible   xpath=//input[@id="COTIZACIONMONTRANSACCION_0"]
+    type                            xpath=//input[@id="COTIZACIONMONTRANSACCION_0"]     ${valor}
+
 # ======== Seccion validaciones ===============================================
 
 Total Retenciones
@@ -355,7 +361,7 @@ Total Cuenta Corriente
 
 Total Inst De Cobro
     [Documentation]     validacion de Total Inst. de Cobro en el popup Cobranza
-    [Arguments]     ${valor}
+    [Arguments]         ${valor}
     Page Should Contain Element     xpath=//div[@class='widgetContainer']//div[text() = 'Total Inst. de Cobro']//following-sibling::div//input[@value='${valor}']
 
 Total Bruto
@@ -459,9 +465,9 @@ Validacion Cliente (Pop-up)
     Page Should Contain Element                         xpath=//div[@id="df_popup"]//div[@name='wdg_Organizacion']//input[@value='${cliente}']
 
 Validacion de Letra (Pop-up)
-    [Documentation]                                     Valida letra del campo Numero
+    [Documentation]                             Valida letra del campo Numero
     [Arguments]     ${letra}
-    Page Should Contain Element                        xpath=(//div[@name='wdg_NumeroDocumento'])[2]//input[contains(@value, '${letra}')]
+    Page Should Contain Element                 xpath=//div[@id="df_popup"]//div[@name='wdg_NumeroDocumento']//input[contains(@value, '${letra}')]
 
 Validacion Condicion de Pago_(Pop-up)
     [Documentation]                                     Valida el dato del campo Condicion de Pago del Pop-up
@@ -498,55 +504,55 @@ Validacion Campos Aplicaciones
     [Documentation]                                       Valida que se encuentre los campos de la ventana Aplicaciones
     [Arguments]             ${aplicado}      ${pendiente}          ${doc_destino}       ${moneda}         ${cotizacion}
     # Validacion Aplicado
-    assertText           xpath=(//div[@class="webix_ss_center_scroll"])[5]//div[@column="1"]//div   ${aplicado}
+    assertText           xpath=(//div[@class="webix_ss_center_scroll"])[5]//div[@column="1"]//div       ${aplicado}
     # Validacion Pendiente
-    assertText           xpath=(//div[@class="webix_ss_center_scroll"])[5]//div[@column="2"]//div    ${pendiente}
+    assertText           xpath=(//div[@class="webix_ss_center_scroll"])[5]//div[@column="2"]//div       ${pendiente}
     # Validacion Documento Destino
-    assertText           xpath=(//div[@class="webix_ss_center_scroll"])[5]//div[@column="3"]//div    ${doc_destino}
+    assertText           xpath=(//div[@class="webix_ss_center_scroll"])[5]//div[@column="3"]//div       ${doc_destino}
     # Validacion Moneda
-    assertText           xpath=(//div[@class="webix_ss_center_scroll"])[5]//div[@column="5"]//div    ${moneda}
+    assertText           xpath=(//div[@class="webix_ss_center_scroll"])[5]//div[@column="5"]//div       ${moneda}
     # Validacion Cotizacion
-    assertText           xpath=(//div[@class="webix_ss_center_scroll"])[5]//div[@column="6"]//div    ${cotizacion}
+    assertText           xpath=(//div[@class="webix_ss_center_scroll"])[5]//div[@column="6"]//div       ${cotizacion}
 
 Validacion primer Tique B/C
-    [Documentation]                                       Verifica el valor del tique B/C ingresado
-    [Arguments]                                           ${valor}
-    Page Should Contain Element                            xpath=//div[@name='wdg_PrimerTktBC']//input                    ${valor}
+    [Documentation]                         Verifica el valor del tique B/C ingresado
+    [Arguments]                             ${valor}
+    Page Should Contain Element             xpath=//div[@name='wdg_PrimerTktBC']//input                    ${valor}
 
 Validacion Ultimo tique B/C
-    [Documentation]                                       Verifica el valor del ultimo tique B/C ingresado
-    [Arguments]                                           ${valor}
-    Page Should Contain Element                           xpath=//div[@name='wdg_UltimoTktBC']//input                    ${valor}
+    [Documentation]                         Verifica el valor del ultimo tique B/C ingresado
+    [Arguments]                             ${valor}
+    Page Should Contain Element             xpath=//div[@name='wdg_UltimoTktBC']//input                    ${valor}
 
 Validacion de comprobantes cancelados
-    [Documentation]                                       Verifica la cantidad de los comprobantes cancelados
-    [Arguments]                                          ${valor}
-    Page Should Contain Element                          xpath=//div[@name='wdg_CantComprobantesCancelados']//input     ${valor}
+    [Documentation]                         Verifica la cantidad de los comprobantes cancelados
+    [Arguments]                             ${valor}
+    Page Should Contain Element             xpath=//div[@name='wdg_CantComprobantesCancelados']//input     ${valor}
 
 Validacion Cant. de comprobantes emitidos
-    [Documentation]                                       Verifica la cantidad de los comprobantes emitidos
-    [Arguments]                                           ${valor}
-    Page Should Contain Element                           xpath=//div[@name='wdg_CantComprobantesEmitidos']//input       ${valor}
+    [Documentation]                         Verifica la cantidad de los comprobantes emitidos
+    [Arguments]                             ${valor}
+    Page Should Contain Element             xpath=//div[@name='wdg_CantComprobantesEmitidos']//input       ${valor}
 
 Validacion Columna Importe Con IVA
-    [Documentation]                                       Verifica el valor de la columna importe
-    [Arguments]                                           ${item}     ${valor}
-    Page Should Contain Element                           xpath=//td[@id='TransaccionCVItems_ImporteConIvaIncluido_${item}']/div     ${valor}
+    [Documentation]                         Verifica el valor de la columna importe
+    [Arguments]                             ${item}     ${valor}
+    Page Should Contain Element             xpath=//td[@id='TransaccionCVItems_ImporteConIvaIncluido_${item}']/div     ${valor}
 
 Validacion Importe de percepcion e Impuesto
-    [Documentation]                                       Verifica el Importe de percepción e Impuesto
-    [Arguments]                                          ${item}     ${valor}
-     assertText                                          xpath=//td[@id='TransaccionTesoreriaIngresoItems_ImporteMonTransaccion_${item}']/div    ${valor}
+    [Documentation]                         Verifica el Importe de percepción e Impuesto
+    [Arguments]                             ${item}     ${valor}
+    assertText                              xpath=//td[@id='TransaccionTesoreriaIngresoItems_ImporteMonTransaccion_${item}']/div    ${valor}
 
 Validacion Columna Importe
-    [Documentation]                                      Verifica el valor de la columna Importe
-    [Arguments]                                          ${item}     ${valor}
-     assertText                                          xpath=//td[@id='TransaccionCVItems_Importe_${item}']/div       ${valor}
+    [Documentation]                         Verifica el valor de la columna Importe
+    [Arguments]                             ${item}     ${valor}
+     assertText                             xpath=//td[@id='TransaccionCVItems_Importe_${item}']/div       ${valor}
 
 Validacion Columna Iva
-    [Documentation]                                      Verifica el valor de la columna Iva
-    [Arguments]                                          ${item}     ${valor}
-    assertText                                          xpath=//td[@id='TransaccionCVItems_ImporteImpuesto_${item}']/div    ${valor}
+    [Documentation]                         Verifica el valor de la columna Iva
+    [Arguments]                             ${item}     ${valor}
+    assertText                              xpath=//td[@id='TransaccionCVItems_ImporteImpuesto_${item}']/div    ${valor}
 
 Validacion Columna Total
      [Documentation]                    Verifica el valor de la columna Total
@@ -596,7 +602,7 @@ validacion Cliente Formulario Cobranza
     [Documentation]                                         Valida que el Cliente que figura en la factura
     ...                                                     sea el mismo que en el formulario cobranza (Pop-up 2)
     [Arguments]                                             ${cliente}
-    Page Should Contain Element                             xpath=(//div[@name='wdg_Organizacion'])[2]//input[contains(@value,'${cliente}')]
+    Page Should Contain Element                             xpath=//div[@id="df_popup"]//div[@name='wdg_Organizacion']//input[@value='${cliente}']
 
 Validacion Moneda (Pop-up)
     [Documentation]                                          valida que el Pop-up en el campo "Moneda" coincida con el ingresado en la factura
@@ -610,9 +616,9 @@ validacion Mensaje Cotizacion
     Page Should Contain Element                             xpath=//div[contains(text(),'${mensaje}')]
 
 Validacion Importe Cobranza
-    [Documentation]                                           Valida que el Importe de Cobranza del Pop-up sea el correcto
-    [Arguments]                                               ${item}     ${valor}
-    assertText                                               xpath=(//td[@id='TransaccionTesoreriaIngresoItems_ImporteMonTransaccion_${item}'])[2]/div    ${valor}
+    [Documentation]                 Valida que el Importe de Cobranza del Pop-up sea el correcto
+    [Arguments]                     ${item}     ${valor}
+    assertText                      xpath=//div[@id="df_popup"]//td[@id='TransaccionTesoreriaIngresoItems_ImporteMonTransaccion_${item}']/div    ${valor}
 
 Validacion Campos Cobro Pop-up
     [Arguments]                     ${item}     ${cliente}      ${documento}        ${moneda}       ${cotizacion}       ${importe}

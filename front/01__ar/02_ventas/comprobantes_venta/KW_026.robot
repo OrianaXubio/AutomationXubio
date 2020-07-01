@@ -64,6 +64,8 @@ Ir a Seccion Cobrar
     comprobantes_venta.Completar Campos en Grilla Cobro         1       Banco        Banco Galicia
     comprobantes_venta.Total Inst De Cobro                      1575
     comprobantes_venta.Total Cuenta Corriente                   1575.00
+    click                                   xpath=//div[@id="df_popup"]//a[@id="_onSave"]
+    Wait Until Element Is Not Visible       xpath=//div[@id="df_popup"]
 
 Ir a Aplicaciones
     [Documentation]             va a la seccion Aplicaciones y valida los campos dados

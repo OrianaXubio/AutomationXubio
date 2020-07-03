@@ -35,7 +35,7 @@ Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_029.robot
 Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_030.robot
 Suite Setup         setup.Ingresar Al Sitio Login
 Suite Teardown      Close All Browsers
-Test Setup          Go To   https://xubiotesting2.ddns.net/NXV/vision-general
+Test Setup          Go To       ${URL}NXV/vision-general
 
 *** Test Cases ***
 TC_001

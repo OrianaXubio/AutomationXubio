@@ -33,14 +33,20 @@ Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_027.robot
 Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_028.robot
 Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_029.robot
 Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_030.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_031.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_032.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_033.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_035.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_037.robot
 Suite Setup         setup.Ingresar Al Sitio Login
 Suite Teardown      Close All Browsers
-Test Setup          Go To       ${URL}NXV/vision-general
+Test Setup          Go To   ${URL}NXV/vision-general
 
 *** Test Cases ***
 TC_001
     [Documentation]         Creacion de una factura A en cuenta corriente con productos de
     ...                     distintas tasas de IVA en pesos argentinos
+    [Tags]          suite
     KW_001.Factura A
     KW_001.Agregar Productos
     KW_001.Grilla Percepcion/Impuestos
@@ -49,6 +55,7 @@ TC_001
 
 TC_002
     [Documentation]         Creacion de una factura B al contado con diferentes tasas de IVA en pesos argentinos
+    [Tags]          suite
     KW_002.Factura B
     KW_002.Grilla Productos
     KW_002.Grilla Percepcion/Impuestos
@@ -297,6 +304,7 @@ TC_026
 TC_027
     [Documentation]             Cobrar un comprobante de venta en dolares desde el comprobante
     ...                         de forma parcial con la misma cotización
+    [Tags]          suite
     KW_027.Realizar una Venta
     KW_027.Agregar Productos
     KW_027.Guardar
@@ -305,6 +313,7 @@ TC_027
 
 TC_028
     [Documentation]         Cobrar un comprobante de venta en pesos desde el comprobante de forma total
+    [Tags]          suite
     KW_028.Cobrar un comprobante de venta
     KW_028.Agregar Productos
     KW_028.Guardar Factura
@@ -315,6 +324,7 @@ TC_028
 TC_029
     [Documentation]         Cobrar un comprobante de venta en dolares desde el comprobante
     ...                     de forma total con la misma cotización
+    [Tags]          suite
     KW_029.Filtra Hasta Fecha Actual
     KW_029.Realiza una Nueva Venta
     KW_029.Agregar Productos
@@ -328,9 +338,66 @@ TC_029
 TC_030
     [Documentation]         Cobrar un comprobante de venta en dolares desde el comprobante de forma parcial con
     ...                     diferente cotización (menor) y verificar la diferencia de cambio
+    [Tags]          suite
     KW_030.Cobrar Comprobante de Venta en Dolares
     KW_030.Grilla Productos
     KW_030.Guardar Factura
     KW_030.Cobrar en Dolares
     KW_030.Guardar Factura II
     KW_030.Validaciones en Aplicaciones
+
+TC_031
+    [Documentation]                             Cobrar un comprobante de venta en dolares desde el comprobante de forma total con diferente cotización (menor)
+    ...                                         y verificar la diferencia de cambio
+    [Tags]          suite
+    KW_031.Realiza una Nueva Venta
+    KW_031.Agregar Productos
+    KW_031.Guardar Factura
+    KW_031.Cobrar Factura
+    KW_031.Grilla Cobranza
+    KW_031.Ir a Aplicaciones
+
+TC_032
+    [Documentation]     Cobrar un comprobante de venta en dolares desde el comprobante de forma parcial con
+    ...                 diferente cotización (mayor) y verificar la diferencia de cambio
+    [Tags]          suite
+    KW_032.Cobrar Comprobante de Venta en Dolares
+    KW_032.Grilla Productos
+    KW_032.Guardar Factura
+    KW_032.Cobrar en Dolares
+    KW_032.Guardar Factura II
+    KW_032.Validaciones en Aplicaciones
+    KW_032.Comprobante Cobranza
+
+TC_033
+    [Documentation]             Cobrar un comprobante de venta en dolares desde el comprobante de forma total con diferente cotización (mayor)
+    ...                         y verificar la diferencia de cambio
+    [Tags]          suite
+    KW_033.Realiza una Nueva Venta
+    KW_033.Agregar Productos
+    KW_033.Guardar Factura
+    KW_033.Cobrar Factura
+    KW_033.Grilla Cobranza
+    KW_033.Ir a Aplicaciones
+    KW_033.Ir a Cobranza
+    KW_033.Ir Aplicaciones-Cobranza
+
+TC_035
+    [Documentation]             Adjuntar un archivo a un comprobante de venta
+    [Tags]          suite
+    KW_035.Realiza una Nueva Venta
+    KW_035.Agregar Productos
+    KW_035.Guardar Factura
+    KW_035.Adjuntar Archivo
+    KW_035.Validacion Adjuntar Archivo
+
+TC_037
+    [Documentation]           Eliminar un comprobante de venta sin aplicar
+    [Tags]          suite
+    KW_037.Realiza una Nueva Venta
+    KW_037.Agregar Productos
+    KW_037.Guardar Factura
+    KW_037.Cobrar Factura
+    KW_037.Grilla Cobranza
+    KW_037.Eliminar Factura
+    KW_037.Buscar Factura Eliminada

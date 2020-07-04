@@ -1,4 +1,10 @@
 *** Keywords ***
+Ir A Cobranzas
+    [Documentation]     ingresa a la seccion Cobranzas en el menu Ventas
+    click           link=Ventas
+    sleep   1s
+    click           link=Cobranzas
+
 Ir a Comprobantes de Venta
     [Documentation]     ingresa a la seccion Comprobantes de venta
     click           link=Ventas
@@ -347,6 +353,9 @@ Cambiar Cotizacion Dolar
     Wait Until Element Is Visible   xpath=//input[@id="COTIZACIONMONTRANSACCION_0"]
     type                            xpath=//input[@id="COTIZACIONMONTRANSACCION_0"]     ${valor}
 
+Ir a Lista de Precios
+    [Documentation]                                                Hace click en "Lista de precios" desde ventas
+    click                                                          link=Listas de Precios
 # ======== Seccion validaciones ===============================================
 
 Total Retenciones

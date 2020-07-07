@@ -15,7 +15,7 @@ Realiza una Nueva Venta
     comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente                     Monotributista   default   Nota de Débito   Cuenta Corriente
     #Guarda el nº de comprobante
-    ${num_comprobante}      Get value                   xpath=//div[@name='wdg_NumeroDocumento']//input
+    ${num_comprobante}      Get text                    xpath=//div[@id='seccionTitulo']/div
     Set Global Variable                                 ${num_comprobante}
 
 Agregar Productos

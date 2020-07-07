@@ -46,14 +46,13 @@ Eliminar Factura
     click                                                           xpath=//div//a[@id='_onDelete']
     #confirma la operacion
     Page Should Contain Element                                     xpath=//div[@class='FAFPopup']
-    sleep    3s
     click                                                           xpath=//div[@class='FAFPopup']//a[@id='showAskPopupYesButton']
+    sleep    2s
 
 Buscar Factura Eliminada
      [Documentation]                                                 Busca la factura eliminada en el buscador de "comprobantes de Venta"
      comprobantes_venta.Ir a Comprobantes de Venta
      sleep     2s
      sendKeys                                                       xpath=//div[@botonid="Buscar"]//input        ${num_comprobante}
-     sleep     2s
      #Verifica que no se encontro la factura
      assertText                                                     xpath=//div[@class='dock']                 No se encontraron registros.

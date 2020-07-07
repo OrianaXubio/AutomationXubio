@@ -1,4 +1,10 @@
 *** Keywords ***
+Ir A Remitos De Venta
+    [Documentation]     ingresa a la seccion Remitos en el menu Ventas
+    click           link=Ventas
+    sleep   1s
+    click           link=Remitos
+
 Ir A Cobranzas
     [Documentation]     ingresa a la seccion Cobranzas en el menu Ventas
     click           link=Ventas
@@ -246,10 +252,21 @@ Guardar (ventana)
 Seleccionar Aplicaciones
     [Documentation]                             Selecciona el boton aplicaciones
     click                                       xpath=//a[@id='FacturaVenta_openVinculacionCuentaCorriente']
+    Wait Until Element Is Visible               xpath=//div[@id="overDiv"]
 
 Salir de Aplicaciones
     [Documentation]                             Sale de la ventana de Aplicaciones
     click                                       xpath=//a[@id='APLICACIONSALIR_0']
+
+Seleccionar Remitir
+    [Documentation]                     Selecciona el boton Remitir en un comprobante
+    click                               xpath=//a[@id='generarRemito']
+    Wait Until Element Is Visible       xpath=//div[@id='df_popup']
+
+Seleccionar Cobrar
+    [Documentation]                     Seleccion el boton Cobrar en un comprobante
+    click                               xpath=//a[@id="cobrarFactura"]
+    Wait Until Element Is Visible       xpath=//div[@id='overDiv']
 
 Campo Comprobantes/Tkt
     [Documentation]                              Completa los campos de Comprobantes/Tkt
@@ -345,6 +362,16 @@ Cobrar Comprobante De Venta
     verifyText                      link=Cobrar                                 Cobrar
     click                           link=Cobrar
     assertText                      xpath=//h1[@id='fafPopUpTitle']/span        Importes a Aplicar por Factura
+
+Eliminar Comprobante De Venta
+    [Documentation]                 click en boton Acciones y luego en el boton Cobrar
+    click                           link=Acciones
+    verifyText                      link=Eliminar                               Eliminar
+    click                           link=Eliminar
+    Wait Until Element Is Visible   xpath=//div[@id="overDiv"]
+    Element Should Contain          xpath=//div[@id="overDiv"]//p       Algunos de los comprobantes seleccionados se encuentran aplicados o conciliados y en caso de eliminarse se desaplicarán/desconciliarán. ¿Está seguro que desea realizar la operación?
+    click                           xpath=//a[@id="showAskPopupYesButton"]
+    Wait Until Element Is Not Visible   xpath=//div[@id="overDiv"]
 
 Cambiar Cotizacion Dolar
     [Documentation]         cambia la cotizacion del dolar desde el popup

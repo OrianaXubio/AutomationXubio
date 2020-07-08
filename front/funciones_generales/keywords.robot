@@ -16,7 +16,7 @@ sendKeys
 
 type
     [Arguments]    ${element}    ${value}
-    Wait Until Page Contains Element        ${element}
+    Wait Until Element Is Visible        ${element}
     wait until keyword succeeds     10x      1s       Press Keys     ${element}    DELETE
     wait until keyword succeeds     10x      1s       Press Keys     ${element}    ${value}
 

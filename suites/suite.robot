@@ -36,8 +36,13 @@ Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_030.robot
 Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_031.robot
 Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_032.robot
 Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_033.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_034.robot
 Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_035.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_036.robot
 Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_037.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_038.robot
+# Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_039.robot
+
 Suite Setup         setup.Ingresar Al Sitio Login
 Suite Teardown      Close All Browsers
 Test Setup          Go To   ${URL}NXV/vision-general
@@ -382,6 +387,16 @@ TC_033
     KW_033.Ir a Cobranza
     KW_033.Ir Aplicaciones-Cobranza
 
+TC_034
+    [Documentation]     Remitir factura de venta
+    [Tags]          suite
+    KW_034.Setear Cliente
+    KW_034.Grilla Productos
+    KW_034.Guardar Factura
+    KW_034.Ir a Remitir
+    KW_034.Guardar Factura II
+    KW_034.Remito Ventas
+
 TC_035
     [Documentation]             Adjuntar un archivo a un comprobante de venta
     [Tags]          suite
@@ -390,6 +405,17 @@ TC_035
     KW_035.Guardar Factura
     KW_035.Adjuntar Archivo
     KW_035.Validacion Adjuntar Archivo
+
+TC_036
+    [Documentation]         Eliminar un comprobante de venta aplicado
+    [Tags]          suite
+    KW_036.Setear Cliente
+    KW_036.Grilla Productos
+    KW_036.Guardar Factura
+    KW_036.Ir a Menu Cobrar
+    KW_036.Guardar Factura II
+    KW_036.Eliminar el Comprobante Generado
+    KW_036.Verificar Cobranza
 
 TC_037
     [Documentation]           Eliminar un comprobante de venta sin aplicar
@@ -401,3 +427,22 @@ TC_037
     KW_037.Grilla Cobranza
     KW_037.Eliminar Factura
     KW_037.Buscar Factura Eliminada
+
+TC_038
+    [Documentation]         Desaplicar transacciones de venta
+    [Tags]          suite
+    KW_038.Filtra Hasta Fecha Actual
+    KW_038.Setear Cliente
+    KW_038.Grilla Productos
+    KW_038.Guardar Factura
+    KW_038.Cobrar Factura
+    KW_038.Guardar Aplicar Factura
+    KW_038.Ir a Aplicaciones y Desaplicar
+
+#TC_039
+#    [Documentation]         Setear una lista de precios default y que aparezca al hacer un comprobante de venta
+#    [Tags]          suite
+#    KW_039.Ir a Lista de Precios
+#    KW_039.Ir a Comprobantes de Venta
+#    KW_039.Agregar Producto
+#    KW_039.Ir a Lista de Precios_2

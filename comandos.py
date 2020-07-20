@@ -4,7 +4,7 @@ import subprocess
 args = [
         'robot',
         '-d', 'reporte',
-        '-i', 'suite',
+        '-i', 'tc_053',
         # 'tests/ventas/comprobantes_de_venta/TC_039.robot'
         'suites/'
         ]

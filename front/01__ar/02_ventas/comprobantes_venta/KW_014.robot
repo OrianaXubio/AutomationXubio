@@ -44,3 +44,10 @@ Validaciones
     comprobantes_venta.Total Bruto                      1564.4200
     comprobantes_venta.Total Impuestos                  387.5800
     comprobantes_venta.Total                            1952.0000
+
+TC_014
+    [Documentation]                 Creación de Nota de Débito B en cuenta corriente en dólares
+    KW_014.Nota de Debito B en Dolares
+    KW_014.Grilla Productos
+    KW_014.Guardar Factura
+    KW_014.Validaciones

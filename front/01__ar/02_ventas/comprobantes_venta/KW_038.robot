@@ -77,3 +77,13 @@ Ir a Aplicaciones y Desaplicar
     assertText      xpath=((//div[@id="overDiv"]//div[@class="fafwebreport"]//div[@column="3"])[1]/div)[1]       ${EMPTY}
     click                       xpath=//a[@id="APLICACIONSALIR_0"]
     Wait Until Element Is Not Visible       xpath=//div[@id="overDiv"]
+
+TC_038
+    [Documentation]         Desaplicar transacciones de venta
+    KW_038.Filtra Hasta Fecha Actual
+    KW_038.Setear Cliente
+    KW_038.Grilla Productos
+    KW_038.Guardar Factura
+    KW_038.Cobrar Factura
+    KW_038.Guardar Aplicar Factura
+    KW_038.Ir a Aplicaciones y Desaplicar

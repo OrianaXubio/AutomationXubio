@@ -6,7 +6,6 @@ Resource            ../../../funciones_generales/setup.robot
 Resource            ../../../01__ar/vision_general.robot
 Resource            ../../../funciones_generales/keywords.robot
 Resource            ../../../01__ar/02_ventas/comprobantes_venta/comprobantes_venta.robot
-#Resource            ../../../01__ar/02_ventas/comprobantes_venta/comprobantes_venta.robot
 Resource            ../../../funciones_generales/recursos.robot
 
 *** Keywords ***
@@ -68,3 +67,11 @@ Validaciones
     comprobantes_venta.Total Bruto                            19205.5000
     comprobantes_venta.Total Impuestos                        3820.7600
     comprobantes_venta.Total                                  23026.2600
+
+TC_019
+   [Documentation]           Crear Factura de Crédito Mipyme A con remito asociado en cuenta corriente
+    KW_019.Factura de Credito Mipyme A
+    KW_019.Agregar Productos
+    KW_019.Seleccionar Remitos Asociados
+    KW_019.Guardar
+    KW_019.Validaciones

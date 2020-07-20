@@ -44,3 +44,10 @@ Validaciones
     comprobantes_venta.Validacion Ultimo Tique B/C Vacio
     comprobantes_venta.Validacion Cant Comprobantes Emitidos Vacio
     comprobantes_venta.Validacion Cant Comprobantes Cancelados Vacio
+
+TC_018
+    [Documentation]     Creación de Informe Diario de Cierre Z con los items opcionales sin
+    ...                 completar en cuenta corriente en pesos
+    KW_018.Comprobante Recibo Z
+    KW_018.Agregar Productos
+    KW_018.Validaciones

@@ -88,3 +88,16 @@ Salir de la Aplicaciones
     [Documentation]                                                 sale del Pop-up Aplicaciones
     log to console                      Salir de la Aplicaciones
     comprobantes_venta.Salir de Aplicaciones
+
+TC_013
+    [Documentation]  Creación de una Nota de Credito A
+     ...             desde una factura parcial en cuenta corriente
+    KW_013.Factura A
+    KW_013.Agregar Productos
+    KW_013.Grilla Percepcion/Impuestos
+    KW_013.Guardar Factura
+    KW_013.Nota de Credito
+    KW_013.Agregar Producto en Popup
+    KW_013.Aplicaciones
+    KW_013.Campos de Aplicaciones
+    KW_013.Salir de la Aplicaciones

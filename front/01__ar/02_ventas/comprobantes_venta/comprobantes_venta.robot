@@ -1,4 +1,21 @@
 *** Keywords ***
+Obtener Valores De Tabla
+    [Documentation]     recibe un xpath y una lista donde almacenar los datos y devuelve un listado con el texto obtenido
+    [Arguments]         ${locator}      ${listado}
+    @{lista}=           Get WebElements         ${locator}
+    FOR  ${item}        IN              @{lista}
+        ${texto}=       Get Text        ${item}
+        Append To List  ${listado}     ${texto}
+    END
+    [Return]            ${listado}
+
+Numero de Factura
+    [Documentation]                 Recibe como parametro el comprobante y devuelve el numero
+    [Arguments]                     ${num_comprobante}
+    ${num}                          Get Substring                       ${num_comprobante}     10
+    ${num}=                         Convert To Number                   ${num}
+    [Return]                        ${num}
+
 Ir A Remitos De Venta
     [Documentation]     ingresa a la seccion Remitos en el menu Ventas
     click           link=Ventas
@@ -16,6 +33,7 @@ Ir a Comprobantes de Venta
     click           link=Ventas
     sleep   1s
     click           link=Comprobantes de Venta
+    Wait Until Element Is Visible       xpath=//a[@botonid='Nuevo']
 
 Ir a Nueva Venta
     [Documentation]     ingresa a la seccion Nueva Venta
@@ -38,6 +56,23 @@ Filtro Fecha_Hasta
     sendKeys        xpath=(//input[@name='year'])[2]          DELETE
     input text      xpath=(//input[@name='year'])[2]          ${datetime.year}
     click           link=Aceptar
+
+Filtrar Fecha
+    [Documentation]         Selecciona "Filtros" y coloca la fecha que se pasa por parametros
+    [Arguments]             ${dia}      ${mes}      ${anio}
+    click           xpath=//div[@class='filter-caption']
+    Wait Until Element Is Visible       xpath=//div[@id='FAFWebReportFilterPopupDiv-Container']
+    click           xpath=(//input[@name='day'])[2]
+    sendKeys        xpath=(//input[@name='day'])[2]           DELETE
+    input text      xpath=(//input[@name='day'])[2]           ${dia}
+    click           xpath=(//input[@name='month'])[2]
+    sendKeys        xpath=(//input[@name='month'])[2]         DELETE
+    input text      xpath=(//input[@name='month'])[2]         ${mes}
+    click           xpath=(//input[@name='year'])[2]
+    sendKeys        xpath=(//input[@name='year'])[2]          DELETE
+    input text      xpath=(//input[@name='year'])[2]          ${anio}
+    click           link=Aceptar
+    Wait Until Element Is Not Visible       xpath=//div[@id='FAFWebReportFilterPopupDiv-Container']
 
 Mas Opciones - Observaciones
     [Documentation]         selecciona y complete el campo "observaciones" del desplegable "Mas Opciones"
@@ -363,6 +398,15 @@ Cobrar Comprobante De Venta
     click                           link=Cobrar
     assertText                      xpath=//h1[@id='fafPopUpTitle']/span        Importes a Aplicar por Factura
 
+Ir A Importar Excel
+    [Documentation]                 ingresa a importar planilla de excel desde el boton Acciones
+    click                           link=Acciones
+    verifyText                      link=Importar                               Importar
+    click                           link=Importar
+    Wait Until Element Is Visible   xpath=//li[contains(text(),'Importar desde Excel')]
+    click                           xpath=//li[contains(text(),'Importar desde Excel')]
+    Wait Until Element Is Visible   xpath=//div[@id='overDiv']
+
 Eliminar Comprobante De Venta
     [Documentation]                 click en boton Acciones y luego en el boton Cobrar
     click                           link=Acciones
@@ -372,6 +416,15 @@ Eliminar Comprobante De Venta
     Element Should Contain          xpath=//div[@id="overDiv"]//p       Algunos de los comprobantes seleccionados se encuentran aplicados o conciliados y en caso de eliminarse se desaplicarán/desconciliarán. ¿Está seguro que desea realizar la operación?
     click                           xpath=//a[@id="showAskPopupYesButton"]
     Wait Until Element Is Not Visible   xpath=//div[@id="overDiv"]
+
+Eliminar Seleccion De Comprobantes
+    click                           link=Acciones
+    verifyText                      link=Eliminar                               Eliminar
+    click                           link=Eliminar
+    Wait Until Element Is Visible   xpath=//div[@id="overDiv"]
+    click                           xpath=//a[@id="showAskPopupYesButton"]
+    Wait Until Element Is Not Visible   xpath=//div[@id="overDiv"]
+
 
 Cambiar Cotizacion Dolar
     [Documentation]         cambia la cotizacion del dolar desde el popup
@@ -383,6 +436,15 @@ Cambiar Cotizacion Dolar
 Ir a Lista de Precios
     [Documentation]                                                Hace click en "Lista de precios" desde ventas
     click                                                          link=Listas de Precios
+
+Boton Acciones
+    [Documentation]                 Hace click en el boton "Acciones" desde Comprobantes de Venta
+    click                           link=Acciones
+
+Importar desde la AFIP
+    [Documentation]                 Hace click en el boton "Acciones" -Importa-Importar desde AFI
+    click                           xpath=//a[contains(text(),'Importar')]
+    click                           xpath=//div//li[contains(text(),'Importar desde AFIP')]
 # ======== Seccion validaciones ===============================================
 
 Total Retenciones

@@ -62,3 +62,13 @@ Verificar Cobranza
     assertText      xpath=((//div[@id="overDiv"]//div[@class="fafwebreport"]//div[@column="1"])[1]/div)[1]       ${EMPTY}
     Wait Until Element Is Visible       xpath=//div[@id="overDiv"]
     click                               xpath=//a[@id="APLICACIONSALIR_0"]
+
+TC_036
+    [Documentation]         Eliminar un comprobante de venta aplicado
+    KW_036.Setear Cliente
+    KW_036.Grilla Productos
+    KW_036.Guardar Factura
+    KW_036.Ir a Menu Cobrar
+    KW_036.Guardar Factura II
+    KW_036.Eliminar el Comprobante Generado
+    KW_036.Verificar Cobranza

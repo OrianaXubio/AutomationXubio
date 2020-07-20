@@ -49,3 +49,11 @@ Cambiar Categoria de Empresa
     [Documentation]                     cambia la empresa a responsable inscripto
     log to console          Cambiar Categoria de Empresa
     recursos.Elegir Categoria de Empresa                 Responsable Inscripto
+
+TC_022
+    [Documentation]         Crear Nota de Crédito Mipyme C en cuenta corriente sin tildar es de anulación
+    KW_022.Nota de Credito Mipyme C
+    KW_022.Agregar Productos
+    KW_022.Guardar Factura
+    KW_022.Validaciones
+    KW_022.Cambiar Categoria de Empresa

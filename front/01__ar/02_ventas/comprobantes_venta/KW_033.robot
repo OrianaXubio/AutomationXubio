@@ -113,3 +113,15 @@ Ir Aplicaciones-Cobranza
     assertText      xpath=((//div[@id="overDiv"]//div[@class="fafwebreport"]//div[@column="5"])[1]/div)[2]       Dólares
     assertText      xpath=((//div[@id="overDiv"]//div[@class="fafwebreport"]//div[@column="6"])[1]/div)[2]       140.00
     comprobantes_venta.Salir de Aplicaciones
+
+TC_033
+    [Documentation]             Cobrar un comprobante de venta en dolares desde el comprobante de forma total con diferente cotización (mayor)
+    ...                         y verificar la diferencia de cambio
+    KW_033.Realiza una Nueva Venta
+    KW_033.Agregar Productos
+    KW_033.Guardar Factura
+    KW_033.Cobrar Factura
+    KW_033.Grilla Cobranza
+    KW_033.Ir a Aplicaciones
+    KW_033.Ir a Cobranza
+    KW_033.Ir Aplicaciones-Cobranza

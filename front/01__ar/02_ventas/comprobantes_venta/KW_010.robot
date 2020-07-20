@@ -139,3 +139,13 @@ Ir a Aplicaciones
     assertText      xpath=//div[3]/div/div[2]/div/div/div[2]/table/tbody/tr[2]/td[5]/div/div    Fecha Aplic.
     #assertText      xpath=//div[3]/div/div[2]/div/div[2]/div[2]/div/div[5]/div                  08-06-2020
     click           id=APLICACIONSALIR_0
+
+TC_010
+    [Documentation]         Creación de una Nota de Crédito A desde una factura total en cuenta corriente
+    KW_010.Nota de Credito A
+    KW_010.Grilla Productos
+    KW_010.Grilla Percepcion/Impuestos
+    KW_010.Guardar Factura
+    KW_010.Validaciones
+    KW_010.Ir a Crear Nota de Credito
+    KW_010.Ir a Aplicaciones

@@ -13,7 +13,7 @@ def ruta_archivo(path):
 #         options = webdriver.ChromeOptions()
 #         options.add_argument("--start-maximized")
 #         prefs = {"profile.default_content_settings.popups": 0,
-#                  "download.default_directory": r"descargas\\",
+#                  "download.default_directory": r"queries\\",
 #                  "directory_upgrade": True}
 #         options.add_experimental_option("prefs", prefs)
 #         return webdriver.Chrome(executable_path=Base.chromedriver_dir, chrome_options=options)

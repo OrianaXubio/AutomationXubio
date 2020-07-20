@@ -1,11 +1,11 @@
 *** Settings ***
 Library             SeleniumLibrary
 
-Resource            ../../../funciones_generales/setup.robot
-Resource            ../../../funciones_generales/common.robot
-Resource            ../../../index.robot
-Resource            ../../../01__ar/index_ar.robot
-Resource            ../../../login/login.robot
+#Resource            ../../../funciones_generales/setup.robot
+#Resource            ../../../funciones_generales/common.robot
+#Resource            ../../../index.robot
+#Resource            ../../../01__ar/index_ar.robot
+#Resource            ../../../login/login.robot
 Resource            ../../../01__ar/vision_general.robot
 Resource            ../../../funciones_generales/keywords.robot
 Resource            ../../../01__ar/02_ventas/comprobantes_venta/comprobantes_venta.robot
@@ -49,3 +49,11 @@ Cambiar Categoria de Empresa
     [Documentation]                     cambia la empresa a responsable inscripto
     log to console                      Cambiar Categoria de Empresa
     recursos.Elegir Categoria de Empresa                 Responsable Inscripto
+
+TC_006
+    [Documentation]         Creacion de una factura C en Tarjeta de Crédito con productos exentos en pesos argentinos
+    KW_006.Factura C
+    KW_006.Agregar Productos
+    KW_006.Guardar Factura
+    KW_006.Validaciones
+    KW_006.Cambiar Categoria de Empresa

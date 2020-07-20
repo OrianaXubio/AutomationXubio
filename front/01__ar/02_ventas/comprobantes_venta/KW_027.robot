@@ -66,13 +66,11 @@ Ir a Aplicaciones
     comprobantes_venta.Validacion Campos Aplicaciones              1,000.00     250.00     ${doc_destino}      Dólares     72.00
     comprobantes_venta.Salir de Aplicaciones
 
-
-
-
-
-
-
-
-
-
-
+TC_027
+    [Documentation]             Cobrar un comprobante de venta en dolares desde el comprobante
+    ...                         de forma parcial con la misma cotización
+    KW_027.Realizar una Venta
+    KW_027.Agregar Productos
+    KW_027.Guardar
+    KW_027.Cobrar Factura
+    KW_027.Ir a Aplicaciones

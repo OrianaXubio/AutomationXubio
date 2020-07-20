@@ -56,3 +56,13 @@ Buscar Factura Eliminada
      sendKeys                                                       xpath=//div[@botonid="Buscar"]//input        ${num_comprobante}
      #Verifica que no se encontro la factura
      assertText                                                     xpath=//div[@class='dock']                 No se encontraron registros.
+
+TC_037
+    [Documentation]           Eliminar un comprobante de venta sin aplicar
+    KW_037.Realiza una Nueva Venta
+    KW_037.Agregar Productos
+    KW_037.Guardar Factura
+    KW_037.Cobrar Factura
+    KW_037.Grilla Cobranza
+    KW_037.Eliminar Factura
+    KW_037.Buscar Factura Eliminada

@@ -68,3 +68,12 @@ Validaciones
     comprobantes_venta.Total Impuestos                3870.2800
     comprobantes_venta.Total                          19941.0000
     comprobantes_venta.Total Cobranza                 19941.0000
+
+TC_002
+    [Documentation]         Creacion de una factura B al contado con diferentes tasas de IVA en pesos argentinos
+    KW_002.Factura B
+    KW_002.Grilla Productos
+    KW_002.Grilla Percepcion/Impuestos
+    KW_002.Instrumentos de Cobro
+    KW_002.Guardar Factura
+    KW_002.Validaciones

@@ -72,3 +72,12 @@ Validaciones
     #Validacion Campo Moneda
     Page Should Contain Element                 xpath=//div[@name="wdg_MonedaID"]//input[@value="Euros"]
     Page Should Contain Element                 xpath=//div[@name="wdg_Cotizacion"]//input[@value="72.000000"]
+
+TC_005
+    [Documentation]                         Creacion de una factura B en cuenta corriente con diferentes
+    ...                                     tasas de IVA en euros
+    KW_005.Factura B_CuentaCorriente
+    KW_005.Agregar Productos
+    KW_005.Grilla Percepcion/Impuestos
+    KW_005.Guardar Factura
+    KW_005.Validaciones

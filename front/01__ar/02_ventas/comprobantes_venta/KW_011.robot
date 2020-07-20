@@ -74,3 +74,12 @@ Validaciones
     click                                       id=fafPopUpTitle
     assertText                                  xpath=//h1[@id='fafPopUpTitle']//span             Pregunta
     click                                       id=showAskPopupNoButton
+
+TC_011
+    [Documentation]                 Creación de una Nota de Crédito A desde un nuevo comprobante
+    ...                             con Condición de Ticket y percepciones
+    KW_011.Nota de Credito
+    KW_011.Agregar Productos
+    KW_011.Grilla Percepcion/Impuestos
+    KW_011.Guardar Factura
+    KW_011.Validaciones

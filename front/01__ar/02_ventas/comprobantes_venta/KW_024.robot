@@ -56,3 +56,11 @@ Cambiar Categoria de Empresa
     log to console              Cambiar Categoria de Empresa
     Sleep   2s
     recursos.Elegir Categoria de Empresa            Responsable Inscripto
+
+TC_024
+    [Documentation]         Crear Nota de Debito Mipyme C en cuenta corriente
+    KW_024.Nota de Debito Mipyme C
+    KW_024.Agregar Productos
+    KW_024.Guardar Factura
+    KW_024.Validaciones
+    KW_024.Cambiar Categoria de Empresa

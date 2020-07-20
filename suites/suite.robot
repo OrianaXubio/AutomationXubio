@@ -41,7 +41,21 @@ Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_035.robot
 Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_036.robot
 Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_037.robot
 Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_038.robot
-# Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_039.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_039.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_040.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_041.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_042.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_043.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_044.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_045.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_046.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_047.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_048.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_049.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_050.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_051.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_052.robot
+Resource            ../front/01__ar/02_ventas/comprobantes_venta/KW_053.robot
 
 Suite Setup         setup.Ingresar Al Sitio Login
 Suite Teardown      Close All Browsers
@@ -51,398 +65,281 @@ Test Setup          Go To   ${URL}NXV/vision-general
 TC_001
     [Documentation]         Creacion de una factura A en cuenta corriente con productos de
     ...                     distintas tasas de IVA en pesos argentinos
-    [Tags]          suite
-    KW_001.Factura A
-    KW_001.Agregar Productos
-    KW_001.Grilla Percepcion/Impuestos
-    KW_001.Guardar Factura
-    KW_001.Validaciones
+    [Tags]                  tc_001  suite
+    KW_001.TC_001
 
 TC_002
     [Documentation]         Creacion de una factura B al contado con diferentes tasas de IVA en pesos argentinos
-    [Tags]          suite
-    KW_002.Factura B
-    KW_002.Grilla Productos
-    KW_002.Grilla Percepcion/Impuestos
-    KW_002.Instrumentos de Cobro
-    KW_002.Guardar Factura
-    KW_002.Validaciones
+    [Tags]                  tc_002  suite
+    KW_002.TC_002
 
 TC_003
     [Documentation]         Creacion de una factura B a cliente del exterior con servicio prestado en el
     ...                     país con diferentes tasas de IVA en pesos
-    KW_003.Factura B
-    KW_003.Agregar Productos
-    KW_003.Guardar Factura
-    KW_003.Validaciones
+    [Tags]                  tc_003  suite
+    KW_003.TC_003
 
 TC_004
     [Documentation]         Creacion de una factura A al contado con productos de distintas tasas de IVA en dólares
-    KW_004.Factura A Al Contado En Dolares
-    KW_004.Agregar Productos
-    KW_004.Grilla Percepcion/Impuestos
-    KW_004.Instrumentos de Cobro
-    KW_004.Guardar Factura
-    KW_004.Validaciones
+    [Tags]                  tc_004  suite
+    KW_004.TC_004
 
 TC_005
     [Documentation]         Creacion de una factura B en cuenta corriente con diferentes
     ...                     tasas de IVA en euros
-    [Tags]                                  faturaB_Cta.CTe
-    KW_005.Factura B_CuentaCorriente
-    KW_005.Agregar Productos
-    KW_005.Grilla Percepcion/Impuestos
-    KW_005.Guardar Factura
-    KW_005.Validaciones
+    [Tags]                  tc_005  suite
+    KW_005.TC_005
 
 TC_006
     [Documentation]         Creacion de una factura C en Tarjeta de Crédito con productos exentos en pesos argentinos
-    KW_006.Factura C
-    KW_006.Agregar Productos
-    KW_006.Guardar Factura
-    KW_006.Validaciones
-    KW_006.Cambiar Categoria de Empresa
+    [Tags]                  tc_006  suite
+    KW_006.TC_006
 
 TC_007
     [Documentation]         Creación de una factura M en Tarjeta de Débito con productos con
     ...                     diferentes tasas de IVA en pesos argentinos
-    KW_007.Empresa con Emision de factura-M
-    KW_007.Factura M
-    KW_007.Agregar Productos
-    KW_007.Grilla Percepcion/Impuestos
-    KW_007.Guardar Factura
-    KW_007.Validaciones
-    KW_007.Destildar Emito Factura M
+    [Tags]                  tc_007  suite
+    KW_007.TC_007
 
 TC_008
     [Documentation]         Creación de una factura E a un cliente del exterior con medio de pago
     ...                     Cheque con productos con diferentes tasas de IVA en pesos argentinos
-    KW_008.Factura E
-    KW_008.Grilla Productos
-    KW_008.Instrumentos de Cobro
-    KW_008.Guardar Factura
-    KW_008.Validaciones
+    [Tags]                  tc_008  suite
+    KW_008.TC_008
 
 TC_009
     [Documentation]         Creación de una factura E a un cliente Responsable Inscripto con provincia
     ...                     destino tierra del fuego con medio de pago Otro con productos con diferentes
     ...                     tasas de IVA en pesos argentinos
-    KW_009.Factura E ClienteExterior
-    KW_009.Agregar Productos
-    KW_009.Guardar Factura
-    KW_009.Validaciones
+    [Tags]                  tc_009  suite
+    KW_009.TC_009
 
 TC_010
     [Documentation]         Creación de una Nota de Crédito A desde una factura total en cuenta corriente
-    KW_010.Nota de Credito A
-    KW_010.Grilla Productos
-    KW_010.Grilla Percepcion/Impuestos
-    KW_010.Guardar Factura
-    KW_010.Validaciones
-    KW_010.Ir a Crear Nota de Credito
-    KW_010.Ir a Aplicaciones
+    [Tags]                  tc_010  suite
+    KW_010.TC_010
 
 TC_011
     [Documentation]         Creación de una Nota de Crédito A desde un nuevo comprobante
     ...                     con Condición de Ticket y percepciones
-    KW_011.Nota de Credito
-    KW_011.Agregar Productos
-    KW_011.Grilla Percepcion/Impuestos
-    KW_011.Guardar Factura
-    KW_011.Validaciones
+    [Tags]                  tc_011  suite
+    KW_011.TC_011
 
 TC_012
     [Documentation]         Creación de una Nota de Crédito A desde una factura total al contado en dólares
-    KW_012.Factura A Al Contado En Dolares
-    KW_012.Agregar Productos
-    KW_012.Grilla Percepcion/Impuestos
-    KW_012.Instrumentos de Cobro
-    KW_012.Guardar Factura
-    KW_012.Validaciones
-    KW_012.Ir a Crear Nota de Credito
-    KW_012.Instrumentos de Cobro (ventana)
-    KW_012.Guardar (ventana)
+    [Tags]                  tc_012  suite
+    KW_012.TC_012
 
 TC_013
-    [Documentation]             Creación de una Nota de Credito A
-     ...                        desde una factura parcial en cuenta corriente
-    KW_013.Factura A
-    KW_013.Agregar Productos
-    KW_013.Grilla Percepcion/Impuestos
-    KW_013.Guardar Factura
-    KW_013.Nota de Credito
-    KW_013.Agregar Producto en Popup
-    KW_013.Aplicaciones
-    KW_013.Campos de Aplicaciones
-    KW_013.Salir de la Aplicaciones
+    [Documentation]         Creación de una Nota de Credito A
+     ...                    desde una factura parcial en cuenta corriente
+    [Tags]                  tc_013  suite
+    KW_013.TC_013
 
 TC_014
-    [Documentation]             Creación de Nota de Débito B en cuenta corriente en dólares
-    KW_014.Nota de Debito B en Dolares
-    KW_014.Grilla Productos
-    KW_014.Guardar Factura
-    KW_014.Validaciones
+    [Documentation]         Creación de Nota de Débito B en cuenta corriente en dólares
+    [Tags]                  tc_014  suite
+    KW_014.TC_014
 
 TC_015
-    [Documentation]             Creación de Recibo A al contado en pesos
-    KW_015.Recibo A
-    KW_015.Agregar Productos
-    KW_015.Grilla Percepcion/Impuestos
-    KW_015.Grilla Instrumento de cobro
-    KW_015.Guardar
-    KW_015.Validaciones
+    [Documentation]         Creación de Recibo A al contado en pesos
+    [Tags]                  tc_015  suite
+    KW_015.TC_015
 
 TC_016
-    [Documentation]             Validación de último usado para el widget "Comprobante"
-    # tc-15
-    KW_016.Comprobante Recibo
-    KW_016.Agregar Productos
-    KW_016.Grilla Percepcion/Impuestos
-    KW_016.Grilla Instrumento de cobro
-    KW_016.Guardar Factura
-    # validacion
-    KW_016.Verificar Comprobante Sugerido
-    # tc-01
-    KW_016.Comprobante Factura
-    KW_016.Agregar Productos
-    KW_016.Grilla Percepcion/Impuestos
-    KW_016.Guardar Factura
-    # validacion
-    KW_016.Verificar Comprobante Sugerido II
-    # tc-11
-    KW_016.Comprobante Nota de Credito
-    KW_016.Agregar Productos
-    KW_016.Grilla Percepcion/Impuestos
-    KW_016.Guardar Factura
-    KW_016.Ventana
-    # validadion
-    KW_016.Verificar Comprobante Sugerido II
+    [Documentation]         Validación de último usado para el widget "Comprobante"
+    [Tags]                  tc_016  suite
+    KW_16.TC_016
 
 TC_017
-    [Documentation]             Creación de Informe Diario de Cierre Z con los items opcionales
-    ...                         completos al contado en pesos
-    KW_017.Informe Diario de Cierre Z
-    KW_017.Agregar Productos
-    KW_017.Grilla Instrumento de cobro
-    KW_017.Guardar
-    KW_017.Validaciones
+    [Documentation]         Creación de Informe Diario de Cierre Z con los items opcionales
+    ...                     completos al contado en pesos
+    [Tags]                  tc_017  suite
+    KW_017.TC_017
 
 TC_018
-    [Documentation]             Creación de Informe Diario de Cierre Z con los items opcionales sin
-    ...                         completar en cuenta corriente en pesos
-    KW_018.Comprobante Recibo Z
-    KW_018.Agregar Productos
-    KW_018.Validaciones
+    [Documentation]         Creación de Informe Diario de Cierre Z con los items opcionales sin
+    ...                     completar en cuenta corriente en pesos
+    [Tags]                  tc_018  suite
+    KW_018.TC_018
 
 TC_019
-   [Documentation]           Crear Factura de Crédito Mipyme A con remito asociado en cuenta corriente
-    KW_019.Factura de Credito Mipyme A
-    KW_019.Agregar Productos
-    KW_019.Seleccionar Remitos Asociados
-    KW_019.Guardar
-    KW_019.Validaciones
+   [Documentation]          Crear Factura de Crédito Mipyme A con remito asociado en cuenta corriente
+    [Tags]                  tc_019  suite
+    KW_019.TC_019
 
 TC_020
     [Documentation]         Crear Factura de Crédito Mipyme C sin remito asociado en cuenta corriente
-    KW_020.Factura de Credito Mipyme C
-    KW_020.Agregar Productos
-    KW_020.Guardar Factura
-    KW_020.Validaciones
-    KW_020.Cambiar Categoria de Empresa
+    [Tags]                  tc-020  suite
+    KW_020.TC_020
 
 TC_021
-    [Documentation]           Crear Factura de Crédito Mipyme A con remito asociado en cuenta corriente
-    KW_021.Crear Nota de Credito MiPyMe A
-    KW_021.Agregar Productos
-    KW_021.Guardar
-    KW_021.Validaciones
+    [Documentation]         Crear Factura de Crédito Mipyme A con remito asociado en cuenta corriente
+    [Tags]                  tc_021  suite
+    KW_021.TC_021
 
 TC_022
     [Documentation]         Crear Nota de Crédito Mipyme C en cuenta corriente sin tildar es de anulación
-    KW_022.Nota de Credito Mipyme C
-    KW_022.Agregar Productos
-    KW_022.Guardar Factura
-    KW_022.Validaciones
-    KW_022.Cambiar Categoria de Empresa
+    [Tags]                  tc_022  suite
+    KW_022.TC_022
 
 TC_023
-    [Documentation]     Crear Nota de Débito Mipyme A en cuenta corriente
-    KW_023.Crear Nota de Debito MiPyMe A
-    KW_023.Agregar Productos
-    KW_023.Guardar
-    KW_023.Validaciones
+    [Documentation]         Crear Nota de Débito Mipyme A en cuenta corriente
+    [Tags]                  tc_023  suite
+    KW_023.TC_023
 
 TC_024
     [Documentation]         Crear Nota de Debito Mipyme C en cuenta corriente
-    KW_024.Nota de Debito Mipyme C
-    KW_024.Agregar Productos
-    KW_024.Guardar Factura
-    KW_024.Validaciones
-    KW_024.Cambiar Categoria de Empresa
+    [Tags]                  tc_024  suite
+    KW_024.TC_024
 
 TC_025
-    [Documentation]        Cobrar desde la grilla de comprobantes de venta masivamente y de distintos clientes
-    KW_025.Selecciona Fecha_Hasta
-    KW_025.Realiza Nueva Venta_1
-    KW_025.Agregar Productos_1
-    KW_025.Guardar_1
-    KW_025.Realizar Nueva Venta_2
-    KW_025.Agregar Productos_2
-    KW_025.Guardar_2
-    KW_025.Realizar Nueva Venta_3
-    KW_025.Agregar Productos_3
-    KW_025.Guardar_3
-    KW_025.Ralizar busqueda
-    KW_025.Seleccionar Facturas
-    KW_025.Cobrar Factura
-    KW_025.Validaciones
-    KW_025.Detalle del proceso Pop-up
+    [Documentation]         Cobrar desde la grilla de comprobantes de venta masivamente y de distintos clientes
+    [Tags]                  tc_025  suite
+    KW_025.TC_025
 
 TC_026
     [Documentation]         Cobrar un comprobante de venta en pesos desde el comprobante de forma parcial
-    KW_026.Cobrar un comprobante de venta
-    KW_026.Agregar Productos
-    KW_026.Guardar Factura
-    KW_026.Ir a Seccion Cobrar
-    KW_026.Ir a Aplicaciones
+    [Tags]                  tc_026  suite
+    KW_026.TC_026
 
 TC_027
-    [Documentation]             Cobrar un comprobante de venta en dolares desde el comprobante
-    ...                         de forma parcial con la misma cotización
-    [Tags]          suite
-    KW_027.Realizar una Venta
-    KW_027.Agregar Productos
-    KW_027.Guardar
-    KW_027.Cobrar Factura
-    KW_027.Ir a Aplicaciones
+    [Documentation]         Cobrar un comprobante de venta en dolares desde el comprobante
+    ...                     de forma parcial con la misma cotización
+    [Tags]                  tc_027      suite
+    KW_027.TC_027
 
 TC_028
     [Documentation]         Cobrar un comprobante de venta en pesos desde el comprobante de forma total
-    [Tags]          suite
-    KW_028.Cobrar un comprobante de venta
-    KW_028.Agregar Productos
-    KW_028.Guardar Factura
-    KW_028.Cobrar Desde Comprobante De Forma Total
-    KW_028.Guardar Factura II
-    KW_028.Validaciones en Aplicaciones
+    [Tags]                  tc_028      suite
+    KW_028.TC_028
 
 TC_029
     [Documentation]         Cobrar un comprobante de venta en dolares desde el comprobante
     ...                     de forma total con la misma cotización
-    [Tags]          suite
-    KW_029.Filtra Hasta Fecha Actual
-    KW_029.Realiza una Nueva Venta
-    KW_029.Agregar Productos
-    KW_029.Guardar Factura
-    KW_029.Comprobantes de Venta
-    KW_029.Selecionar Factura
-    KW_029.Cobrar Factura
-    KW_029.Grilla Cobranza
-    KW_029.Ir a Aplicaciones
+    [Tags]                  tc_029      suite
+    KW_029.TC_029
 
 TC_030
     [Documentation]         Cobrar un comprobante de venta en dolares desde el comprobante de forma parcial con
     ...                     diferente cotización (menor) y verificar la diferencia de cambio
-    [Tags]          suite
-    KW_030.Cobrar Comprobante de Venta en Dolares
-    KW_030.Grilla Productos
-    KW_030.Guardar Factura
-    KW_030.Cobrar en Dolares
-    KW_030.Guardar Factura II
-    KW_030.Validaciones en Aplicaciones
+    [Tags]                  tc_030      suite
+    KW_030.TC_030
 
 TC_031
-    [Documentation]                             Cobrar un comprobante de venta en dolares desde el comprobante de forma total con diferente cotización (menor)
-    ...                                         y verificar la diferencia de cambio
-    [Tags]          suite
-    KW_031.Realiza una Nueva Venta
-    KW_031.Agregar Productos
-    KW_031.Guardar Factura
-    KW_031.Cobrar Factura
-    KW_031.Grilla Cobranza
-    KW_031.Ir a Aplicaciones
+    [Documentation]         Cobrar un comprobante de venta en dolares desde el comprobante de forma total con diferente cotización (menor)
+    ...                     y verificar la diferencia de cambio
+    [Tags]                  tc_031      suite
+    KW_031.TC_031
 
 TC_032
-    [Documentation]     Cobrar un comprobante de venta en dolares desde el comprobante de forma parcial con
-    ...                 diferente cotización (mayor) y verificar la diferencia de cambio
-    [Tags]          suite
-    KW_032.Cobrar Comprobante de Venta en Dolares
-    KW_032.Grilla Productos
-    KW_032.Guardar Factura
-    KW_032.Cobrar en Dolares
-    KW_032.Guardar Factura II
-    KW_032.Validaciones en Aplicaciones
-    KW_032.Comprobante Cobranza
+    [Documentation]         Cobrar un comprobante de venta en dolares desde el comprobante de forma parcial con
+    ...                     diferente cotización (mayor) y verificar la diferencia de cambio
+    [Tags]                  tc_032      suite
+    KW_032.TC_032
 
 TC_033
-    [Documentation]             Cobrar un comprobante de venta en dolares desde el comprobante de forma total con diferente cotización (mayor)
-    ...                         y verificar la diferencia de cambio
-    [Tags]          suite
-    KW_033.Realiza una Nueva Venta
-    KW_033.Agregar Productos
-    KW_033.Guardar Factura
-    KW_033.Cobrar Factura
-    KW_033.Grilla Cobranza
-    KW_033.Ir a Aplicaciones
-    KW_033.Ir a Cobranza
-    KW_033.Ir Aplicaciones-Cobranza
+    [Documentation]         Cobrar un comprobante de venta en dolares desde el comprobante de forma total con diferente cotización (mayor)
+    ...                     y verificar la diferencia de cambio
+    [Tags]                  tc_033      suite
+    KW_033.TC_033
 
 TC_034
-    [Documentation]     Remitir factura de venta
-    [Tags]          suite
-    KW_034.Setear Cliente
-    KW_034.Grilla Productos
-    KW_034.Guardar Factura
-    KW_034.Ir a Remitir
-    KW_034.Guardar Factura II
-    KW_034.Remito Ventas
+    [Documentation]         Remitir factura de venta
+    [Tags]                  tc_034      suite
+    KW_034.TC_034
 
 TC_035
-    [Documentation]             Adjuntar un archivo a un comprobante de venta
-    [Tags]          suite
-    KW_035.Realiza una Nueva Venta
-    KW_035.Agregar Productos
-    KW_035.Guardar Factura
-    KW_035.Adjuntar Archivo
-    KW_035.Validacion Adjuntar Archivo
+    [Documentation]         Adjuntar un archivo a un comprobante de venta
+    [Tags]                  tc_035      suite
+    KW_035.TC_035
 
 TC_036
     [Documentation]         Eliminar un comprobante de venta aplicado
-    [Tags]          suite
-    KW_036.Setear Cliente
-    KW_036.Grilla Productos
-    KW_036.Guardar Factura
-    KW_036.Ir a Menu Cobrar
-    KW_036.Guardar Factura II
-    KW_036.Eliminar el Comprobante Generado
-    KW_036.Verificar Cobranza
+    [Tags]                  tc_036      suite
+    KW_036.TC_036
 
 TC_037
-    [Documentation]           Eliminar un comprobante de venta sin aplicar
-    [Tags]          suite
-    KW_037.Realiza una Nueva Venta
-    KW_037.Agregar Productos
-    KW_037.Guardar Factura
-    KW_037.Cobrar Factura
-    KW_037.Grilla Cobranza
-    KW_037.Eliminar Factura
-    KW_037.Buscar Factura Eliminada
+    [Documentation]         Eliminar un comprobante de venta sin aplicar
+    [Tags]                  tc_037      suite
+    KW_037.TC_037
 
 TC_038
     [Documentation]         Desaplicar transacciones de venta
-    [Tags]          suite
-    KW_038.Filtra Hasta Fecha Actual
-    KW_038.Setear Cliente
-    KW_038.Grilla Productos
-    KW_038.Guardar Factura
-    KW_038.Cobrar Factura
-    KW_038.Guardar Aplicar Factura
-    KW_038.Ir a Aplicaciones y Desaplicar
+    [Tags]                  tc_038      suite   
+    KW_038.TC_038
 
-#TC_039
-#    [Documentation]         Setear una lista de precios default y que aparezca al hacer un comprobante de venta
-#    [Tags]          suite
-#    KW_039.Ir a Lista de Precios
-#    KW_039.Ir a Comprobantes de Venta
-#    KW_039.Agregar Producto
-#    KW_039.Ir a Lista de Precios_2
+TC_039
+    [Documentation]         Setear una lista de precios default y que aparezca al hacer un comprobante de venta
+    [Tags]                  tc_039         nuevo
+    KW_039.TC_039
+
+TC_040
+    [Documentation]         Importar facturas de venta desde excel
+    [Tags]                  tc_040         nuevo
+    KW_040.TC_040
+
+TC_041
+    [Documentation]         Importar facturas de venta desde .txt de AFIP
+    [Tags]                  tc_041         nuevo
+    KW_041.TC_041
+
+TC_042
+    [Documentation]         Verificar contabilidad de factura de Venta A en cuenta corriente en pesos
+    [Tags]                  tc_042         nuevo
+    KW_042.TC_042
+
+TC_043
+    [Documentation]         Verificar contabilidad de factura de Venta B al contado en pesos
+    [Tags]                  tc_043         nuevo
+    KW_043.TC_043
+
+TC_044
+    [Documentation]         Verificar contabilidad de factura de Venta E en cuenta corriente en dolares
+    [Tags]                  tc_044         nuevo
+    KW_044.TC_044
+
+TC_045
+    [Documentation]         Verificar contabilidad de factura de Venta M al contado en pesos
+    [Tags]                  tc_045         nuevo
+    KW_045.TC_045
+
+TC_046
+    [Documentation]         Verificar contabilidad de nota de Credito de venta A con condición de pago ticket en pesos
+    [Tags]                  tc_046         nuevo
+    KW_046.TC_046
+
+TC_047
+    [Documentation]         Verificar contabilidad de nota de Debito de venta B en cuenta corriente en dólares
+    [Tags]                  tc_047         nuevo
+    KW_047.TC_047
+
+TC_048
+    [Documentation]         Verficar contabilidad de un informe diario de cierre Z en pesos
+    [Tags]                  tc_048
+    KW_048.TC_048
+
+TC_049
+    [Documentation]         Verificar contabilidad de Recibo de venta A al contado en pesos
+    [Tags]                  tc_049      nuevo
+    KW_049.TC_049
+
+TC_050
+    [Documentation]         Verificar contabilidad de factura de Venta C en tarjeta de crédito en pesos
+    [Tags]                  tc_050      nuevo
+    KW_050.TC_050
+
+TC_051
+    [Documentation]         Verificar correlatividad en punto de venta con talonario unificado
+    [Tags]                  tc_051      nuevo
+    KW_051.TC_051
+
+TC_052
+    [Documentation]         Verificar correlatividad en punto de venta con talonario no unificado
+    [Tags]                  tc_052      nuevo
+    KW_052.TC_052
+
+TC_053
+    [Documentation]         Verificar grilla de comprobantes de venta después de crear cuatro tipos de comprobantes
+    [Tags]                  tc_053      nuevo
+    KW_053.TC_053

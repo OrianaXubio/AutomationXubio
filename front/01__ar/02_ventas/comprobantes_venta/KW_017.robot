@@ -50,3 +50,12 @@ Validaciones
 Guardar
     log to console          Guardar
     comprobantes_venta.Guardar
+
+TC_017
+    [Documentation]             Creación de Informe Diario de Cierre Z con los items opcionales
+    ...                         completos al contado en pesos
+    KW_017.Informe Diario de Cierre Z
+    KW_017.Agregar Productos
+    KW_017.Grilla Instrumento de cobro
+    KW_017.Guardar
+    KW_017.Validaciones

@@ -41,22 +41,22 @@ Cobrar en Dolares
     Page Should Contain Element         xpath=//td//input[@id="COTIZACION_0" and @value="102.00"]
     Page Should Contain Element         xpath=//td//input[@id="IMPORTE_0" and @value="158.75"]
 
-    comprobantes_venta.Modificar importe en NC                    100
+    comprobantes_venta.Modificar importe en NC                      100
     # validaciones
     comprobantes_venta.validacion Cliente Formulario Cobranza       Responsable Inscripto
-    #guarda el numero de factura
+    # guarda el numero de factura
     ${doc_destino}      Get value                                   xpath=//div[@id='df_popup']//div[@name='wdg_NumeroDocumento']//input
     Set Global Variable                                             ${doc_destino}
     # campo fecha
-    ${dia1}=        Get Value                                      xpath=//div[@id="df_popup"]//div[@name="wdg_Fecha"]//input[@name="day"]
-    ${mes1}=        Get Value                                      xpath=//div[@id="df_popup"]//div[@name="wdg_Fecha"]//input[@name="month"]
-    ${anio1}=       Get Value                                      xpath=//div[@id="df_popup"]//div[@name="wdg_Fecha"]//input[@name="year"]
-    ${dia}=         Convert To Integer                             ${dia1}
-    ${mes}=         Convert To Integer                             ${mes1}
-    ${anio}=        Convert To Integer                             ${anio1}
-    Should Be Equal      ${dia}                                    ${datetime.day}
-    Should Be Equal      ${mes}                                    ${datetime.month}
-    Should Be Equal      ${anio}                                   ${datetime.year}
+    ${dia1}=        Get Value                   xpath=//div[@id="df_popup"]//div[@name="wdg_Fecha"]//input[@name="day"]
+    ${mes1}=        Get Value                   xpath=//div[@id="df_popup"]//div[@name="wdg_Fecha"]//input[@name="month"]
+    ${anio1}=       Get Value                   xpath=//div[@id="df_popup"]//div[@name="wdg_Fecha"]//input[@name="year"]
+    ${dia}=         Convert To Integer          ${dia1}
+    ${mes}=         Convert To Integer          ${mes1}
+    ${anio}=        Convert To Integer          ${anio1}
+    Should Be Equal      ${dia}                 ${datetime.day}
+    Should Be Equal      ${mes}                 ${datetime.month}
+    Should Be Equal      ${anio}                ${datetime.year}
     #comprobantes_venta.Validacion de Letra (Pop-up)                 X
     comprobantes_venta.click en mas opciones (Pop-up)
     Page Should Contain Element         xpath=//div[@id="df_popup"]//div[@name="wdg_MonedaID"]//input[@value="Dólares"]
@@ -88,3 +88,13 @@ Validaciones en Aplicaciones
     assertText      xpath=((//div[@id="overDiv"]//div[@class="fafwebreport"]//div[@column="5"])[1]/div)[2]       Dólares
     assertText      xpath=((//div[@id="overDiv"]//div[@class="fafwebreport"]//div[@column="6"])[1]/div)[2]       72.00
     comprobantes_venta.Salir de Aplicaciones
+
+TC_030
+    [Documentation]     Cobrar un comprobante de venta en dolares desde el comprobante de forma parcial con
+    ...                 diferente cotización (menor) y verificar la diferencia de cambio
+    KW_030.Cobrar Comprobante de Venta en Dolares
+    KW_030.Grilla Productos
+    KW_030.Guardar Factura
+    KW_030.Cobrar en Dolares
+    KW_030.Guardar Factura II
+    KW_030.Validaciones en Aplicaciones

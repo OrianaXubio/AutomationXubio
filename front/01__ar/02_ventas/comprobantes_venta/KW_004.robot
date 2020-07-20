@@ -90,3 +90,11 @@ Validaciones
     Page Should Contain Element     xpath=//div[@name="wdg_MonedaID"]//input[@value="Dólares"]
     Page Should Contain Element     xpath=//div[@name="wdg_Cotizacion"]//input[@value="65.400000"]
 
+TC_004
+    [Documentation]         Creacion de una factura A al contado con productos de distintas tasas de IVA en dólares
+    KW_004.Factura A Al Contado En Dolares
+    KW_004.Agregar Productos
+    KW_004.Grilla Percepcion/Impuestos
+    KW_004.Instrumentos de Cobro
+    KW_004.Guardar Factura
+    KW_004.Validaciones

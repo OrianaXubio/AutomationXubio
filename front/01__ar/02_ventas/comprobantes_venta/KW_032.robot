@@ -31,9 +31,9 @@ Guardar Factura
     ${num_comprobante}      Get value           xpath=//div[@name='wdg_NumeroDocumento']//input
     Set Global Variable                         ${num_comprobante}
 
-
 Cobrar en Dolares
     [Documentation]         ir a "Cobrar" y cobrar en dolares
+    log to console          Cobrar en Dolares
     ${CurrentDate}=         Get Current Date        result_format=%Y-%m-%d %H:%M:%S.%f
     ${datetime}=            Convert Date            ${CurrentDate}       datetime
     comprobantes_venta.Ir a Cobrar
@@ -101,3 +101,14 @@ Comprobante Cobranza
     assertText      xpath=((//div[@id="overDiv"]//div[@class="fafwebreport"]//div[@column="5"])[1]/div)[2]       Dólares
     assertText      xpath=((//div[@id="overDiv"]//div[@class="fafwebreport"]//div[@column="6"])[1]/div)[2]       140.00
     comprobantes_venta.Salir de Aplicaciones
+
+TC_032
+    [Documentation]     Cobrar un comprobante de venta en dolares desde el comprobante de forma parcial con
+    ...                 diferente cotización (mayor) y verificar la diferencia de cambio
+    KW_032.Cobrar Comprobante de Venta en Dolares
+    KW_032.Grilla Productos
+    KW_032.Guardar Factura
+    KW_032.Cobrar en Dolares
+    KW_032.Guardar Factura II
+    KW_032.Validaciones en Aplicaciones
+    KW_032.Comprobante Cobranza

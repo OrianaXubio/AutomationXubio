@@ -81,5 +81,12 @@ Ir a Aplicaciones
     assertText           xpath=(//div[@class="webix_ss_center_scroll"])[5]//div[@column="5"]//div    Pesos Argentinos
     # Validacion Cotizacion
     assertText           xpath=(//div[@class="webix_ss_center_scroll"])[5]//div[@column="6"]//div    1.00
-
     comprobantes_venta.Salir de Aplicaciones
+
+TC_026
+    [Documentation]         Cobrar un comprobante de venta en pesos desde el comprobante de forma parcial
+    KW_026.Cobrar un comprobante de venta
+    KW_026.Agregar Productos
+    KW_026.Guardar Factura
+    KW_026.Ir a Seccion Cobrar
+    KW_026.Ir a Aplicaciones

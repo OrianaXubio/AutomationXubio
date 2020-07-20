@@ -56,3 +56,11 @@ Validaciones
     comprobantes_venta.Total                          19205.5000
     #Validación del Checkbox
     Checkbox Should Be Selected                 xpath=//div[@name='wdg_FacturaNoExportacion']//input
+
+TC_003
+    [Documentation]         Creacion de una factura B a cliente del exterior con servicio prestado en el
+    ...                     país con diferentes tasas de IVA en pesos
+    KW_003.Factura B
+    KW_003.Agregar Productos
+    KW_003.Guardar Factura
+    KW_003.Validaciones

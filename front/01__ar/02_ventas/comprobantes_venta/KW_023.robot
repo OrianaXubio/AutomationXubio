@@ -44,3 +44,10 @@ Validaciones
     comprobantes_venta.Total Bruto                              17350.5000
     comprobantes_venta.Total Impuestos                          3793.6400
     comprobantes_venta.Total                                    21144.1400
+
+TC_023
+    [Documentation]     Crear Nota de Débito Mipyme A en cuenta corriente
+    KW_023.Crear Nota de Debito MiPyMe A
+    KW_023.Agregar Productos
+    KW_023.Guardar
+    KW_023.Validaciones

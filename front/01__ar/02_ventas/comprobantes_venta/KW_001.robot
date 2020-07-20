@@ -11,7 +11,7 @@ Resource            ../../../funciones_generales/keywords.robot
 Resource            ../../../01__ar/02_ventas/comprobantes_venta/comprobantes_venta.robot
 
 *** Keywords ***
-Factura A
+Factura A 001
     [Documentation]                     creacion de una factura A
     Log To Console                      Factura A
     comprobantes_venta.Ir a Nueva Venta
@@ -79,3 +79,10 @@ Validaciones
     comprobantes_venta.Total Bruto                    19205.5000
     comprobantes_venta.Total Impuestos                4686.2600
     comprobantes_venta.Total                          23891.7600
+
+TC_001
+    KW_001.Factura A 001
+    KW_001.Agregar Productos
+    KW_001.Grilla Percepcion/Impuestos
+    KW_001.Guardar Factura
+    KW_001.Validaciones

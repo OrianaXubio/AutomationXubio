@@ -7,6 +7,7 @@ Resource            ../../../01__ar/vision_general.robot
 Resource            ../../../funciones_generales/keywords.robot
 Resource            ../../../01__ar/02_ventas/comprobantes_venta/comprobantes_venta.robot
 Resource            ../../../funciones_generales/recursos.robot
+Resource            ../../../funciones_generales/queries/consultas_sql.robot
 
 *** Keywords ***
 Setear Cliente
@@ -88,3 +89,18 @@ Remito Ventas
     assertText          xpath=//td[@id="TransaccionCVItems_ProductoID_1"]/div      Carpetas (27%)
     assertText          xpath=//td[@id="TransaccionCVItems_Cantidad_1"]/div        1.00
     assertText          xpath=//td[@id="TransaccionCVItems_Precio_1"]/div          125.0000
+
+Validacion Con BD
+    consultas_sql.Conectar A BD
+    consultas_sql.Validar Remito-Factura      Remito de Venta N° ${doc_destino}       Factura de Venta N° ${num_comprobante}
+    consultas_sql.Desconectar A BD
+
+TC_034
+    [Documentation]     Remitir factura de venta
+    KW_034.Setear Cliente
+    KW_034.Grilla Productos
+    KW_034.Guardar Factura
+    KW_034.Ir a Remitir
+    KW_034.Guardar Factura II
+    KW_034.Remito Ventas
+    KW_034.Validacion Con BD

@@ -116,3 +116,21 @@ Detalle del proceso Pop-up
     Page Should Contain Element         xpath=//tr[3]//td[contains(text(),' para el cliente: Responsable Inscripto 2')]
     click                               xpath=//a[@id="btnOK"]
     Wait Until Element Is Not Visible   xpath=//div[@id="overDiv"]
+
+TC_025
+    [Documentation]                             Cobrar desde la grilla de comprobantes de venta masivamente y de distintos clientes
+    KW_025.Selecciona Fecha_Hasta
+    KW_025.Realiza Nueva Venta_1
+    KW_025.Agregar Productos_1
+    KW_025.Guardar_1
+    KW_025.Realizar Nueva Venta_2
+    KW_025.Agregar Productos_2
+    KW_025.Guardar_2
+    KW_025.Realizar Nueva Venta_3
+    KW_025.Agregar Productos_3
+    KW_025.Guardar_3
+    KW_025.Ralizar busqueda
+    KW_025.Seleccionar Facturas
+    KW_025.Cobrar Factura
+    KW_025.Validaciones
+    KW_025.Detalle del proceso Pop-up

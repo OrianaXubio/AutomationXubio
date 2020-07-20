@@ -49,3 +49,11 @@ Cambiar Categoria de Empresa
     [Documentation]                     cambia la empresa a responsable inscripto
     log to console           Cambiar Categoria de Empresa
     recursos.Elegir Categoria de Empresa                 Responsable Inscripto
+
+TC_020
+    [Documentation]         Crear Factura de Crédito Mipyme C sin remito asociado en cuenta corriente
+    KW_020.Factura de Credito Mipyme C
+    KW_020.Agregar Productos
+    KW_020.Guardar Factura
+    KW_020.Validaciones
+    KW_020.Cambiar Categoria de Empresa

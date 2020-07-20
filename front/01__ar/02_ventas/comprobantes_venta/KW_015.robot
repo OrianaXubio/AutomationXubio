@@ -66,3 +66,12 @@ Validaciones
 Guardar
     log to console              guardar
     comprobantes_venta.Guardar
+
+TC_015
+    [Documentation]             Creación de Recibo A al contado en pesos
+    KW_015.Recibo A
+    KW_015.Agregar Productos
+    KW_015.Grilla Percepcion/Impuestos
+    KW_015.Grilla Instrumento de cobro
+    KW_015.Guardar
+    KW_015.Validaciones

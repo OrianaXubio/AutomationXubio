@@ -66,3 +66,29 @@ Ventana
     click                                       id=fafPopUpTitle
     assertText                                  xpath=//h1[@id='fafPopUpTitle']//span             Pregunta
     click                                       id=showAskPopupNoButton
+
+TC_016
+    [Documentation]             Validación de último usado para el widget "Comprobante"
+    # tc-15
+    KW_016.Comprobante Recibo
+    KW_016.Agregar Productos
+    KW_016.Grilla Percepcion/Impuestos
+    KW_016.Grilla Instrumento de cobro
+    KW_016.Guardar Factura
+    # validacion
+    KW_016.Verificar Comprobante Sugerido
+    # tc-01
+    KW_016.Comprobante Factura
+    KW_016.Agregar Productos
+    KW_016.Grilla Percepcion/Impuestos
+    KW_016.Guardar Factura
+    # validacion
+    KW_016.Verificar Comprobante Sugerido II
+    # tc-11
+    KW_016.Comprobante Nota de Credito
+    KW_016.Agregar Productos
+    KW_016.Grilla Percepcion/Impuestos
+    KW_016.Guardar Factura
+    KW_016.Ventana
+    # validadion
+    KW_016.Verificar Comprobante Sugerido II

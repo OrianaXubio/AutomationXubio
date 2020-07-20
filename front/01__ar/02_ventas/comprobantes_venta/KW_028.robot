@@ -47,7 +47,7 @@ Cobrar Desde Comprobante De Forma Total
     Page Should Contain Element                xpath=//input[@name="Documento" and contains(@value, "${num_comprobante}")]
     click                           xpath=//a[@id='ACEPTAR_0']
     # segundo popup - Nuevo Monotributista - Cobranza
-    comprobantes_venta.Completar Campos en Grilla Cobro            1     Valores a depositar   Valores a depositar
+    comprobantes_venta.Completar Campos en Grilla Cobro            1     Valores a depositar     Valores a depositar
     comprobantes_venta.Agregar Cheque                              1     12345678      12   12   2020     BACS
     # Validaciones
     # campo fecha
@@ -73,9 +73,17 @@ Guardar Factura II
 
 Validaciones en Aplicaciones
     log to console                      Validaciones en Aplicaciones
-    #comprobantes_venta.Buscador         ${num_comprobante}
     click                               xpath=(//div[@class="webix_ss_center"]//div//a[text() = '${num_comprobante}'])[1]
     comprobantes_venta.Seleccionar Aplicaciones
     assertText                          xpath=(//div[@class="webix_ss_body"])[2]//div[@class="webix_column "][1]/div    2,500.50
     assertText                          xpath=(//div[@class="webix_ss_body"])[2]//div[@class="webix_column "][2]/div    0.00
     comprobantes_venta.Salir de Aplicaciones
+
+TC_028
+    [Documentation]         Cobrar un comprobante de venta en pesos desde el comprobante de forma total
+    KW_028.Cobrar un comprobante de venta
+    KW_028.Agregar Productos
+    KW_028.Guardar Factura
+    KW_028.Cobrar Desde Comprobante De Forma Total
+    KW_028.Guardar Factura II
+    KW_028.Validaciones en Aplicaciones

@@ -47,3 +47,10 @@ Validaciones
     comprobantes_venta.Total Bruto                              17350.5000
     comprobantes_venta.Total Impuestos                          3793.6400
     comprobantes_venta.Total                                    21144.1400
+
+TC_021
+    [Documentation]           Crear Factura de Crédito Mipyme A con remito asociado en cuenta corriente
+    KW_021.Crear Nota de Credito MiPyMe A
+    KW_021.Agregar Productos
+    KW_021.Guardar
+    KW_021.Validaciones

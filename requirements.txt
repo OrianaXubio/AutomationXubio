@@ -1,6 +1,7 @@
 pandas==1.0.3
 requests==2.23.0
 robotframework==3.2.1
+robotframework-postgresqldb==2.0.0
 robotframework-requests==0.7.0
 robotframework-selenium2library==3.0.0
 robotframework-seleniumlibrary==4.4.0

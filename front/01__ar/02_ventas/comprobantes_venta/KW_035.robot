@@ -29,7 +29,7 @@ Guardar Factura
     comprobantes_venta.Guardar
 
 Adjuntar Archivo
-    [Documentation]                                      Selecciona un tipo de archivo y lo adjunta del ordenador
+    [Documentation]                                     Selecciona un tipo de archivo y lo adjunta del ordenador
     click                                               xpath=//a[@id='_onFileAttach']
     ${archivo}=         funciones.ruta archivo         ./archivos_adjuntos/ArchivoXubio.pdf
     Select From List By Label                           xpath=//div[@class='FAFPopup']//select[@id='WDGADJUNTARTIPO_0']         ${tipo}
@@ -49,3 +49,11 @@ Adjuntar Archivo
 Validacion Adjuntar Archivo
     Page Should Contain Element                         xpath=//span[@class='attachment'][contains(text(),'Adjuntos')]
     Page Should Contain Element                         xpath=//a[@class='fileName']
+
+TC_035
+    [Documentation]             Adjuntar un archivo a un comprobante de venta
+    KW_035.Realiza una Nueva Venta
+    KW_035.Agregar Productos
+    KW_035.Guardar Factura
+    KW_035.Adjuntar Archivo
+    KW_035.Validacion Adjuntar Archivo

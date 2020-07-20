@@ -55,3 +55,12 @@ Validaciones
     comprobantes_venta.Total                          20286.5000
     comprobantes_venta.Total Cobranza                 20286.5000
     comprobantes_venta.Condicion De Pago              Cheque
+
+TC_008
+    [Documentation]         Creación de una factura E a un cliente del exterior con medio de pago
+    ...                     Cheque con productos con diferentes tasas de IVA en pesos argentinos
+    KW_008.Factura E
+    KW_008.Grilla Productos
+    KW_008.Instrumentos de Cobro
+    KW_008.Guardar Factura
+    KW_008.Validaciones

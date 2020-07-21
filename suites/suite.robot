@@ -149,7 +149,7 @@ TC_015
 TC_016
     [Documentation]         Validación de último usado para el widget "Comprobante"
     [Tags]                  tc_016  suite
-    KW_16.TC_016
+    KW_016.TC_016
 
 TC_017
     [Documentation]         Creación de Informe Diario de Cierre Z con los items opcionales

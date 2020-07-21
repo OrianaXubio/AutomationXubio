@@ -99,6 +99,9 @@ Eliminar las Facturas
      sleep                                                2s
      click                                                Link=Eliminar
      click                                                xpath=//a[@id='showAskPopupYesButton']
+     Wait Until Element Is Not Visible                    xpath=//div[@id="overDiv"]
+     sleep   2s
+     Wait Until Element Contains             xpath=//div[@class='dock']                      No se encontraron registros.
 
 
 TC_041

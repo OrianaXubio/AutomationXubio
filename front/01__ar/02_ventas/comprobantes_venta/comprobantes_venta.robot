@@ -41,6 +41,22 @@ Ir a Nueva Venta
     click           link=Nueva Venta
     verifyText      xpath=//div[@id='seccionTitulo']/div    Nuevo - Comprobante de Venta
 
+Filtro Fecha_Desde
+    [Documentation]         Selecciona "Filtros" y coloca la fecha actual en el campo "Desde" del calendario
+    ${CurrentDate}=  Get Current Date  result_format=%Y-%m-%d %H:%M:%S.%f
+    ${datetime} =	Convert Date  ${CurrentDate}  datetime
+    click           xpath=//div[@class='filter-caption']
+    click           xpath=(//input[@name='day'])[1]
+    sendKeys        xpath=(//input[@name='day'])[1]           DELETE
+    input text      xpath=(//input[@name='day'])[1]           ${datetime.day}
+    click           xpath=(//input[@name='month'])[1]
+    sendKeys        xpath=(//input[@name='month'])[1]         DELETE
+    input text      xpath=(//input[@name='month'])[1]         ${datetime.month}
+    click           xpath=(//input[@name='year'])[1]
+    sendKeys        xpath=(//input[@name='year'])[1]          DELETE
+    input text      xpath=(//input[@name='year'])[1]          ${datetime.year}
+    click           link=Aceptar    
+
 Filtro Fecha_Hasta
     [Documentation]         Selecciona "Filtros" y coloca la fecha actual en el campo "Hasta" del calendario
     ${CurrentDate}=  Get Current Date  result_format=%Y-%m-%d %H:%M:%S.%f

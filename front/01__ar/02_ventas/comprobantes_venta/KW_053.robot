@@ -90,6 +90,8 @@ Selecciona FechaHasta
     log to console                              Selecciona FechaHasta
     sleep                                       2s
     comprobantes_venta.Ir a Comprobantes de Venta
+    # elegir las fechas actuales
+    comprobantes_venta.Filtro Fecha_Desde
     comprobantes_venta.Filtro Fecha_Hasta
 
 Ralizar busqueda

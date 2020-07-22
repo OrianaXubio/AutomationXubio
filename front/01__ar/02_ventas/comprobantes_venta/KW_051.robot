@@ -37,9 +37,7 @@ Guardar Factura
 Seleccionar Comprobantes de Venta 2
     [Documentation]                         Se dirije a Comprobantes de Ventas "+"
     Log To Console                          Seleccionar Comprobantes de Venta 2
-    click                                   link=Ventas
-    sleep                                   2s
-    click                                   xpath=//li[@class='ventas']//li[1]//a[2]
+    comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente         Responsable Inscripto     Talonario Unificado     Factura    Cuenta Corriente
     #Guarda el nº de comprobante
     ${num_comprobante_dos}      Get value   xpath=//div[@name='wdg_NumeroDocumento']//input
@@ -47,6 +45,7 @@ Seleccionar Comprobantes de Venta 2
     #Hace la convesion del numero de factura de  string a numero
     ${num_fact_dos}       comprobantes_venta.Numero de Factura     ${num_comprobante_dos}
     Set Global Variable                     ${num_fact_dos}
+
 Agregar Productos 2
     [Documentation]                         se completan los campos de productos
     log to console                          Agregar Productos 2
@@ -66,9 +65,7 @@ Validar correlatividad dos
 Seleccionar Comprobantes de Venta 3
     [Documentation]                         Se dirije a Comprobantes de Ventas "+"
     Log To Console                          Seleccionar Comprobantes de Venta 3
-    click                                   link=Ventas
-    sleep                                   2s
-    click                                   xpath=//li[@class='ventas']//li[1]//a[2]
+    comprobantes_venta.Ir a Nueva Venta
     comprobantes_venta.Tipo Cliente         Responsable Inscripto     Talonario Unificado     Nota de Crédito     Cuenta Corriente
     #Guarda el nº de comprobante
     ${num_comprobante_tres}     Get value   xpath=//div[@name='wdg_NumeroDocumento']//input

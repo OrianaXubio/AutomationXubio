@@ -67,7 +67,7 @@ Filtrar Fecha
      #Campo Fecha Hasta
      click           xpath=(//input[@name='day'])[2]
      sendKeys        xpath=(//input[@name='day'])[2]           DELETE
-     input text      xpath=(//input[@name='day'])[2]           31
+     input text      xpath=(//input[@name='day'])[2]           30
      click           xpath=(//input[@name='month'])[2]
      sendKeys        xpath=(//input[@name='month'])[2]         DELETE
      input text      xpath=(//input[@name='month'])[2]         09

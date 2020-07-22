@@ -271,75 +271,75 @@ TC_038
 
 TC_039
     [Documentation]         Setear una lista de precios default y que aparezca al hacer un comprobante de venta
-    [Tags]                  tc_039         nuevo
+    [Tags]                  tc_039      suite
     KW_039.TC_039
 
 TC_040
     [Documentation]         Importar facturas de venta desde excel
-    [Tags]                  tc_040         nuevo
+    [Tags]                  tc_040      suite
     KW_040.TC_040
 
 TC_041
     [Documentation]         Importar facturas de venta desde .txt de AFIP
-    [Tags]                  tc_041         nuevo
+    [Tags]                  tc_041      suite
     KW_041.TC_041
 
 TC_042
     [Documentation]         Verificar contabilidad de factura de Venta A en cuenta corriente en pesos
-    [Tags]                  tc_042         nuevo
+    [Tags]                  tc_042      suite
     KW_042.TC_042
 
 TC_043
     [Documentation]         Verificar contabilidad de factura de Venta B al contado en pesos
-    [Tags]                  tc_043         nuevo
+    [Tags]                  tc_043      suite
     KW_043.TC_043
 
 TC_044
     [Documentation]         Verificar contabilidad de factura de Venta E en cuenta corriente en dolares
-    [Tags]                  tc_044         nuevo
+    [Tags]                  tc_044      suite
     KW_044.TC_044
 
 TC_045
     [Documentation]         Verificar contabilidad de factura de Venta M al contado en pesos
-    [Tags]                  tc_045         nuevo
+    [Tags]                  tc_045      suite
     KW_045.TC_045
 
 TC_046
     [Documentation]         Verificar contabilidad de nota de Credito de venta A con condición de pago ticket en pesos
-    [Tags]                  tc_046         nuevo
+    [Tags]                  tc_046      suite
     KW_046.TC_046
 
 TC_047
     [Documentation]         Verificar contabilidad de nota de Debito de venta B en cuenta corriente en dólares
-    [Tags]                  tc_047         nuevo
+    [Tags]                  tc_047      suite
     KW_047.TC_047
 
 TC_048
     [Documentation]         Verficar contabilidad de un informe diario de cierre Z en pesos
-    [Tags]                  tc_048
+    [Tags]                  tc_048      suite
     KW_048.TC_048
 
 TC_049
     [Documentation]         Verificar contabilidad de Recibo de venta A al contado en pesos
-    [Tags]                  tc_049      nuevo
+    [Tags]                  tc_049      suite
     KW_049.TC_049
 
 TC_050
     [Documentation]         Verificar contabilidad de factura de Venta C en tarjeta de crédito en pesos
-    [Tags]                  tc_050      nuevo
+    [Tags]                  tc_050      suite
     KW_050.TC_050
 
 TC_051
     [Documentation]         Verificar correlatividad en punto de venta con talonario unificado
-    [Tags]                  tc_051      nuevo
+    [Tags]                  tc_051      suite
     KW_051.TC_051
 
 TC_052
     [Documentation]         Verificar correlatividad en punto de venta con talonario no unificado
-    [Tags]                  tc_052      nuevo
+    [Tags]                  tc_052      suite
     KW_052.TC_052
 
 TC_053
     [Documentation]         Verificar grilla de comprobantes de venta después de crear cuatro tipos de comprobantes
-    [Tags]                  tc_053      nuevo
+    [Tags]                  tc_053      suite
     KW_053.TC_053

@@ -18,8 +18,8 @@ Grilla Productos
     [Documentation]                     se completan los campos de productos
     log to console                      Grilla Productos
     sleep   1s
-    comprobantes_venta.Agregar Item RI    1   HONORARIOS         1       5000     0
-    comprobantes_venta.Agregar Item RI    2   Alquiler           1       16985    10
+    comprobantes_venta.Agregar Item     1   HONORARIOS         1       5000     0
+    comprobantes_venta.Agregar Item     2   Alquiler           1       16985    10
     click    xpath=//td[@id='TransaccionCVItems_internal_delete_column_3']/div/div
 
 Instrumentos de Cobro

@@ -31,7 +31,7 @@ Realiza Nueva Venta_1
 Agregar Productos_1
     [Documentation]                               Se Completa la grilla Productos
     sleep   1s
-    comprobantes_venta.Agregar Item RI            1   Carpeta         1       2500.50     0
+    comprobantes_venta.Agregar Item             1   Carpeta         1       2500.50     0
     click                                         xpath=//td[@id='TransaccionCVItems_internal_delete_column_2']/div/div
 
 Guardar_1
@@ -49,7 +49,7 @@ Realizar Nueva Venta_2
 Agregar Productos_2
     [Documentation]                                   Se Completa la grilla Productos
     sleep   1s
-    comprobantes_venta.Agregar Item CF                1   Carpeta         1       3679     0
+    comprobantes_venta.Agregar Item                 1   Carpeta         1       3679     0
     click                                             xpath=//td[@id='TransaccionCVItems_internal_delete_column_2']/div/div
 
 Guardar_2
@@ -67,7 +67,7 @@ Realizar Nueva Venta_3
 Agregar Productos_3
     [Documentation]                                    Se Completa la grilla Productos
     sleep   1s
-    comprobantes_venta.Agregar Item RI                 1   Carpeta         1       4582     0
+    comprobantes_venta.Agregar Item                  1   Carpeta         1       4582     0
     click                                              xpath=//td[@id='TransaccionCVItems_internal_delete_column_2']/div/div
 
 Guardar_3

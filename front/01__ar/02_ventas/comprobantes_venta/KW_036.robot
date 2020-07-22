@@ -18,7 +18,7 @@ Grilla Productos
     [Documentation]                     se completan los campos de productos
     log to console                      Grilla Productos
     sleep   1s
-    comprobantes_venta.Agregar Item CF    1   Carpetas         1       2500.50     0
+    comprobantes_venta.Agregar Item     1   Carpetas         1       2500.50     0
     click    xpath=//td[@id='TransaccionCVItems_internal_delete_column_2']/div/div
 
 Guardar Factura

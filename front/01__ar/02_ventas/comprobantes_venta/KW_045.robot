@@ -32,9 +32,9 @@ Agregar Productos
     [Documentation]                                se completan los campos de productos
     log to console                                 Agregar Productos
     sleep   1s
-    comprobantes_venta.Agregar Item RI             1   Carpeta         1       2500.50     0
-    comprobantes_venta.Agregar Item RI             2   Alquiler        1       16500       10
-    comprobantes_venta.Agregar Item RI             3   Cinta Papel     2.5     500         0
+    comprobantes_venta.Agregar Item              1   Carpeta         1       2500.50     0
+    comprobantes_venta.Agregar Item              2   Alquiler        1       16500       10
+    comprobantes_venta.Agregar Item              3   Cinta Papel     2.5     500         0
     click                                          xpath=//td[@id='TransaccionCVItems_internal_delete_column_4']/div/div
 
 Guardar Factura

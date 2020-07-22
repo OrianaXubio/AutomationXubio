@@ -18,12 +18,12 @@ Agregar Productos
     [Documentation]                                Se Completa la grilla Productos
     log to console                              Agregar Productos
     sleep   2s
-    comprobantes_venta.Agregar Item RI            1   Carpeta         1       2500.50     0
-    comprobantes_venta.Agregar Item RI            2   Alquiler        1       16500       10
-    comprobantes_venta.Agregar Item RI            3   Cinta Papel     2.5     500         0
-    comprobantes_venta.Agregar Item RI            4   Goma de borrar  4       120         0
-    comprobantes_venta.Agregar Item RI            5   Carátulas       7       25          0
-    comprobantes_venta.Agregar Item RI            6   Carátulas       2       -25         0
+    comprobantes_venta.Agregar Item             1   Carpeta         1       2500.50     0
+    comprobantes_venta.Agregar Item             2   Alquiler        1       16500       10
+    comprobantes_venta.Agregar Item             3   Cinta Papel     2.5     500         0
+    comprobantes_venta.Agregar Item             4   Goma de borrar  4       120         0
+    comprobantes_venta.Agregar Item             5   Carátulas       7       25          0
+    comprobantes_venta.Agregar Item             6   Carátulas       2       -25         0
     click    xpath=//td[@id='TransaccionCVItems_internal_delete_column_7']/div/div
 
 Grilla Percepcion/Impuestos
@@ -57,7 +57,7 @@ Agregar Producto en Popup
     # Se guarda el numero de comprobante en una variable
     ${num_comprobante}       Get Value              xpath=(//div[@name='wdg_NumeroDocumento']//input)[2]
     Set Global Variable                             ${num_comprobante}
-    comprobantes_venta.Agregar Item RI (ventana)                    1   Cinta Papel     1     200         0
+    comprobantes_venta.Agregar Item  (ventana)                    1   Cinta Papel     1     200         0
     comprobantes_venta.Validacion Cliente (Pop-up)                  Responsable Inscripto
     comprobantes_venta.Validacion de Letra (Pop-up)                 A
     comprobantes_venta.Validacion Condicion de Pago_(Pop-up)        Cuenta Corriente

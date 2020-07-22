@@ -26,7 +26,7 @@ Agregar Productos
     [Documentation]                         se completan los campos de productos
     log to console                          Agregar Productos
     sleep   1s
-    comprobantes_venta.Agregar Item RI      1   Cinta Papel     1     1256,9         0
+    comprobantes_venta.Agregar Item       1   Cinta Papel     1     1256,9         0
     click        xpath=//td[@id='TransaccionCVItems_internal_delete_column_2']/div/div
 
 Guardar Factura
@@ -50,7 +50,7 @@ Agregar Productos 2
     [Documentation]                         se completan los campos de productos
     log to console                          Agregar Productos 2
     sleep   1s
-    comprobantes_venta.Agregar Item RI      1   Cinta Papel     1     1256,9         0
+    comprobantes_venta.Agregar Item       1   Cinta Papel     1     1256,9         0
     click        xpath=//td[@id='TransaccionCVItems_internal_delete_column_2']/div/div
 
 Guardar Factura 2
@@ -78,7 +78,7 @@ Agregar Productos 3
     [Documentation]                         se completan los campos de productos
     log to console                          Agregar Productos 3
     sleep   1s
-    comprobantes_venta.Agregar Item RI      1   Cinta Papel     1     1256,9         0
+    comprobantes_venta.Agregar Item       1   Cinta Papel     1     1256,9         0
     click        xpath=//td[@id='TransaccionCVItems_internal_delete_column_2']/div/div
 
 Guardar Factura 3

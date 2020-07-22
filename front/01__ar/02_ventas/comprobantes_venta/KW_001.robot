@@ -21,12 +21,12 @@ Agregar Productos
     [Documentation]                     se completan los campos de produtos
     Log To Console                      Agregar Productos
     sleep   1s
-    comprobantes_venta.Agregar Item RI    1   Carpeta         1       2500.50     0
-    comprobantes_venta.Agregar Item RI    2   Alquiler        1       16500       10
-    comprobantes_venta.Agregar Item RI    3   Cinta Papel     2.5     500         0
-    comprobantes_venta.Agregar Item RI    4   Goma de borrar  4       120         0
-    comprobantes_venta.Agregar Item RI    5   Carátulas       7       25          0
-    comprobantes_venta.Agregar Item RI    6   Carátulas       2       -25         0
+    comprobantes_venta.Agregar Item     1   Carpeta         1       2500.50     0
+    comprobantes_venta.Agregar Item     2   Alquiler        1       16500       10
+    comprobantes_venta.Agregar Item     3   Cinta Papel     2.5     500         0
+    comprobantes_venta.Agregar Item     4   Goma de borrar  4       120         0
+    comprobantes_venta.Agregar Item     5   Carátulas       7       25          0
+    comprobantes_venta.Agregar Item     6   Carátulas       2       -25         0
     click    xpath=//td[@id='TransaccionCVItems_internal_delete_column_7']/div/div
 
 Grilla Percepcion/Impuestos

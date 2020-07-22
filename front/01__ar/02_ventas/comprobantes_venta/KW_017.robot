@@ -19,8 +19,8 @@ Agregar Productos
     [Documentation]                                   Se Completa la grilla Productos
     log to console              Agregar Productos
     sleep   1s
-    comprobantes_venta.Agregar Item CF                1   Carpetas        1       3002        0
-    comprobantes_venta.Agregar Item CF                2   Alquiler        1       18500       0
+    comprobantes_venta.Agregar Item                 1   Carpetas        1       3002        0
+    comprobantes_venta.Agregar Item                 2   Alquiler        1       18500       0
     click    xpath=//td[@id='TransaccionCVItems_internal_delete_column_3']/div/div
 
 Grilla Instrumento de cobro

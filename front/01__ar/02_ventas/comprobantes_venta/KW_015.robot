@@ -18,9 +18,9 @@ Agregar Productos
     [Documentation]                                       Se Completa la grilla Productos
     log to console                      Agregar Productos
     sleep   2s
-    comprobantes_venta.Agregar Item RI                    1   Carpeta         1       3002        0
-    comprobantes_venta.Agregar Item RI                    2   Alquiler        1       18500       10
-    comprobantes_venta.Agregar Item RI                    3   Cinta Papel     2.5     360         0
+    comprobantes_venta.Agregar Item                     1   Carpeta         1       3002        0
+    comprobantes_venta.Agregar Item                     2   Alquiler        1       18500       10
+    comprobantes_venta.Agregar Item                     3   Cinta Papel     2.5     360         0
     click    xpath=//td[@id='TransaccionCVItems_internal_delete_column_4']/div/div
 
 Grilla Percepcion/Impuestos

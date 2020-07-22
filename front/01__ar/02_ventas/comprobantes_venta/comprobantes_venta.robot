@@ -193,7 +193,7 @@ Agregar Cheque
     click       xpath=//td/div/table/tbody/tr/td
     sleep   1s
 
-Agregar Item RI
+Agregar Item
     [Documentation]     agrega un nuevo producto a la grilla. El cliente debe ser de tipo Sin IVA incluido
     ...                 la variable ${num_item} hace referencia al numero de fila en la grilla
     [Arguments]     ${num_item}  ${producto}  ${cantidad}  ${precio}  ${descuento}
@@ -203,26 +203,9 @@ Agregar Item RI
     click       xpath=//td[@id='TransaccionCVItems_Cantidad_${num_item}']/div
     type        xpath=//td[@id='TransaccionCVItems_Cantidad_${num_item}']/div/div/input                 ${cantidad}
     sendKeys    xpath=//td[@id='TransaccionCVItems_Cantidad_${num_item}']/div                           TAB
-    click       xpath=//td[@id='TransaccionCVItems_Precio_${num_item}']/div
-    type        xpath=//td[@id='TransaccionCVItems_Precio_${num_item}']/div/div/input                   ${precio}
-    sendKeys    xpath=//td[@id='TransaccionCVItems_Precio_${num_item}']/div                             TAB
-    click       xpath=//td[@id='TransaccionCVItems_PorcentajeDescuento_${num_item}']/div
-    type        xpath=//td[@id='TransaccionCVItems_PorcentajeDescuento_${num_item}']/div/div/input      ${descuento}
-    sendKeys    xpath=//td[@id='TransaccionCVItems_PorcentajeDescuento_${num_item}']/div                TAB
-
-Agregar Item CF
-    [Documentation]     agrega un nuevo producto a la grilla. El cliente debe ser de tipo Con IVA incluido (o consumidor final)
-    ...                 la variable ${num_item} hace referencia al numero de fila en la grilla
-    [Arguments]     ${num_item}  ${producto}  ${cantidad}  ${precio}  ${descuento}
-    click       xpath=//td[@id='TransaccionCVItems_ProductoID_${num_item}']/div
-    type        xpath=//td[2]/div/div/div/input                                                         ${producto}
-    click       xpath=//td/div/table/tbody/tr/td
-    click       xpath=//td[@id='TransaccionCVItems_Cantidad_${num_item}']/div
-    type        xpath=//td[@id='TransaccionCVItems_Cantidad_${num_item}']/div/div/input                 ${cantidad}
-    sendKeys    xpath=//td[@id='TransaccionCVItems_Cantidad_${num_item}']/div                           TAB
-    click       xpath=//td[@id='TransaccionCVItems_PrecioConIvaIncluido_${num_item}']/div
-    type        xpath=//td[@id='TransaccionCVItems_PrecioConIvaIncluido_${num_item}']/div/div/input     ${precio}
-    sendKeys    xpath=//td[@id='TransaccionCVItems_PrecioConIvaIncluido_${num_item}']/div               TAB
+    click       xpath=//td[@id='TransaccionCVItems_PrecioConIvaIncluido_${num_item}' or @id='TransaccionCVItems_Precio_${num_item}']/div
+    type        xpath=//td[@id='TransaccionCVItems_PrecioConIvaIncluido_${num_item}' or @id='TransaccionCVItems_Precio_${num_item}']/div/div/input      ${precio}
+    sendKeys    xpath=//td[@id='TransaccionCVItems_PrecioConIvaIncluido_${num_item}' or @id='TransaccionCVItems_Precio_${num_item}']/div                TAB
     click       xpath=//td[@id='TransaccionCVItems_PorcentajeDescuento_${num_item}']/div
     type        xpath=//td[@id='TransaccionCVItems_PorcentajeDescuento_${num_item}']/div/div/input      ${descuento}
     sendKeys    xpath=//td[@id='TransaccionCVItems_PorcentajeDescuento_${num_item}']/div                TAB

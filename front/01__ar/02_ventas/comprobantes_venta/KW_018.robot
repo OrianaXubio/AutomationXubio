@@ -18,10 +18,10 @@ Agregar Productos
     [Documentation]                         Se agregan productos
     log to console                  Agregar Productos
     sleep   1s
-    comprobantes_venta.Agregar Item CF    1    Carátulas       8       64500        0
-    comprobantes_venta.Agregar Item CF    2    Cinta Papel     169     89600        0
-    comprobantes_venta.Agregar Item CF    3    Alquiler        265     54700        0
-    comprobantes_venta.Agregar Item CF    4    Goma de borrar  1       16500        0
+    comprobantes_venta.Agregar Item     1    Carátulas       8       64500        0
+    comprobantes_venta.Agregar Item     2    Cinta Papel     169     89600        0
+    comprobantes_venta.Agregar Item     3    Alquiler        265     54700        0
+    comprobantes_venta.Agregar Item     4    Goma de borrar  1       16500        0
     click       xpath=//td[@id='TransaccionCVItems_internal_delete_column_5']/div/div
 
     comprobantes_venta.Guardar

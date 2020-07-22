@@ -22,7 +22,7 @@ Nueva Venta
 Agregar Productos
     [Documentation]                             Se Completa la grilla Productos
     sleep   1s
-    comprobantes_venta.Agregar Item RI          1   Carpeta         1       2500.50     0
+    comprobantes_venta.Agregar Item           1   Carpeta         1       2500.50     0
     click           xpath=//td[@id='TransaccionCVItems_internal_delete_column_2']/div/div
 
 Grilla Percepcion/Impuestos
@@ -54,7 +54,7 @@ Nueva Venta 2
 Agregar Productos 2
     [Documentation]                             Se Completa la grilla Productos
     sleep   1s
-    comprobantes_venta.Agregar Item RI          1   Carpeta         1       2500.50     0
+    comprobantes_venta.Agregar Item           1   Carpeta         1       2500.50     0
     click           xpath=//td[@id='TransaccionCVItems_internal_delete_column_2']/div/div
 
 Guardar Factura 2
@@ -77,7 +77,7 @@ Nueva Venta 3
 Agregar Productos 3
     [Documentation]                             Se Completa la grilla Productos
     sleep   1s
-    comprobantes_venta.Agregar Item CF          1   Cinta Papel         1       1256.9     0
+    comprobantes_venta.Agregar Item           1   Cinta Papel         1       1256.9     0
     click                                       xpath=//td[@id='TransaccionCVItems_internal_delete_column_2']/div/div
 
 Guardar Factura 3

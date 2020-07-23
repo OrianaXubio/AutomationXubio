@@ -57,7 +57,7 @@ Agregar Producto en Popup
     # Se guarda el numero de comprobante en una variable
     ${num_comprobante}       Get Value              xpath=(//div[@name='wdg_NumeroDocumento']//input)[2]
     Set Global Variable                             ${num_comprobante}
-    comprobantes_venta.Agregar Item  (ventana)                    1   Cinta Papel     1     200         0
+    comprobantes_venta.Agregar Item RI (ventana)                    1   Cinta Papel     1     200         0
     comprobantes_venta.Validacion Cliente (Pop-up)                  Responsable Inscripto
     comprobantes_venta.Validacion de Letra (Pop-up)                 A
     comprobantes_venta.Validacion Condicion de Pago_(Pop-up)        Cuenta Corriente
